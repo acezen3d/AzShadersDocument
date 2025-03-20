@@ -205,3 +205,8 @@
 - Reorganize the properties and categorize them, please use Material Editor v3.12.0 or above to take effect.
 - Significantly refactor the code.
 - Update the documents.
+
+## v5.1.0
+- Rename `LiquidBaseColor` to `LiquidColor`.
+- Optimize the distribution of `LiquidMetallic` and `LiquidGlossiness`.
+- Update the documents.
