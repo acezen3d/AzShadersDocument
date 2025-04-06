@@ -101,7 +101,6 @@ UnityEngine.RenderSettings.reflectionIntensity = 1.0f;
 8. Now the variable `q` carries our skybox material.
 
 ## Related: Local indirect lighting
-
 ### Light Probes (diffuse term)
 Baked only  
 https://docs.unity3d.com/ScriptReference/LightProbes.html
@@ -111,6 +110,6 @@ Baked or realtime
 https://docs.unity3d.com/ScriptReference/ReflectionProbe.html
 
 ## Notes
-- Ambient lighting requires shader support to work. Az Standard shaders support it of course.
+- Ambient lighting requires shader support to work.
 - The greater the `Glossiness` and `Metallic` of the material, the more pronounced the ambient specular reflections will be. If `Glossiness` and `Metallic` are too small, ambient specular reflections may become invisible.
 - All changes in Runtime Unity Editor will not be saved to the scene file, you need to record them yourself.
