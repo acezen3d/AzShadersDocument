@@ -70,7 +70,7 @@ Too many to list, why not experience them firsthand? 😉
 - [Az/StandardDebug shader](az_standard_debug_shader.md)
 
 ## Tutorials
-- [How to setup ambient lighting](tutorials/how_to_setup_ambient_lighting.md)
+- [How to setup ambient lighting](../tutorials/how_to_setup_ambient_lighting.md)
 
 ## Known issues
 - You have to update your Material Editor to v3.3.0 or later to use Az Standard shaders v2.2.0 or later without problems. This is because only newer versions of Material Editor support shader keywords in Az Standard shaders added from v2.2.0. If you use Az Standard shaders v2.2.0 or later in an older version of Material Editor, you may get an error that Material Editor fails and other shader mods cannot be loaded.
@@ -93,6 +93,4 @@ Too many to list, why not experience them firsthand? 😉
 - If you encounter issues like missing textures during the migration from v4 to v5, you can download **[Acezen][KK/KKS] Az.Shader.StandardMigrationToV5 v0.0.0.zipmod**. It retains the removed shaders to prevent errors and facilitate the migration. When you have fully migrated to the new v5 shaders, you can safely delete it.
 
 ## Download
-[https://mega.nz/folder/CYtRjKBQ#1SvoZEZCnLxuPs5q56P5Ww](https://mega.nz/folder/CYtRjKBQ#1SvoZEZCnLxuPs5q56P5Ww)
-
-More mods: [https://www.patreon.com/AcezenMod](https://www.patreon.com/AcezenMod)
+https://www.patreon.com/posts/102947265
