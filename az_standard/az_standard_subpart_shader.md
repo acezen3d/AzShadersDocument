@@ -56,13 +56,13 @@ This shader can be used with the following renderers:
 | [Detail properties](detail_properties.md) |      |               |             |
 
 ### 🏷️Koikatsu and Extension
-| Name                                            | Type                                                                                    | Default value | Description                                                                               |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------- |
-| Color                                           | Color                                                                                   | (1,1,1,1)     | ⚜️***Extension property***. The color adjustment, will be multiplied with the main albedo. |
-| OverTex                                         | Texture                                                                                 | white         | ⚜️***Extension property***. A custom over texture, using UV0.                              |
-| OverColor                                       | Color                                                                                   | (1,1,1,1)     | ⚜️***Extension property***. `OverTex` color tint.                                          |
-| OverTexBlendType                                | Integer(0,11), see [Blend type enum for color](blend_type.md#blend-type-enum-for-color) | 1             | ⚜️***Extension property***. `OverTex` blend type.                                          |
-| [Drawn map properties](drawn_map_properties.md) |                                                                                         |               |                                                                                           |
+| Name                                            | Type                                                                                           | Default value | Description                                                                               |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------- |
+| Color                                           | Color                                                                                          | (1,1,1,1)     | ⚜️***Extension property***. The color adjustment, will be multiplied with the main albedo. |
+| OverTex                                         | Texture                                                                                        | white         | ⚜️***Extension property***. A custom over texture, using UV0.                              |
+| OverColor                                       | Color                                                                                          | (1,1,1,1)     | ⚜️***Extension property***. `OverTex` color tint.                                          |
+| OverTexBlendType                                | Integer(0,11), see [Blend type enum for color](common/blend_type.md#blend-type-enum-for-color) | 1             | ⚜️***Extension property***. `OverTex` blend type.                                          |
+| [Drawn map properties](drawn_map_properties.md) |                                                                                                |               |                                                                                           |
 
 ### 🏷️Lighting
 | Name                                          | Type | Default value | Description |
