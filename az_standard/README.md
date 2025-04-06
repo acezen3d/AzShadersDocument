@@ -93,6 +93,4 @@ Too many to list, why not experience them firsthand? 😉
 - If you encounter issues like missing textures during the migration from v4 to v5, you can download **[Acezen][KK/KKS] Az.Shader.StandardMigrationToV5 v0.0.0.zipmod**. It retains the removed shaders to prevent errors and facilitate the migration. When you have fully migrated to the new v5 shaders, you can safely delete it.
 
 ## Download
-[https://mega.nz/folder/CYtRjKBQ#1SvoZEZCnLxuPs5q56P5Ww](https://mega.nz/folder/CYtRjKBQ#1SvoZEZCnLxuPs5q56P5Ww)
-
-More mods: [https://www.patreon.com/AcezenMod](https://www.patreon.com/AcezenMod)
+https://www.patreon.com/posts/102947265
