@@ -93,15 +93,12 @@ UnityEngine.RenderSettings.reflectionIntensity = 1.0f;
 2. Choose it in the workspace and open Material Editor to check the renderer name, like **dome_sphere**.
 3. Search the renderer name in Runtime Unity Editor Object Browser to find the `GameObject`.
 4. Click **Inspect** to inspect the found `GameObject`, check its **Components**, find the component `UnityEngine.MeshRenderer`, like **dome_sphere (UnityEngine.MeshRenderer)**.
-5. Enter the component `UnityEngine.MeshRenderer`, find the property `material`.
-6. Enter the property `material`.
-   - Right click `material` on the breadcrumbs and choose **Send to REPL**, a line of code will appear in Runtime Unity Editor REPL, such as `var q = (UnityEngine.Material)InteropTempVar;`.
-   - Or just go to Runtime Unity Editor REPL and type the code `var q = geti();`.
+5. Enter the component `UnityEngine.MeshRenderer`, find the property `sharedMaterial`.
+6. Right click `sharedMaterial` and choose **Send to REPL**, a line of code will appear in Runtime Unity Editor REPL, such as `var q = (UnityEngine.Material)InteropTempVar;`; Or enter the property `sharedMaterial`, then go to Runtime Unity Editor REPL and type the code `var q = geti();`.
 7. Click **Run** to run the code in Runtime Unity Editor REPL.
 8. Now the variable `q` carries our skybox material.
 
 ## Related: Local indirect lighting
-
 ### Light Probes (diffuse term)
 Baked only  
 https://docs.unity3d.com/ScriptReference/LightProbes.html
@@ -111,6 +108,6 @@ Baked or realtime
 https://docs.unity3d.com/ScriptReference/ReflectionProbe.html
 
 ## Notes
-- Ambient lighting requires shader support to work. Az Standard shaders support it of course.
+- Ambient lighting requires shader support to work.
 - The greater the `Glossiness` and `Metallic` of the material, the more pronounced the ambient specular reflections will be. If `Glossiness` and `Metallic` are too small, ambient specular reflections may become invisible.
 - All changes in Runtime Unity Editor will not be saved to the scene file, you need to record them yourself.
