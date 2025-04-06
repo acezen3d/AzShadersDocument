@@ -4,15 +4,15 @@
   - [What's blend type](#whats-blend-type)
   - [Supported blend types](#supported-blend-types)
     - [Normal](#normal)
-    - [Add (aka. LinearDodge)](#add-aka-lineardodge)
     - [Multiply](#multiply)
-    - [AddMultiply](#addmultiply)
     - [MultiplyAndDouble](#multiplyanddouble)
+    - [Add (aka. LinearDodge)](#add-aka-lineardodge)
+    - [AddMultiply](#addmultiply)
     - [Subtract](#subtract)
     - [ReverseSubtract](#reversesubtract)
     - [Screen](#screen)
-    - [Min (aka. Darken)](#min-aka-darken)
     - [Max (aka. Lighten)](#max-aka-lighten)
+    - [Min (aka. Darken)](#min-aka-darken)
     - [Overlay](#overlay)
     - [HardLight](#hardlight)
   - [Blend type enum for color](#blend-type-enum-for-color)
@@ -35,21 +35,21 @@ $$a = (1-t)a+to$$
 $$
 o = b
 $$
-### Add (aka. LinearDodge)
-$$
-o = a+b
-$$
 ### Multiply
 $$
 o = ab
 $$
-### AddMultiply
-$$
-o = a+ab
-$$
 ### MultiplyAndDouble
 $$
 o = 2ab
+$$
+### Add (aka. LinearDodge)
+$$
+o = a+b
+$$
+### AddMultiply
+$$
+o = a+ab
 $$
 ### Subtract
 $$
@@ -63,13 +63,13 @@ $$
 $$
 o = 1-(1- a)(1-b)
 $$
-### Min (aka. Darken)
-$$
-o = min(a,b)
-$$
 ### Max (aka. Lighten)
 $$
 o = max(a,b)
+$$
+### Min (aka. Darken)
+$$
+o = min(a,b)
 $$
 ### Overlay
 $$
