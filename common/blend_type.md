@@ -4,15 +4,15 @@
   - [What's blend type](#whats-blend-type)
   - [Supported blend types](#supported-blend-types)
     - [Normal](#normal)
-    - [Add (aka. LinearDodge)](#add-aka-lineardodge)
     - [Multiply](#multiply)
-    - [AddMultiply](#addmultiply)
     - [MultiplyAndDouble](#multiplyanddouble)
+    - [Add (aka. LinearDodge)](#add-aka-lineardodge)
+    - [AddMultiply](#addmultiply)
     - [Subtract](#subtract)
     - [ReverseSubtract](#reversesubtract)
     - [Screen](#screen)
-    - [Min (aka. Darken)](#min-aka-darken)
     - [Max (aka. Lighten)](#max-aka-lighten)
+    - [Min (aka. Darken)](#min-aka-darken)
     - [Overlay](#overlay)
     - [HardLight](#hardlight)
   - [Blend type enum for color](#blend-type-enum-for-color)
@@ -29,47 +29,47 @@ Blend type here refers to the blend mode commonly found in graphics editing prog
 ## Supported blend types
 Suppose $a$ is the destination, $b$ is the source, $t$ is the blending ratio and $o$ is the blending output by following methods, then after blending, $a$ becomes:  
 
-$$a = (1-t)a+to$$
+$$a=(1-t)a+to$$
 
 ### Normal
 $$
-o = b
-$$
-### Add (aka. LinearDodge)
-$$
-o = a+b
+o=b
 $$
 ### Multiply
 $$
-o = ab
-$$
-### AddMultiply
-$$
-o = a+ab
+o=ab
 $$
 ### MultiplyAndDouble
 $$
-o = 2ab
+o=2ab
+$$
+### Add (aka. LinearDodge)
+$$
+o=a+b
+$$
+### AddMultiply
+$$
+o=a+ab
 $$
 ### Subtract
 $$
-o = a-b
+o=a-b
 $$
 ### ReverseSubtract
 $$
-o = b-a
+o=b-a
 $$
 ### Screen
 $$
-o = 1-(1- a)(1-b)
-$$
-### Min (aka. Darken)
-$$
-o = min(a,b)
+o=1-(1-a)(1-b)
 $$
 ### Max (aka. Lighten)
 $$
-o = max(a,b)
+o=max(a,b)
+$$
+### Min (aka. Darken)
+$$
+o=min(a,b)
 $$
 ### Overlay
 $$
@@ -119,4 +119,4 @@ $$
  | 9     | Min               |
  
 ## Notes
-- `MultiplyAndDouble` behaves differently under different enums. In **Blend type enum for color**, it means multiplying by $2^{2.2}$ (if we're working in linear color space , which we are), but in **Blend type enum for non-color**, it means multiplying by $2$.
+- `MultiplyAndDouble` behaves differently under different enums. In **Blend type enum for color**, it means multiplying by $2 ^ {2.2}$ (if we're working in linear color space , which we are), but in **Blend type enum for non-color**, it means multiplying by 2.
