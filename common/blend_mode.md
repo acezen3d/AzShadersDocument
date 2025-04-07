@@ -31,7 +31,7 @@ The color left in the frame buffer after blending is given by this formula:
 FinalValue = SourceValue * SourceBlendMode BlendOp DestinationValue * DestinationBlendMode
 ```
 
-**Reference**
+**References**
 - https://docs.unity3d.com/Manual/SL-Blend.html
 - https://docs.unity3d.com/ScriptReference/Rendering.BlendMode.html
 - https://docs.unity3d.com/Manual/SL-BlendOp.html
