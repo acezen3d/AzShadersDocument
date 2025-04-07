@@ -1,4 +1,5 @@
 # Changelog
+
 ## v1.1.0
 - Add tessellation variant shaders:
   - `Az/StandardSkinTess`
@@ -8,7 +9,6 @@
   - `Az/StandardCutoffTess`
   - `Az/StandardAlphaTess`
   - `Az/StandardDebugTess`
-- Update the document.
 
 ## v1.1.1
 - Remove the processing of `ShadowlessColor` and `ShadowIntensity` in the ForwardAdd pass to make the fake indirect lighting consistent with Unity's indirect lighting. And this also fixes the problem of the rectangular bounding box when lighting with spot lights and point lights reported by ***Starstorm***.
@@ -16,7 +16,6 @@
 ## v2.0.0
 - Remove `ShadowIntensity` and `ShadowlessColor`.
 - Add `DummyAmbient`, `DummyAmbient` basically imitates Unity's ambient light, and also uses `OcclusionMap`.
-- Update the document.
 
 ## v2.0.1
 - Make texture maps in `Az/StandardEye(Tess)` shader other than `expression`, `overtex1`, `overtex2` (These three have already followed) follow the UV tiling and offset of `MainTex`, so that these texture maps move with the eye movements. This issue was reported by ***pizdatyi***. It's worth noting that setting the UV tiling and offset of these texture maps will now have no effect.
@@ -41,18 +40,15 @@
 - Add two keywords `DETAIL_ALBEDO_MAP_X2_ON` and `DETAIL_METALLIC_GLOSS_MAP_X2_ON`, to allow users to control how `AlbedoMapDetail(2)` and `MetallicGlossMapDetail(2)` are calculated. Please check the document for specific details.
 - Clarify the color space for all texture maps.
 - To solve the problem that Material Editor can only import textures in gamma space but not in linear space, Az standard shaders are now able to internally convert the texture color space back to linear space if needed, so that texture maps that need to be in linear color space now work as expected.
-- Update the document.
 
 ## v2.3.0
 - Add `ZWrite` property to `Az/StandardEye(Tess)` and `Az/StandardEyeW(Tess)`, so that users can make better adjustments. For example, on the eyebrow material, it may require turning on `ZWrite` of `Az/StandardEyeW`.
-- Update the document.
 
 ## v2.4.0
 - Add `Az/StandardAlphaAlt` shader and its tessellation variant shader, requested by ***pizdatyi***. This shader uses premultiplied alpha blending and is suitable for materials like glass.
 - Set explicit defaults for `BlendSrc` and `BlendDst` for `Az/StandardAlpha(Tess)` and `Az/StandardAlphaAlt(Tess)`.
 - Add detail properties `DetailUVRotationCenter`, `DetailUVRotation`, `DetailUVRotation2` to support detail UV rotation.
 - Fix the problem that the game incorrectly set `Color` property to a reddish color when using `Az/StandardSkin(Tess)`. It now has an explicit default value of white.
-- Update the document.
 
 ## v3.0.0
 - Add displacement feature to all Az Standard shaders.
@@ -62,7 +58,6 @@
 - Change the shader keywords `DETAIL_ALBEDO_MAP_X2_ON` and `DETAIL_METALLIC_GLOSS_MAP_X2_ON` to `DETAIL_ALBEDO_MAP_X2` and `DETAIL_METALLIC_GLOSS_MAP_X2`, i.e., remove the suffix "ON".
 - Rename `Az/StandardDebugTess` to `Az/StandardDebug`. It now visualizes world space normals.
 - Optimize the logic of the main color. The original `Color` is now only used for the `red` channel of `ColorMask`, and `BaseColor` has been added for overall color adjustment. This is requested by ***Starstorm***.
-- Update the document.
 
 ## v3.0.1
 - Add a gradient transition (quartic power) to `OverTex1NormalMapScale` when blending `OverTex1NormalMap` to the main normal. So that even the edges of `OverTex1NormalMap` are discontinuous, it will not cause normal discontinuities at UV seams.
@@ -73,35 +68,28 @@
 ## v3.1.0
 - Add `Color` back to `Az/StandardEye` and `Az/StandardEyeW`. They was removed in v3.0.0, but the removal caused the game's color slider to fail.
 - Add `StencilRef` to `Az/StandardEye` and `Az/StandardEyeW` for advanced rendering control.
-- Update the document.
 
 ## v3.2.0
 - Cancel the keywords `DETAIL_ALBEDO_MAP_X2` and `DETAIL_METALLIC_GLOSS_MAP_X2` and change them to properties `DetailAlbedoDouble` and `DetailMetallicGlossDouble`, since they are not important enough to be keywords.
 - Add keywords `DETAIL_SET` and `DETAIL_SET2` to act as master switches for detail set 1 and 2, respectively.
-- Update the document.
 
 ## v3.3.0
 - Add `DisplaceMiddleLevel` like Blender, so that Az Standard shaders have a more understandable logic for dealing with various height maps, bump maps or displacement maps etc.
-- Update the document.
 
 ## v3.4.0
 - Chang the functionality of `DisplaceAdjustment`. It now specializes in adjusting the displacement according to the size of the object. Check the document for more details.
-- Update the document.
 
 ## v3.5.0
 - Fix an issue of `Az/StandardEye` that `rotation` property is ignored by most texture maps of the shader. So we now have the texture maps (excluding `expression`) also use `rotation`, which is consistent with the game.
 - Optimize the displacement normal generation method. Previously we used approximate derivative calculation, now we use Scharr filter convolution calculation, which has better results.
 - Add `DisplaceNormalTexelSize` to control the sampling offset of Scharr filter. The larger `DisplaceNormalTexelSize`, the stronger and smoother the normals.
-- Update the document.
 
 ## v4.0.0
 - Add back `ShadowIntensity` removed from v2.0.0. Check the document for more details.
 - Make `TessSmoothMap` in `Az/StandardEye` not follow eye movement and rotation, as it shouldn't.
-- Update the document.
 
 ## v4.1.0
 - Add `ShadowSpecularControl` to indicate whether `ShadowIntensity` also controls specular highlights in shadows.
-- Update the document.
 
 ## v4.1.1
 - Fix an issue where lights would lose chroma when lowering `ShadowIntensity`.
@@ -113,7 +101,6 @@
 - Add spot light shadow optimization. Add 7x7 kernel PCF tent filter for KK version, enable 7x7 kernel PCF tent filter for KKS version.
 - Add point light shadow optimization. Add PCF filter with more samples (29, take into account the performance) for both KK and KKS versions. However, due to different versions of Unity underneath, the implementations in different versions are different, KKS version has better point light shadow quality.
 - Add `ShadowPointPCFTexelSize` property to control the sampling offset of the above PCF filter.
-- Update the document.
 
 ## v4.3.0
 - Add `NormalBackFaceFlip` to `Az/StandardAlpha`, `Az/StandardAlphaAlt`, `Az/StandardCutoff`, `Az/StandardHair`, `Az/StandardSkin`. It indicates whether to flip the normals of back faces.
@@ -124,7 +111,6 @@
   - Add `LineUseFillColor` to indicate whether to use the fill color as the line color. 
   - Add `Visualization` to determine the fill color. There are several options: World Normal, Face Orientation, Vertex Color and Blend Weight. 
   - Add `BoneA` and `BoneB` to indicate the indices of the two bones in Blend Weight visualization.
-- Update the document.
 
 ## v4.3.1
 - Fix the error of `Az/StandardDebug` in KK version v4.3.0, remove support for Blend Weight visualization, `BoneA` and `BoneB` in KK version because KK's Unity version is too low to support them.
@@ -134,12 +120,10 @@
 - Remove `Alpha` and `ZWrite` from `Az/StandardDebug` to simplify the logic.
 - Improve `Az/StandardDebug` rendering using the alpha to coverage technique.
 - Change the normal generation filter of the displacement from Scharr filter to Sobel filter to improve the normals at default values.
-- Update the document.
 
 ## v4.5.0
 - Add `HighlightLevel`, `UseOverColor`, `IgnoreOverTexUV` to `Az/StandardEye`. Check the document for more details.
 - Optimize the blending logic of the eye highlight areas (`overtex1` and `overtex2`), make it consistent with the game.
-- Update the document.
 
 ## v4.6.0
 - Remove occlusion properties and normal map properties from `Az/StandardEye` and `Az/StandardEyeW`. Because they are rarely used and to avoid redundancy for the new features added below.
@@ -148,19 +132,16 @@
 - Since we have adjusted flat normals, the gradient transition (quartic power) of `OverTex1NormalMap` in `Az/StandardSkin` has been removed.
 - Add `OverTex2NormalMap` and `OverTex2NormalMapScale` to `Az/StandardSkin`.
 - Change the default texture of `DetailMask` to `red` for all shaders that have `DetailMask`.
-- Update the document.
 
 ## v4.7.0
 - Add `ShadowTransitionPower` to all shaders. It allows for a smoother transition at light-dark boundaries. Check the document for more details.
 - Remove the adjustment to flat normals introduced in v4.6.0, as it may cause banding artifacts.
 - Add the special property `UseBlueAsMaskForNormalMaps` to `Az/StandardSkin`, still aimed at addressing the issue of insufficient precision of normal maps in Material Editor. Check the document for more details.
-- Update the document.
 
 ## v4.8.0
 - Set the default value of `ShadowSpecularControl` to 0.
 - Add `ShadowCookieControl` (and `SpotDefaultCookie`) to indicate whether `ShadowIntensity` also controls light cookies. This feature originates from a question raised by ***Starstorm***. Check the document for more details.
 - Add `ShadowDarkControl` to indicate whether `ShadowIntensity` also controls dark areas on the object. This is a property split off from the original default behavior. Check the document for more details.
-- Update the document.
 
 ## v5.0.0
 - Add `ShadowReceiveControl`, and change all shadow controls (`ShadowReceiveControl`, `ShadowDarkControl` and `ShadowCookieControl`) to floats.
@@ -168,7 +149,7 @@
 - Remove `DummyAmbient`.
 - Optimize the detail UV rotation:
   - Remove `DetailUVRotationCenter`.
-  - Change the value range of detail UV rotation (`DetailUVRotation` and `DetailUVRotation2`) from $[0, 2]$ to $[-1, 1]$ for consistency.
+  - Change the value range of detail UV rotation (`DetailUVRotation` and `DetailUVRotation2`) from $[0,2]$ to $[-1,1]$ for consistency.
   - Fix the issue with incorrect detail normals when rotating the detail UV.
 - Optimize how details are blended:
   - Remove detail properties `DetailAlbedoDouble`, `DetailMetallicGlossDouble`.
@@ -178,7 +159,7 @@
 - Fix the issue that `VERTEXLIGHT_ON` keyword is not enabled, resulting in a lack of vertex light support.
 - Add `Az/StandardSubpart` shader for rendering the tooth, tongue, genital and etc.
 - Add `Az/StandardExtraStyle` shader for extra styles: matcap and rim light.
-- Change `EmissionIntensity` value range to $[0, 2]$.
+- Change `EmissionIntensity` value range to $[0,2]$.
 - Remove `Az/StandardCutoff` shader, add `Az/StandardItemCutout` and `Az/StandardClothCutout` shaders.
 - Remove `Az/StandardAlpha` shader, add `Az/StandardItemAlpha` and `Az/StandardClothAlpha` shaders.
 - Remove `Az/StandardAlphaAlt` shader.
@@ -204,27 +185,32 @@
 - Remove unnecessary Unity built-in variants to reduce file size and speed things up.
 - Reorganize the properties and categorize them, please use Material Editor v3.12.0 or above to take effect.
 - Significantly refactor the code.
-- Update the document.
 
 ## v5.1.0
 - Rename `LiquidBaseColor` to `LiquidColor`.
 - Optimize the distribution of `LiquidMetallic` and `LiquidGlossiness`.
-- Update the document.
 
 ## v5.2.0
 - Add `Az/StandardLiteCutout` and `Az/StandardLiteAlpha` shaders. They're lite versions of the cloth and item shaders, requested by ***AhaNubis*** and ***Starstorm***.
 - Fix the issue that the eyes lost the highlight areas (`overtex1` and `overtex2`) when `IgnoreOverTexUV` is 0.
 - Fix `MatcapCancelCameraRolling` not working properly in `Az/StandardExtraStyle`.
 - Change the render type and default render queue of `Az/StandardExtraStyle`.
-- Update the document.
 
 ## v5.3.0
 - Add back `DummyAmbient` removed from v5.0.0 as requested by ***Coppersocket***. It may still be deprecated in future versions. Please minimize its usage.
 - Additionally, note that `IndirectLightToRimLight` and `IndirectLightToMatcap` in `Az/StandardExtraStyle`, as well as `IndirectDiffuseIntensity` and `IndirectSpecularIntensity` in the lighting properties, refer to the real indirect light in Unity.
-- Update the document.
 
 ## v5.3.1
 - Fix the two matcaps not blending correctly in `Az/StandardExtraStyle`.
 
 ## v5.3.2
 - Remove the intentional ignoring of the offset and tiling for `Texture2` and `Texture3` to fix the issue where certain plugins in Koikatsu attempt to manipulate them but have no effect.
+
+## v5.4.0
+- Reorder `DummyAmbient` and `ShadowOptimization`.
+- Move `Alpha` to Main PBR category.
+- Add the liquid feature to `Az/StandardSubpart` shader.
+- Rename some detail properties to avoid misleading meanings:
+  - `DetailAlbedoMapScale` to `DetailAlbedoBlend`
+  - `DetailMetallic` to `DetailMetallicBlend`
+  - `DetailGlossiness` to `DetailGlossinessBlend`

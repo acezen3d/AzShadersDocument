@@ -2,46 +2,38 @@
 
 - [Detail properties](#detail-properties)
   - [Properties](#properties)
-  - [Additional property description](#additional-property-description)
-    - [DetailMask](#detailmask)
 
 ## Properties
-| Name                          | Type                                                                                                  | Default value | Description                                                                                                 |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| DetailSet                     | Boolean                                                                                               | true          | Whether to enable the detail set 1.                                                                         |
-| DetailSet2                    | Boolean                                                                                               | false         | Whether to enable the detail set 2.                                                                         |
-| DetailMask                    | Texture                                                                                               | red           | See [Additional property description/DetailMask](#detailmask).                                              |
-| ***UV Rotation***             |                                                                                                       |               |                                                                                                             |
-| DetailUVRotation              | Float(-1,1)                                                                                           | 0             | Detail set 1 UV rotation angle in units of $\pi$.                                                           |
-| DetailUVRotation2             | Float(-1,1)                                                                                           | 0             | Detail set 2 UV rotation angle in units of $\pi$.                                                           |
-| ***Normal***                  |                                                                                                       |               |                                                                                                             |
-| NormalMapDetail               | Texture                                                                                               | bump          | Detail normal map 1.                                                                                        |
-| DetailNormalMapScale          | Float(0,1)                                                                                            | 0             | Detail normal map scale 1.                                                                                  |
-| NormalMapDetail2              | Texture                                                                                               | bump          | Detail normal map 2.                                                                                        |
-| DetailNormalMapScale2         | Float(0,1)                                                                                            | 0             | Detail normal map scale 2.                                                                                  |
-| ***Albedo***                  |                                                                                                       |               |                                                                                                             |
-| AlbedoMapDetail               | Texture                                                                                               | white         | Detail albedo map 1, no need to be a greyscale but a color texture.                                         |
-| DetailAlbedoMapScale          | Float(0,1)                                                                                            | 0             | Detail albedo map scale 1.                                                                                  |
-| AlbedoMapDetail2              | Texture                                                                                               | white         | Detail albedo map 2, no need to be a greyscale but a color texture.                                         |
-| DetailAlbedoMapScale2         | Float(0,1)                                                                                            | 0             | Detail albedo map scale 2.                                                                                  |
-| DetailAlbedoBlendType         | Integer(0,11), see [Blend type enum for color](common/blend_type.md#blend-type-enum-for-color)        | 1             | Detail albedo blend type, which determines how the detail albedo blends with the main albedo.               |
-| ***Metallic and Glossiness*** |                                                                                                       |               |                                                                                                             |
-| MetallicGlossMapDetail        | Texture                                                                                               | white         | Detail metallic and glossiness map 1, metallic - `red`, glossiness - `alpha`.                               |
-| DetailMetallic                | Float(0,1)                                                                                            | 0             | Detail metallic 1. Works with `MetallicGlossMap`, `Metallic`, `MetallicGlossMapDetail`.                     |
-| DetailGlossiness              | Float(0,1)                                                                                            | 0             | Detail glossiness 1. Works with `MetallicGlossMap`, `Glossiness`, `MetallicGlossMapDetail`.                 |
-| MetallicGlossMapDetail2       | Texture                                                                                               | white         | Detail metallic and glossiness map 2, metallic - `red`, glossiness - `alpha`.                               |
-| DetailMetallic2               | Float(0,1)                                                                                            | 0             | Detail metallic 2. Works with `MetallicGlossMap`, `Metallic`, `MetallicGlossMapDetail2`.                    |
-| DetailGlossiness2             | Float(0,1)                                                                                            | 0             | Detail glossiness 2. Works with `MetallicGlossMap`, `Glossiness`, `MetallicGlossMapDetail2`.                |
-| DetailMetallicBlendType       | Integer(0,9), see [Blend type enum for non-color](common/blend_type.md#blend-type-enum-for-non-color) | 2             | Detail metallic blend type, which determines how the detail metallic blends with the main metallic.         |
-| DetailGlossinessBlendType     | Integer(0,9), see [Blend type enum for non-color](common/blend_type.md#blend-type-enum-for-non-color) | 2             | Detail glossiness blend type, which determines how the detail glossiness blends with the main glossiness.   |
-| ***Occlusion***               |                                                                                                       |               |                                                                                                             |
-| OcclusionMapDetail            | Texture                                                                                               | white         | Detail ambient occlusion map 1. The `green` channel is used.                                                |
-| DetailOcclusionStrength       | Float(0,1)                                                                                            | 0             | Detail ambient occlusion strength 1. Works with `OcclusionMap`, `OcclusionStrength`, `OcclusionMapDetail`.  |
-| OcclusionMapDetail2           | Texture                                                                                               | white         | Detail ambient occlusion map 2. The `green` channel is used.                                                |
-| DetailOcclusionStrength2      | Float(0,1)                                                                                            | 0             | Detail ambient occlusion strength 2. Works with `OcclusionMap`, `OcclusionStrength`, `OcclusionMapDetail2`. |
-
-## Additional property description
-### DetailMask
-**This is not Koikatsu's original `DetailMask`!**\
-Koikatsu uses this map to specify or control ramp based specular highlights, shadows and rim lights. But Az Standard shaders use this map to provide a mask for detail sets, i.e. on its `red`: detail set 1, `green`: detail set 2. 
-If you want to use something like `DetailMask` of Koikatsu, please refer to `DrawnMap` (see [Drawn map properties](drawn_map_properties.md)).
+| Name                      | Type          | Default value | Description                                                                                           |
+| ------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------------------------------- |
+| DetailSet                 | Boolean       | true          | See [DetailSet(n)](../common/detail_property_descriptions.md#detailsetn).                             |
+| DetailSet2                | Boolean       | false         | See [DetailSet(n)](../common/detail_property_descriptions.md#detailsetn).                             |
+| DetailMask                | Texture2D(L)  | red           | See [DetailMask](../common/detail_property_descriptions.md#detailmask).                               |
+| *UV Rotation*             |               |               |                                                                                                       |
+| DetailUVRotation          | Float(-1,1)   | 0             | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).               |
+| DetailUVRotation2         | Float(-1,1)   | 0             | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).               |
+| *Normal*                  |               |               |                                                                                                       |
+| NormalMapDetail           | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                |
+| DetailNormalMapScale      | Float(0,1)    | 0             | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).       |
+| NormalMapDetail2          | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                |
+| DetailNormalMapScale2     | Float(0,1)    | 0             | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).       |
+| *Albedo*                  |               |               |                                                                                                       |
+| AlbedoMapDetail           | Texture2D(G)  | white         | See [AlbedoMapDetail(n)](../common/detail_property_descriptions.md#albedomapdetailn).                 |
+| DetailAlbedoBlend         | Float(0,1)    | 0             | See [DetailAlbedoBlend(n)](../common/detail_property_descriptions.md#detailalbedoblendn).             |
+| AlbedoMapDetail2          | Texture2D(G)  | white         | See [AlbedoMapDetail(n)](../common/detail_property_descriptions.md#albedomapdetailn).                 |
+| DetailAlbedoBlend2        | Float(0,1)    | 0             | See [DetailAlbedoBlend(n)](../common/detail_property_descriptions.md#detailalbedoblendn).             |
+| DetailAlbedoBlendType     | Integer(0,11) | 1             | See [DetailAlbedoBlendType](../common/detail_property_descriptions.md#detailalbedoblendtype).         |
+| *Metallic and Glossiness* |               |               |                                                                                                       |
+| MetallicGlossMapDetail    | Texture2D(L)  | white         | See [MetallicGlossMapDetail(n)](../common/detail_property_descriptions.md#metallicglossmapdetailn).   |
+| DetailMetallicBlend       | Float(0,1)    | 0             | See [DetailMetallicBlend(n)](../common/detail_property_descriptions.md#detailmetallicblendn).         |
+| DetailGlossinessBlend     | Float(0,1)    | 0             | See [DetailGlossinessBlend(n)](../common/detail_property_descriptions.md#detailglossinessblendn).     |
+| MetallicGlossMapDetail2   | Texture2D(L)  | white         | See [MetallicGlossMapDetail(n)](../common/detail_property_descriptions.md#metallicglossmapdetailn).   |
+| DetailMetallicBlend2      | Float(0,1)    | 0             | See [DetailMetallicBlend(n)](../common/detail_property_descriptions.md#detailmetallicblendn).         |
+| DetailGlossinessBlend2    | Float(0,1)    | 0             | See [DetailGlossinessBlend(n)](../common/detail_property_descriptions.md#detailglossinessblendn).     |
+| DetailMetallicBlendType   | Integer(0,9)  | 2             | See [DetailMetallicBlendType](../common/detail_property_descriptions.md#detailmetallicblendtype).     |
+| DetailGlossinessBlendType | Integer(0,9)  | 2             | See [DetailGlossinessBlendType](../common/detail_property_descriptions.md#detailglossinessblendtype). |
+| *Occlusion*               |               |               |                                                                                                       |
+| OcclusionMapDetail        | Texture2D(L)  | white         | See [OcclusionMapDetail(n)](../common/detail_property_descriptions.md#occlusionmapdetailn).           |
+| DetailOcclusionStrength   | Float(0,1)    | 0             | See [DetailOcclusionStrength(n)](../common/detail_property_descriptions.md#detailocclusionstrengthn). |
+| OcclusionMapDetail2       | Texture2D(L)  | white         | See [OcclusionMapDetail(n)](../common/detail_property_descriptions.md#occlusionmapdetailn).           |
+| DetailOcclusionStrength2  | Float(0,1)    | 0             | See [DetailOcclusionStrength(n)](../common/detail_property_descriptions.md#detailocclusionstrengthn). |

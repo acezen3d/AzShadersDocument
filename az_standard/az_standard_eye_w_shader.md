@@ -30,21 +30,21 @@ This shader can be used with the following renderers:
 
 ## Setup
 - RenderType: `Transparent`
-- Cull: [property]
-- SrcBlend: `SrcAlpha`
-- DstBlend: `OneMinusSrcAlpha`
-- ZWrite: [property]
 - Queue: `Transparent`-1
+- Cull: [property]
+- Blend source: `SrcAlpha`
+- Blend destination: `OneMinusSrcAlpha`
+- ZWrite: [property]
 - Alpha mode keyword: `ALPHABLEND_ON`
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name       | Type           | Default value       | Description                                                                        |
-| ---------- | -------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Cutoff     | Float(0,1)     | 0.5                 | Alpha clip threshold value. Pixels with an alpha value below this will be clipped. |
-| Cull       | Integer(0,2)   | 0                   | Face culling, 0: cull off, 1: cull front, 2: cull back.                            |
-| ZWrite     | Integer(0,1)   | 0, explicit default | Whether to update the depth buffer.                                                |
-| StencilRef | Integer(0,255) | 8                   | The stencil reference value.                                                       |
+| Name       | Type           | Default value       | Description                                                                            |
+| ---------- | -------------- | ------------------- | -------------------------------------------------------------------------------------- |
+| Cutoff     | Float(0,1)     | 0.5                 | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff). |
+| Cull       | Integer(0,2)   | 0                   | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).     |
+| ZWrite     | Integer(0,1)   | 0, explicit default | See [ZWrite](../common/alpha_clip_and_render_options_property_descriptions.md#zwrite). |
+| StencilRef | Integer(0,255) | 8                   | The stencil reference value.                                                           |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |
@@ -52,9 +52,9 @@ This shader can be used with the following renderers:
 | [Main PBR properties](main_pbr_properties.md) |      |               |             |
 
 ### 🏷️Koikatsu and Extension
-| Name  | Type  | Default value | Description                                                                             |
-| ----- | ----- | ------------- | --------------------------------------------------------------------------------------- |
-| Color | Color | (1,1,1,1)     | ***Koikatsu property***. The color adjustment, will be multiplied with the main albedo. |
+| Name  | Type  | Default value | Description                                                                         |
+| ----- | ----- | ------------- | ----------------------------------------------------------------------------------- |
+| Color | Color | (1,1,1,1)     | *Koikatsu property*. The color adjustment, will be multiplied with the main albedo. |
 
 ### 🏷️Lighting
 | Name                                          | Type | Default value | Description |

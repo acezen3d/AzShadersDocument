@@ -4,9 +4,9 @@
   - [Properties](#properties)
 
 ## Properties
-| Name      | Type    | Default value | Description                                                                                                                        |
-| --------- | ------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ColorMask | Texture | black         | ***Koikatsu property***. Color mask of Koikatsu, `Color` - `red`, `Color2` - `green`, `Color3` - `blue`, `blue` > `green` > `red`. |
-| Color     | Color   | (1,1,1,1)     | ***Koikatsu property***. The color of the `red` channel of `ColorMask`.                                                            |
-| Color2    | Color   | (1,1,1,1)     | ***Koikatsu property***. The color of the `green` channel of `ColorMask`.                                                          |
-| Color3    | Color   | (1,1,1,1)     | ***Koikatsu property***. The color of the `blue` channel of `ColorMask`.                                                           |
+| Name      | Type         | Default value | Description                                                               |
+| --------- | ------------ | ------------- | ------------------------------------------------------------------------- |
+| ColorMask | Texture2D(G) | black         | See [ColorMask](../common/color_mask_property_descriptions.md#colormask). |
+| Color     | Color        | (1,1,1,1)     | See [Color](../common/color_mask_property_descriptions.md#color).         |
+| Color2    | Color        | (1,1,1,1)     | See [Color2](../common/color_mask_property_descriptions.md#color2).       |
+| Color3    | Color        | (1,1,1,1)     | See [Color3](../common/color_mask_property_descriptions.md#color3).       |

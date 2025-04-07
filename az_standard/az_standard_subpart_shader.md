@@ -30,20 +30,20 @@ This shader can be used with the following renderers:
 
 ## Setup
 - RenderType: `TransparentCutout`
-- Cull: [property]
-- SrcBlend: `One`
-- DstBlend: `Zero`
-- ZWrite: `On`
 - Queue: `AlphaTest`-100
+- Cull: [property]
+- Blend source: `One`
+- Blend destination: `Zero`
+- ZWrite: `On`
 - Alpha mode keyword: `ALPHATEST_ON`
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name               | Type         | Default value | Description                                                                        |
-| ------------------ | ------------ | ------------- | ---------------------------------------------------------------------------------- |
-| Cutoff             | Float(0,1)   | 0.5           | Alpha clip threshold value. Pixels with an alpha value below this will be clipped. |
-| NormalBackFaceFlip | Boolean      | false         | Whether to flip the normals of the back faces.                                     |
-| Cull               | Integer(0,2) | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                            |
+| Name               | Type         | Default value | Description                                                                                                    |
+| ------------------ | ------------ | ------------- | -------------------------------------------------------------------------------------------------------------- |
+| Cutoff             | Float(0,1)   | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff).                         |
+| NormalBackFaceFlip | Boolean      | false         | See [NormalBackFaceFlip](../common/alpha_clip_and_render_options_property_descriptions.md#normalbackfaceflip). |
+| Cull               | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                             |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |
@@ -56,13 +56,14 @@ This shader can be used with the following renderers:
 | [Detail properties](detail_properties.md) |      |               |             |
 
 ### 🏷️Koikatsu and Extension
-| Name                                            | Type                                                                                           | Default value | Description                                                                               |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------- |
-| Color                                           | Color                                                                                          | (1,1,1,1)     | ⚜️***Extension property***. The color adjustment, will be multiplied with the main albedo. |
-| OverTex                                         | Texture                                                                                        | white         | ⚜️***Extension property***. A custom over texture, using UV0.                              |
-| OverColor                                       | Color                                                                                          | (1,1,1,1)     | ⚜️***Extension property***. `OverTex` color tint.                                          |
-| OverTexBlendType                                | Integer(0,11), see [Blend type enum for color](common/blend_type.md#blend-type-enum-for-color) | 1             | ⚜️***Extension property***. `OverTex` blend type.                                          |
-| [Drawn map properties](drawn_map_properties.md) |                                                                                                |               |                                                                                           |
+| Name                                            | Type          | Default value | Description                                                                                                                                         |
+| ----------------------------------------------- | ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Color                                           | Color         | (1,1,1,1)     | *Extension property*. The color adjustment, will be multiplied with the main albedo.                                                                |
+| OverTex                                         | Texture2D(G)  | white         | *Extension property*. A custom over texture, using UV0.                                                                                             |
+| OverColor                                       | Color         | (1,1,1,1)     | *Extension property*. `OverTex` color tint.                                                                                                         |
+| OverTexBlendType                                | Integer(0,11) | 1             | *Extension property*. `OverTex` blend type. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color). |
+| [Liquid properties](liquid_properties.md)       |               |               |                                                                                                                                                     |
+| [Drawn map properties](drawn_map_properties.md) |               |               |                                                                                                                                                     |
 
 ### 🏷️Lighting
 | Name                                          | Type | Default value | Description |
@@ -83,6 +84,6 @@ This shader can be used with the following renderers:
 ### Order
 `MainTex`  
 -> `OverTex`, `OverColor`, `OverTexBlendType`   
--> `BaseColor` (🌈***Multiply***)  
+-> `BaseColor` (***Multiply***)  
 -> `DrawnMap`  
 -> `AlbedoMapDetail(2)`, `DetailAlbedoBlendType(2)`
