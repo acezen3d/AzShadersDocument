@@ -7,7 +7,7 @@
     - [🏷️Visualization](#️visualization)
     - [🏷️Tessellation](#️tessellation)
     - [🏷️Displacement](#️displacement)
-  - [Additional property description](#additional-property-description)
+  - [Additional property descriptions](#additional-property-descriptions)
     - [Visualization](#visualization)
   - [Known issues](#known-issues)
   - [Notes](#notes)
@@ -16,7 +16,7 @@
 ### 🏷️Alpha Clip and Render Options
 | Name        | Type         | Default value | Description                                                                              |
 | ----------- | ------------ | ------------- | ---------------------------------------------------------------------------------------- |
-| Cull        | Integer(0,2) | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                                  |
+| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).       |
 | AlphaToMask | Integer(0,1) | 1             | Whether to enable alpha to coverage. Should only be disabled when MSAA is not supported. |
 
 ### 🏷️Basic
@@ -30,13 +30,13 @@
 | NoFill         | Boolean     | false         | Do not draw the fills. |
 
 ### 🏷️Visualization
-| Name            | Type          | Default value | Description                                                          |
-| --------------- | ------------- | ------------- | -------------------------------------------------------------------- |
-| VisualizeOnLine | Float(0,1)    | 1             | Apply the visualization color to the lines.                          |
-| VisualizeOnFill | Float(0,1)    | 1             | Apply the visualization color to the fills.                          |
-| Visualization   | Integer(0,3)  | 0             | See [Additional property description/Visualization](#visualization). |
-| BoneA           | Integer(0,99) | 0             | Bone index A.                                                        |
-| BoneB           | Integer(0,99) | 0             | Bone index B.                                                        |
+| Name            | Type          | Default value | Description                                                           |
+| --------------- | ------------- | ------------- | --------------------------------------------------------------------- |
+| VisualizeOnLine | Float(0,1)    | 1             | The weight of the visualization color blend into the lines.           |
+| VisualizeOnFill | Float(0,1)    | 1             | The weight of the visualization color blend into the fills.           |
+| Visualization   | Integer(0,3)  | 0             | See [Additional property descriptions/Visualization](#visualization). |
+| BoneA           | Integer(0,99) | 0             | Bone index A.                                                         |
+| BoneB           | Integer(0,99) | 0             | Bone index B.                                                         |
 
 ### 🏷️Tessellation
 | Name                                                  | Type | Default value | Description |
@@ -48,21 +48,21 @@
 | ----------------------------------------------------- | ---- | ------------- | ----------- |
 | [Displacement properties](displacement_properties.md) |      |               |             |
 
-## Additional property description
+## Additional property descriptions
 ### Visualization
-**Value: 0**
+**Value 0**
 - Visualizes ***World Normal***.
 - If the displacement is turned on, the normals displayed are after the displacement.
 
-**Value: 1**
+**Value 1**
 - Visualizes ***Face Orientation***.
 - Like Blender, blue means front faces, and red means back faces.
 
-**Value: 2**
+**Value 2**
 - Visualizes ***Vertex Color***.
 - If there is vertex color data in the model, it will be displayed.
 
-**Value: 3**
+**Value 3**
 - Visualizes ***Blend Weight***.
 - Can display the weights of two bones (`BoneA` and `BoneB`) at the same time.
 - Change the values ​​of `BoneA` and `BoneB` to see the weights of the corresponding bones.

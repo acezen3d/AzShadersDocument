@@ -28,20 +28,20 @@ This shader can be used with the following renderers:
 
 ## Setup
 - RenderType: `TransparentCutout`
-- Cull: [property]
-- SrcBlend: `One`
-- DstBlend: `Zero`
-- ZWrite: `On`
 - Queue: `AlphaTest`
+- Cull: [property]
+- Blend source: `One`
+- Blend destination: `Zero`
+- ZWrite: `On`
 - Alpha mode keyword: `ALPHATEST_ON`
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name               | Type         | Default value | Description                                                                        |
-| ------------------ | ------------ | ------------- | ---------------------------------------------------------------------------------- |
-| Cutoff             | Float(0,1)   | 0.5           | Alpha clip threshold value. Pixels with an alpha value below this will be clipped. |
-| NormalBackFaceFlip | Boolean      | false         | Whether to flip the normals of the back faces.                                     |
-| Cull               | Integer(0,2) | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                            |
+| Name               | Type         | Default value | Description                                                                                                    |
+| ------------------ | ------------ | ------------- | -------------------------------------------------------------------------------------------------------------- |
+| Cutoff             | Float(0,1)   | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff).                         |
+| NormalBackFaceFlip | Boolean      | false         | See [NormalBackFaceFlip](../common/alpha_clip_and_render_options_property_descriptions.md#normalbackfaceflip). |
+| Cull               | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                             |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |
