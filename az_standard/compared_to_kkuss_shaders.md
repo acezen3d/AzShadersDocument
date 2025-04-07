@@ -13,7 +13,7 @@
 - Occlusion -> IndirectDiffuseIntensity, IndirectSpecularIntensity
 
 ## Properties added
-Omitted
+(Omitted)
 
 ## Notes
 - What are compared here is only shader properties introduced by KKUSS, and all Koikatsu built-in shader properties are ignored here.

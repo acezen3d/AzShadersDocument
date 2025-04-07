@@ -4,24 +4,26 @@
   - [Properties](#properties)
 
 ## Properties
-| Name              | Type       | Default value | Description                                                                                                                                                                           |
-| ----------------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BaseColor         | Color      | (1,1,1,1)     | Main color, will be multiplied with `MainTex` to get the final main albedo color. `alpha`: not used.                                                                                  |
-| MainTex           | Texture    | white         | Main albedo.                                                                                                                                                                          |
-| NormalMap         | Texture    | bump          | Main normal map.                                                                                                                                                                      |
-| NormalMapScale    | Float(0,1) | 1             | Main normal map scale.                                                                                                                                                                |
-| MetallicGlossMap  | Texture    | white         | Main metallic and glossiness map, metallic - `red`, glossiness - `alpha`.                                                                                                             |
-| Metallic          | Float(0,1) | 0             | Metallic control, will be multiplied with `MetallicGlossMap` `red` channel to get the final main metallic value.                                                                      |
-| Glossiness        | Float(0,1) | 0.5           | Glossiness control, will be multiplied with `MetallicGlossMap` `alpha` channel to get the final main glossiness value.                                                                |
-| OcclusionMap      | Texture    | white         | Main ambient occlusion map, effective when there are indirect lights in the scene. `green` channel is used.                                                                           |
-| OcclusionStrength | Float(0,1) | 1             | Ambient occlusion strength.                                                                                                                                                           |
-| EmissionMap       | Texture    | white         | Emission map, no need to be a greyscale but a color texture. `rgb`: emission color, `alpha` channel not used and will be handled automatically. Note black (0,0,0) means no emission. |
-| EmissionColor     | Color      | (0,0,0,0)     | Emission color, will be multiplied with `EmissionMap`.                                                                                                                                |
-| EmissionIntensity | Float(0,2) | 0             | Emission intensity control, will be multiplied with `EmissionMap` and `EmissionColor`.                                                                                                |
+| Name              | Type         | Default value | Description                                                                                                        |
+| ----------------- | ------------ | ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| BaseColor         | Color        | (1,1,1,1)     | Albedo color, will be multiplied with `MainTex` `rgb` channels to determine the albedo. `alpha` channel: not used. |
+| Alpha             | Float(0,1)   | 1             | Alpha value, will be multiplied with `MainTex` `a` channel to determine the alpha.                                 |
+| MainTex           | Texture2D(G) | white         | See [MainTex](../common/pbr_property_descriptions.md#maintex).                                                     |
+| NormalMap         | Texture2D(L) | bump          | See [NormalMap](../common/pbr_property_descriptions.md#normalmap).                                                 |
+| NormalMapScale    | Float(0,1)   | 1             | See [NormalMapScale](../common/pbr_property_descriptions.md#normalmapscale).                                       |
+| MetallicGlossMap  | Texture2D(L) | white         | See [MetallicGlossMap](../common/pbr_property_descriptions.md#metallicglossmap).                                   |
+| Metallic          | Float(0,1)   | 0             | See [Metallic](../common/pbr_property_descriptions.md#metallic).                                                   |
+| Glossiness        | Float(0,1)   | 0.5           | See [Glossiness](../common/pbr_property_descriptions.md#glossiness).                                               |
+| OcclusionMap      | Texture2D(L) | white         | See [OcclusionMap](../common/pbr_property_descriptions.md#occlusionmap).                                           |
+| OcclusionStrength | Float(0,1)   | 1             | See [OcclusionStrength](../common/pbr_property_descriptions.md#occlusionstrength).                                 |
+| EmissionMap       | Texture2D(G) | white         | See [EmissionMap](../common/pbr_property_descriptions.md#emissionmap).                                             |
+| EmissionColor     | Color        | (0,0,0,0)     | See [EmissionColor](../common/pbr_property_descriptions.md#emissioncolor).                                         |
+| EmissionIntensity | Float(0,2)   | 0             | See [EmissionIntensity](../common/pbr_property_descriptions.md#emissionintensity).                                 |
 
 **Properties not supported by shaders**
 | Name              | Unsupported shaders                 |
 | ----------------- | ----------------------------------- |
+| Alpha             | All except `Az/Standard*Alpha`      |
 | NormalMap         | `Az/StandardEye`, `Az/StandardEyeW` |
 | NormalMapScale    | `Az/StandardEye`, `Az/StandardEyeW` |
 | OcclusionMap      | `Az/StandardEye`, `Az/StandardEyeW` |

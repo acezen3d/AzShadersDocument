@@ -17,7 +17,7 @@
 - DstBlend -> BlendDst
 
 ## Properties added
-Omitted
+(Omitted)
 
 ## Properties removed
 - ParallaxMap
