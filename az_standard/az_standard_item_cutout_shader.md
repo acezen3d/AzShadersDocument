@@ -37,11 +37,11 @@ This shader can be used with the following renderers:
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name               | Type         | Default value | Description                                                                        |
-| ------------------ | ------------ | ------------- | ---------------------------------------------------------------------------------- |
-| Cutoff             | Float(0,1)   | 0.5           | Alpha clip threshold value. Pixels with an alpha value below this will be clipped. |
-| NormalBackFaceFlip | Boolean      | false         | Whether to flip the normals of the back faces.                                     |
-| Cull               | Integer(0,2) | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                            |
+| Name               | Type         | Default value | Description                                                                           |
+| ------------------ | ------------ | ------------- | ------------------------------------------------------------------------------------- |
+| Cutoff             | Float(0,1)   | 0.5           | See [Cutoff](../common/misc_property_descriptions.md#cutoff).                         |
+| NormalBackFaceFlip | Boolean      | false         | See [NormalBackFaceFlip](../common/misc_property_descriptions.md#normalbackfaceflip). |
+| Cull               | Integer(0,2) | 0             | See [Cull](../common/misc_property_descriptions.md#cull).                             |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |

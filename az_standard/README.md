@@ -7,8 +7,6 @@ v5.3.0
   - [Features](#features)
   - [Changelog](#changelog)
   - [Shader documents](#shader-documents)
-  - [Tutorials](#tutorials)
-  - [Known issues](#known-issues)
   - [Notes](#notes)
   - [Download](#download)
 
@@ -69,18 +67,11 @@ Too many to list, why not experience them firsthand? 😉
 - [Az/StandardExtraStyle shader](az_standard_extra_style_shader.md)
 - [Az/StandardDebug shader](az_standard_debug_shader.md)
 
-## Tutorials
-- [How to setup ambient lighting](tutorial/how_to_setup_ambient_lighting.md)
-
-## Known issues
-- You have to update your Material Editor to v3.3.0 or later to use Az Standard shaders v2.2.0 or later without problems. This is because only newer versions of Material Editor support shader keywords in Az Standard shaders added from v2.2.0. If you use Az Standard shaders v2.2.0 or later in an older version of Material Editor, you may get an error that Material Editor fails and other shader mods cannot be loaded.
-
 ## Notes
 - Az Standard shaders support most Unity Standard shader properties, see [Compared to Unity Standard shader](compared_to_unity_standard_shader.md).
 - Az Standard shaders support and improve properties of KKUSS shaders, see [Compared to KKUSS shaders](compared_to_kkuss_shaders.md).
-- General albedo stack order:  
+- General albedo stack order:\
   (Underlay and Overlay)ed `MainTex` -> `ColorMask` (if it exists) -> `BaseColor`-> `DrawnMap` -> `DetailAlbedo(2)`. 
-- [Texture maps color space](texture_maps_color_space.md).
 - When Az Standard shaders have exactly the same lighting result as Unity Standard shader?
   - `ShadowIntensity`: 1
   - `IndirectDiffuseIntensity`: 1

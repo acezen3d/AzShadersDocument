@@ -22,26 +22,26 @@
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name      | Type         | Default value | Description                                                                                              |
-| --------- | ------------ | ------------- | -------------------------------------------------------------------------------------------------------- |
-| AlphaMask | Texture      | white         | Alpha mask of Koikatsu, no clip - `yellow`, clip when cloth on - `green`, clip when cloth 1/2 - `black`. |
-| Cutoff    | Float(0,1)   | 0.5           | Alpha clip threshold value. Pixels with an alpha value below this will be clipped.                       |
-| Cull      | Integer(0,2) | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                                                  |
+| Name      | Type         | Default value | Description                                                         |
+| --------- | ------------ | ------------- | ------------------------------------------------------------------- |
+| AlphaMask | Texture🌈     | white         | See [AlphaMask](../common/misc_property_descriptions.md#alphamask). |
+| Cutoff    | Float(0,1)   | 0.5           | See [Cutoff](../common/misc_property_descriptions.md#cutoff).       |
+| Cull      | Integer(0,2) | 0             | See [Cull](../common/misc_property_descriptions.md#cull).           |
 
 ### 🏷️Surface Reconstruction
 | Name                  | Type        | Default value | Description                                                                                                           |
 | --------------------- | ----------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
-| MainTex               | Texture     | white         | Same as `Main PBR/MainTex`, but only `alpha` channel is used to provide consistent alpha clipping with other shaders. |
-| NormalMap             | Texture     | bump          | Same as `Main PBR/NormalMap`.                                                                                         |
+| MainTex               | Texture🌈    | white         | Same as `Main PBR/MainTex`, but only `alpha` channel is used to provide consistent alpha clipping with other shaders. |
+| NormalMap             | Texture✨    | bump          | Same as `Main PBR/NormalMap`.                                                                                         |
 | NormalMapScale        | Float(0,1)  | 1             | Same as `Main PBR/NormalMapScale`.                                                                                    |
 | DetailSet             | Boolean     | true          | Same as `Detail/DetailSet`.                                                                                           |
 | DetailSet2            | Boolean     | false         | Same as `Detail/DetailSet2`.                                                                                          |
-| DetailMask            | Texture     | red           | Same as `Detail/DetailMask`, and it will also provide masking for the matcap.                                         |
+| DetailMask            | Texture✨    | red           | Same as `Detail/DetailMask`, and it will also provide masking for the matcap.                                         |
 | DetailUVRotation      | Float(-1,1) | 0             | Same as `Detail/DetailUVRotation`.                                                                                    |
 | DetailUVRotation2     | Float(-1,1) | 0             | Same as `Detail/DetailUVRotation2`.                                                                                   |
-| NormalMapDetail       | Texture     | bump          | Same as `Detail/NormalMapDetail`.                                                                                     |
+| NormalMapDetail       | Texture✨    | bump          | Same as `Detail/NormalMapDetail`.                                                                                     |
 | DetailNormalMapScale  | Float(0,1)  | 0             | Same as `Detail/DetailNormalMapScale`.                                                                                |
-| NormalMapDetail2      | Texture     | bump          | Same as `Detail/NormalMapDetail2`.                                                                                    |
+| NormalMapDetail2      | Texture✨    | bump          | Same as `Detail/NormalMapDetail2`.                                                                                    |
 | DetailNormalMapScale2 | Float(0,1)  | 0             | Same as `Detail/DetailNormalMapScale2`.                                                                               |
 
 ### 🏷️Custom Main Light
@@ -55,7 +55,7 @@
 | Name                    | Type        | Default value | Description                                                                                                                                           |
 | ----------------------- | ----------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | RimLight                | Boolean     | true          | Whether to enable the rim light.                                                                                                                      |
-| RimLightMap             | Texture     | white         | Rim light texture, its `rgb` channels are for the color, and `alpha` channel is for the mask.                                                         |
+| RimLightMap             | Texture🌈    | white         | Rim light texture, its `rgb` channels are for the color, and `alpha` channel is for the mask.                                                         |
 | RimLightColor           | Color       | (1,1,1,1)     | Rim light color, its `rgb` channels will be multiplied with `rgb` channels of `RimLightMap`, `alpha` channel is not used.                             |
 | RimLightIntensity       | Float(0,2)  | 1             | Rim light intensity, will be multiplied with `rgb` values of the rim light.                                                                           |
 | RimLightMaskLevel       | Float(-1,1) | 0             | Rim light mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                         |
@@ -71,11 +71,11 @@
 | Name                       | Type          | Default value | Description                                                                                                                                    |
 | -------------------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Matcap                     | Boolean       | true          | Whether to enable the matcap.                                                                                                                  |
-| MatcapTex                  | Texture       | black         | Matcap texture of detail set 1.                                                                                                                |
+| MatcapTex                  | Texture🌈      | black         | Matcap texture of detail set 1.                                                                                                                |
 | MatcapColor                | Color         | (1,1,1,1)     | Matcap color of detail set 1.                                                                                                                  |
-| MatcapTex2                 | Texture       | black         | Matcap texture of detail set 2.                                                                                                                |
+| MatcapTex2                 | Texture🌈      | black         | Matcap texture of detail set 2.                                                                                                                |
 | MatcapColor2               | Color         | (1,1,1,1)     | Matcap color of detail set 2.                                                                                                                  |
-| MatcapMask                 | Texture       | white         | Matcap mask, `red` channel for detail set 1, `green` channel for detail set 2.                                                                 |
+| MatcapMask                 | Texture✨      | white         | Matcap mask, `red` channel for detail set 1, `green` channel for detail set 2.                                                                 |
 | MatcapMaskLevel            | Float(-1,1)   | 0             | Matcap 1 mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                   |
 | MatcapMaskLevel2           | Float(-1,1)   | 0             | Matcap 2 mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                   |
 | MatcapUVRotation           | Float(-1,1)   | 0             | Matcap 1 UV rotation in units of $\pi$.                                                                                                        |

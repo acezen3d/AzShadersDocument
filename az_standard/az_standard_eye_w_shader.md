@@ -39,12 +39,12 @@ This shader can be used with the following renderers:
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name       | Type           | Default value       | Description                                                                        |
-| ---------- | -------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Cutoff     | Float(0,1)     | 0.5                 | Alpha clip threshold value. Pixels with an alpha value below this will be clipped. |
-| Cull       | Integer(0,2)   | 0                   | Face culling, 0: cull off, 1: cull front, 2: cull back.                            |
-| ZWrite     | Integer(0,1)   | 0, explicit default | Whether to update the depth buffer.                                                |
-| StencilRef | Integer(0,255) | 8                   | The stencil reference value.                                                       |
+| Name       | Type           | Default value       | Description                                                   |
+| ---------- | -------------- | ------------------- | ------------------------------------------------------------- |
+| Cutoff     | Float(0,1)     | 0.5                 | See [Cutoff](../common/misc_property_descriptions.md#cutoff). |
+| Cull       | Integer(0,2)   | 0                   | See [Cull](../common/misc_property_descriptions.md#cull).     |
+| ZWrite     | Integer(0,1)   | 0, explicit default | See [ZWrite](../common/misc_property_descriptions.md#zwrite). |
+| StencilRef | Integer(0,255) | 8                   | The stencil reference value.                                  |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |

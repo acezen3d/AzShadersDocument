@@ -16,7 +16,7 @@
 ### 🏷️Alpha Clip and Render Options
 | Name        | Type         | Default value | Description                                                                              |
 | ----------- | ------------ | ------------- | ---------------------------------------------------------------------------------------- |
-| Cull        | Integer(0,2) | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                                  |
+| Cull        | Integer(0,2) | 0             | See [Cull](../common/misc_property_descriptions.md#cull).                                |
 | AlphaToMask | Integer(0,1) | 1             | Whether to enable alpha to coverage. Should only be disabled when MSAA is not supported. |
 
 ### 🏷️Basic

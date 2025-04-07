@@ -38,12 +38,12 @@ This shader can be used with the following renderers:
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name       | Type           | Default value       | Description                                                                        |
-| ---------- | -------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Cutoff     | Float(0,1)     | 0.5                 | Alpha clip threshold value. Pixels with an alpha value below this will be clipped. |
-| Cull       | Integer(0,2)   | 2                   | Face culling, 0: cull off, 1: cull front, 2: cull back.                            |
-| ZWrite     | Integer(0,1)   | 0, explicit default | Whether to update the depth buffer.                                                |
-| StencilRef | Integer(0,255) | 7                   | The stencil reference value.                                                       |
+| Name       | Type           | Default value       | Description                                                   |
+| ---------- | -------------- | ------------------- | ------------------------------------------------------------- |
+| Cutoff     | Float(0,1)     | 0.5                 | See [Cutoff](../common/misc_property_descriptions.md#cutoff). |
+| Cull       | Integer(0,2)   | 2                   | See [Cull](../common/misc_property_descriptions.md#cull).     |
+| ZWrite     | Integer(0,1)   | 0, explicit default | See [ZWrite](../common/misc_property_descriptions.md#zwrite). |
+| StencilRef | Integer(0,255) | 7                   | The stencil reference value.                                  |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |
@@ -54,12 +54,12 @@ This shader can be used with the following renderers:
 | Name            | Type        | Default value | Description                                                                                                     |
 | --------------- | ----------- | ------------- | --------------------------------------------------------------------------------------------------------------- |
 | Color           | Color       | (1,1,1,1)     | ***Koikatsu property***. The color adjustment, will be multiplied with the main albedo.                         |
-| overtex1        | Texture     | black         | ***Koikatsu property***. Over texture 1 for the upper highlight of the iris.                                    |
+| overtex1        | Texture🌈    | black         | ***Koikatsu property***. Over texture 1 for the upper highlight of the iris.                                    |
 | overcolor1      | Color       | (1,1,1,1)     | ***Koikatsu property***. `overtex1` color tint.                                                                 |
-| overtex2        | Texture     | black         | ***Koikatsu property***. Over texture 2 for the lower highlight of the iris.                                    |
+| overtex2        | Texture🌈    | black         | ***Koikatsu property***. Over texture 2 for the lower highlight of the iris.                                    |
 | overcolor2      | Color       | (1,1,1,1)     | ***Koikatsu property***. `overtex2` color tint.                                                                 |
 | isHighLight     | Float(0,1)  | 0             | ***Koikatsu property***. Whether to enable the iris highlight.                                                  |
-| expression      | Texture     | black         | ***Koikatsu property***. Iris expression overlay, like a heart, a star, etc.                                    |
+| expression      | Texture🌈    | black         | ***Koikatsu property***. Iris expression overlay, like a heart, a star, etc.                                    |
 | exppower        | Float(0,1)  | 1             | ***Koikatsu property***. The iris expression overlay intensity (alpha).                                         |
 | ExpressionSize  | Float(0,1)  | 0.35          | ⚜️***Extension property***. The iris expression overlay size, borrowed from Vanilla Plus.                        |
 | ExpressionDepth | Float(-1,1) | 0             | ⚜️***Extension property***. The iris expression overlay depth, borrowed from Vanilla Plus.                       |

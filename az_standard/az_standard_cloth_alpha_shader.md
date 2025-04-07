@@ -13,7 +13,6 @@
     - [🏷️Lighting](#️lighting)
     - [🏷️Tessellation](#️tessellation)
     - [🏷️Displacement](#️displacement)
-  - [Notes](#notes)
 
 ## Shader compatibility
 ### Target shaders
@@ -36,17 +35,17 @@ This shader can be used with the following renderers:
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name               | Type                                                                       | Default value | Description                                                                                                                                     |
-| ------------------ | -------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| AlphaMask          | Texture                                                                    | white         | Alpha mask of Koikatsu, no clip - `yellow`, clip when cloth on - `green`, clip when cloth 1/2 - `black`. You may not need to touch it.          |
-| Alpha              | Float(0,1)                                                                 | 1             | Alpha control, will be multiplied with `MainTex` `alpha` channel to get the final alpha value.                                                  |
-| Cutoff             | Float(0,1)                                                                 | 0.5           | Alpha clip threshold value. Pixels with an alpha value below this will be clipped.                                                              |
-| NormalBackFaceFlip | Boolean                                                                    | false         | Whether to flip the normals of the back faces.                                                                                                  |
-| Cull               | Integer(0,2)                                                               | 0             | Face culling, 0: cull off, 1: cull front, 2: cull back.                                                                                         |
-| BlendSrc           | Integer(0,10), see [Blend mode enum](common/blend_mode.md#blend-mode-enum) | 5             | Source (current color) blend mode.                                                                                                              |
-| BlendDst           | Integer(0,10), see [Blend mode enum](common/blend_mode.md#blend-mode-enum) | 10            | Destination (frame buffer) blend mode.                                                                                                          |
-| ZWrite             | Integer(0,1)                                                               | 1             | Whether to update the depth buffer.                                                                                                             |
-| PREMULTIPLY_ALPHA  | Keyword                                                                    | false         | Whether to switch to premultiplied alpha mode. When enabled, it will turn on `ALPHAPREMULTIPLY_ON`; otherwise, it will turn on `ALPHABLEND_ON`. |
+| Name               | Type                                                                          | Default value | Description                                                                                    |
+| ------------------ | ----------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| AlphaMask          | Texture🌈                                                                      | white         | See [AlphaMask](../common/misc_property_descriptions.md#alphamask).                            |
+| Alpha              | Float(0,1)                                                                    | 1             | Alpha control, will be multiplied with `MainTex` `alpha` channel to get the final alpha value. |
+| Cutoff             | Float(0,1)                                                                    | 0.5           | See [Cutoff](../common/misc_property_descriptions.md#cutoff).                                  |
+| NormalBackFaceFlip | Boolean                                                                       | false         | See [NormalBackFaceFlip](../common/misc_property_descriptions.md#normalbackfaceflip).          |
+| Cull               | Integer(0,2)                                                                  | 0             | See [Cull](../common/misc_property_descriptions.md#cull).                                      |
+| BlendSrc           | Integer(0,10), see [Blend mode enum](../common/blend_mode.md#blend-mode-enum) | 5             | See [BlendSrc](../common/misc_property_descriptions.md#blendsrc).                              |
+| BlendDst           | Integer(0,10), see [Blend mode enum](../common/blend_mode.md#blend-mode-enum) | 10            | See [BlendDst](../common/misc_property_descriptions.md#blenddst).                              |
+| ZWrite             | Integer(0,1)                                                                  | 1             | See [ZWrite](../common/misc_property_descriptions.md#zwrite).                                  |
+| PREMULTIPLY_ALPHA  | Keyword                                                                       | false         | See [PREMULTIPLY_ALPHA](../common/misc_property_descriptions.md#premultiply_alpha).            |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |
@@ -78,11 +77,3 @@ This shader can be used with the following renderers:
 | Name                                                  | Type | Default value | Description |
 | ----------------------------------------------------- | ---- | ------------- | ----------- |
 | [Displacement properties](displacement_properties.md) |      |               |             |
-
-## Notes
-- When `PREMULTIPLY_ALPHA` is off, the blend modes are commonly set to:
-  - `BlendSrc`: 5
-  - `BlendDst`: 10
-- When `PREMULTIPLY_ALPHA` is on, the blend modes are commonly set to:
-  - `BlendSrc`: 1
-  - `BlendDst`: 10
