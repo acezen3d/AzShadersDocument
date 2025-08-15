@@ -19,7 +19,7 @@ v1.1.0
 | ----------------------- | ---------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Color                   | Color            | (1,1,1,1), explicit default | Color tint.                                                                                                   |
 | Albedo                  | Texture2D(G)     | white                       | Main albedo texture.                                                                                          |
-| AlbedoDetail            | Texture2D(G)     | grey                        | Detail albedo texture.                                                                                        |
+| AlbedoDetail            | Texture2D(G)     | gray                        | Detail albedo texture.                                                                                        |
 | AlbedoDetailScale       | Float(0,1)       | 0, explicit default         | The scale applied to `AlbedoDetail`.                                                                          |
 | Cutoff                  | Float(0,1)       | 0.01, explicit default      | Clip the mesh with this value according to the value computed by the alpha channels of `MainTex` and `Color`. |
 | NormalMap               | Texture2D(L)     | bump                        | Main normal map.                                                                                              |

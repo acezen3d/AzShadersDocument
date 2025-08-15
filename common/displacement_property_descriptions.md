@@ -14,10 +14,10 @@
 Whether to enable the displacement.
 
 ### DisplaceMap
-Displacement map, greyscale texture, `red` channel is used.
+Displacement map, grayscale texture, `red` channel is used.
 
 ### DisplaceMiddleLevel
-Neutral displacement value that causes no displacement on `DisplaceMap`. Any lower values will push the surfaces inwards, and any higher values will push them outwards. Typically, this value is middle grey (0.5) or black (0).
+Neutral displacement value that causes no displacement on `DisplaceMap`. Any lower values will push the surfaces inwards, and any higher values will push them outwards. Typically, this value is middle gray (0.5) or black (0).
 
 ### DisplaceStrength
 The intensity of displacement application.

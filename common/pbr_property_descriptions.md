@@ -50,7 +50,7 @@ Ambient occlusion map. Uses the `green` channel to reduce ambient/indirect light
 Ambient occlusion strength.
 
 ### EmissionMap
-Emission map, no need to be a greyscale but a color texture. `rgb`: emission, `alpha` channel not used and will be handled automatically. Note black (0,0,0) means no emission.
+Emission map, no need to be a grayscale but a color texture. `rgb`: emission, `alpha` channel not used and will be handled automatically. Note black (0,0,0) means no emission.
 
 ### EmissionColor
 Emission color, will be multiplied with `EmissionMap`.
