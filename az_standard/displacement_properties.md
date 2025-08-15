@@ -7,7 +7,7 @@
 | Name                     | Type         | Default value | Description                                                                                               |
 | ------------------------ | ------------ | ------------- | --------------------------------------------------------------------------------------------------------- |
 | Displacement             | Boolean      | false         | See [Displacement](../common/displacement_property_descriptions.md#displacement).                         |
-| DisplaceMap              | Texture2D(L) | grey          | See [DisplaceMap](../common/displacement_property_descriptions.md#displacemap).                           |
+| DisplaceMap              | Texture2D(L) | gray          | See [DisplaceMap](../common/displacement_property_descriptions.md#displacemap).                           |
 | DisplaceMiddleLevel      | Float(0,1)   | 0.5           | See [DisplaceMiddleLevel](../common/displacement_property_descriptions.md#displacemiddlelevel).           |
 | DisplaceStrength         | Float(0,1)   | 1             | See [DisplaceStrength](../common/displacement_property_descriptions.md#displacestrength).                 |
 | DisplaceNormalTexelSize  | Float(1,10)  | 1             | See [DisplaceNormalTexelSize](../common/displacement_property_descriptions.md#displacenormaltexelsize).   |

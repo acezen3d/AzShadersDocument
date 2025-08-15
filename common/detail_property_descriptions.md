@@ -37,7 +37,7 @@ Detail normal map for detail set n.
 Detail normal map scale for detail set n.
 
 ### AlbedoMapDetail(n)
-Detail albedo map for detail set n. No need to be a greyscale but a color texture.
+Detail albedo map for detail set n. No need to be a grayscale but a color texture.
 
 ### DetailAlbedoBlend(n)
 Detail albedo blend amount for detail set n.
