@@ -6,3 +6,6 @@
 ## v1.2.0
 - Add `Az/ShadowCaster` shader.
 - Add `Az/UnlitTriplanarCutout` and `Az/UnlitTriplanarAlpha` shaders.
+
+## v1.3.0
+- Add `UVScroll` and `ScreenUVScroll` to `Az/UnlitCutout` and `Az/UnlitAlpha`.

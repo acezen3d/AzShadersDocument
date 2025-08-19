@@ -3,8 +3,10 @@
 
 - [Az/UnlitTriplanarCutout(Alpha) shader](#azunlittriplanarcutoutalpha-shader)
   - [Az/UnlitTriplanarCutout shader](#azunlittriplanarcutout-shader)
+    - [Tags](#tags)
     - [Properties](#properties)
   - [Az/UnlitTriplanarAlpha shader](#azunlittriplanaralpha-shader)
+    - [Tags](#tags-1)
     - [Properties](#properties-1)
   - [Additional property descriptions](#additional-property-descriptions)
     - [BlendOrder](#blendorder)
@@ -13,6 +15,10 @@
     - [BlendOffsets, BlendPowers and BlendScales](#blendoffsets-blendpowers-and-blendscales)
 
 ## Az/UnlitTriplanarCutout shader
+### Tags
+- RenderType: `TransparentCutout`
+- Queue: `AlphaTest`
+
 ### Properties
 | Name         | Type         | Default value | Description                                                                                                                  |
 | ------------ | ------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -38,6 +44,10 @@
 | BlendScales  | Vector       | (1,1,1,0)     | See [Additional property descriptions/BlendOffsets, BlendPowers and BlendScales](#blendoffsets-blendpowers-and-blendscales). |
 
 ## Az/UnlitTriplanarAlpha shader
+### Tags
+- RenderType: `Transparent`
+- Queue: `Transparent`
+
 ### Properties
 (Same as `Az/UnlitTriplanarCutout`)
 
@@ -45,17 +55,17 @@
 ### BlendOrder
 Takes effect when `UseMainColor` is `true`. Controls the blending order of the triplanar textures with the main color.
 
-**Value 0**: ***XYZ***
+**Value 0**: ***XYZ***.
 
-**Value 1**: ***XZY***
+**Value 1**: ***XZY***.
 
-**Value 2**: ***YXZ***
+**Value 2**: ***YXZ***.
 
-**Value 3**: ***YZX***
+**Value 3**: ***YZX***.
 
-**Value 4**: ***ZXY***
+**Value 4**: ***ZXY***.
 
-**Value 5**: ***ZYX***
+**Value 5**: ***ZYX***.
 
 ### UVMode
 **Value 0**: ***World Position***. The vertices' world space positions are used as the sampling UVs.
@@ -72,19 +82,19 @@ Takes effect when `UseMainColor` is `true`. Controls the blending order of the t
 **Value 3**: UVs are flipped in the U(V) direction everywhere.
 
 The two properties share a similar structure:
-- `red`: value for `TextureX`
-- `green`: value for `TextureY`
-- `blue`: value for `TextureZ`
-- `alpha`: not used
+- `red`: Value for `TextureX`.
+- `green`: Value for `TextureY`.
+- `blue`: Value for `TextureZ`.
+- `alpha`: Not used.
 
 ### BlendOffsets, BlendPowers and BlendScales
 These properties are used to calculate the blend factor, which determines how the triplanar textures are blended together when `UseMainColor` is `false`, or how they blend with the main color when `UseMainColor` is `true`.
 
 All three properties share a similar structure:
-- `red`: value for `TextureX`
-- `green`: value for `TextureY`
-- `blue`: value for `TextureZ`
-- `alpha`: value for all the triplanar textures
+- `red`: Value for `TextureX`.
+- `green`: Value for `TextureY`.
+- `blue`: Value for `TextureZ`.
+- `alpha`: Value for all the triplanar textures.
 
 So, the values of each property of `TextureX`, `TextureY`, `TextureZ` are `red`, `green`, `blue` channels respectively, with `alpha` channel added to each.
 After the addition, the value range is as follows, `BlendOffset`: $[0,1]$, `BlendPower`: $[0,\infty)$, `BlendScale`: $(-\infty,\infty)$.
