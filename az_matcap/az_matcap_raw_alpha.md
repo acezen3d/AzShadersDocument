@@ -1,7 +1,7 @@
 # Az/MatcapRawAlpha shader
 
 - [Az/MatcapRawAlpha shader](#azmatcaprawalpha-shader)
-  - [Setup](#setup)
+  - [Tags](#tags)
   - [Properties](#properties)
     - [🏷️Alpha Clip and Render Options](#️alpha-clip-and-render-options)
     - [🏷️PBR Specular Setup](#️pbr-specular-setup)
@@ -10,17 +10,11 @@
     - [🏷️Matcap Mask and Fresnel](#️matcap-mask-and-fresnel)
     - [🏷️Matcap Texture Edit](#️matcap-texture-edit)
     - [🏷️Lighting](#️lighting)
-    - [🏷️Tessellation](#️tessellation)
-    - [🏷️Displacement](#️displacement)
+    - [🏷️Mesh](#️mesh)
 
-## Setup
+## Tags
 - RenderType: `Transparent`
 - Queue: `Transparent`
-- Cull: [property]
-- Blend source: [property]
-- Blend destination: [property]
-- ZWrite: [property]
-- Alpha mode keyword: `ALPHABLEND_ON` or `ALPHAPREMULTIPLY_ON`
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
@@ -65,12 +59,7 @@
 | --------------------------------------------- | ---- | ------------- | ----------- |
 | [Lighting properties](lighting_properties.md) |      |               |             |
 
-### 🏷️Tessellation
-| Name                                                  | Type | Default value | Description |
-| ----------------------------------------------------- | ---- | ------------- | ----------- |
-| [Tessellation properties](tessellation_properties.md) |      |               |             |
-
-### 🏷️Displacement
-| Name                                                  | Type | Default value | Description |
-| ----------------------------------------------------- | ---- | ------------- | ----------- |
-| [Displacement properties](displacement_properties.md) |      |               |             |
+### 🏷️Mesh
+| Name                                  | Type | Default value | Description |
+| ------------------------------------- | ---- | ------------- | ----------- |
+| [Mesh properties](mesh_properties.md) |      |               |             |
