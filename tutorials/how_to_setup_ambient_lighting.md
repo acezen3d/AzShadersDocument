@@ -52,7 +52,7 @@ UnityEngine.RenderSettings.ambientProbe = {{lightProbeCustom}}; // UnityEngine.R
 UnityEngine.Rendering.SphericalHarmonicsL2 sh;
 sh.Clear();
 sh.AddAmbientLight(new UnityEngine.Color(0.35f, 0.35f, 0.35f));
-sh.AddDirectionalLight(new UnityEngine.Vector3(0f,1f,0f).normalized, new UnityEngine.Color(0.1f, 0.1f, 0.1f), 0.25f);
+sh.AddDirectionalLight(new UnityEngine.Vector3(0.0f, 1.0f, 0.0f).normalized, new UnityEngine.Color(0.1f, 0.1f, 0.1f), 0.25f);
 UnityEngine.RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Custom;
 UnityEngine.RenderSettings.ambientProbe = sh;
 ```
