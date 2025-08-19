@@ -1,8 +1,13 @@
 # Az/ShadowCaster shader
 
 - [Az/ShadowCaster shader](#azshadowcaster-shader)
+  - [Tags](#tags)
   - [Properties](#properties)
   - [Notes](#notes)
+
+## Tags
+- RenderType: `Transparent`
+- Queue: `Transparent`
 
 ## Properties
 | Name                   | Type         | Default value | Description                                                                                                     |
