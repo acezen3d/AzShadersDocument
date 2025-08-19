@@ -1,7 +1,7 @@
 # Az/MatcapCutout shader
 
 - [Az/MatcapCutout shader](#azmatcapcutout-shader)
-  - [Setup](#setup)
+  - [Tags](#tags)
   - [Properties](#properties)
     - [🏷️Alpha Clip and Render Options](#️alpha-clip-and-render-options)
     - [🏷️PBR Specular Setup](#️pbr-specular-setup)
@@ -10,17 +10,11 @@
     - [🏷️Matcap Mask and Fresnel](#️matcap-mask-and-fresnel)
     - [🏷️Matcap Texture Edit](#️matcap-texture-edit)
     - [🏷️Lighting](#️lighting)
-    - [🏷️Tessellation](#️tessellation)
-    - [🏷️Displacement](#️displacement)
+    - [🏷️Mesh](#️mesh)
 
-## Setup
+## Tags
 - RenderType: `TransparentCutout`
 - Queue: `AlphaTest`
-- Cull: [property]
-- Blend source: `One`
-- Blend destination: `Zero`
-- ZWrite: `On`
-- Alpha mode keyword: `ALPHATEST_ON`
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
@@ -61,12 +55,7 @@
 | --------------------------------------------- | ---- | ------------- | ----------- |
 | [Lighting properties](lighting_properties.md) |      |               |             |
 
-### 🏷️Tessellation
-| Name                                                  | Type | Default value | Description |
-| ----------------------------------------------------- | ---- | ------------- | ----------- |
-| [Tessellation properties](tessellation_properties.md) |      |               |             |
-
-### 🏷️Displacement
-| Name                                                  | Type | Default value | Description |
-| ----------------------------------------------------- | ---- | ------------- | ----------- |
-| [Displacement properties](displacement_properties.md) |      |               |             |
+### 🏷️Mesh
+| Name                                  | Type | Default value | Description |
+| ------------------------------------- | ---- | ------------- | ----------- |
+| [Mesh properties](mesh_properties.md) |      |               |             |
