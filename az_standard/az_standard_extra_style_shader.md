@@ -1,14 +1,14 @@
 # Az/StandardExtraStyle shader
 
 - [Az/StandardExtraStyle shader](#azstandardextrastyle-shader)
+  - [Tags](#tags)
   - [Properties](#properties)
     - [🏷️Alpha Clip and Render Options](#️alpha-clip-and-render-options)
     - [🏷️Surface Reconstruction](#️surface-reconstruction)
     - [🏷️Custom Main Light](#️custom-main-light)
     - [🏷️Rim Light](#️rim-light)
     - [🏷️Matcap](#️matcap)
-    - [🏷️Tessellation](#️tessellation)
-    - [🏷️Displacement](#️displacement)
+    - [🏷️Mesh](#️mesh)
   - [Additional property descriptions](#additional-property-descriptions)
     - [UseCustomMainLight](#usecustommainlight)
     - [CustomMainLightDirection](#custommainlightdirection)
@@ -19,6 +19,10 @@
     - [MatcapUVMethod](#matcapuvmethod)
     - [MainLightToMatcap](#mainlighttomatcap)
   - [Notes](#notes)
+
+## Tags
+- RenderType: `Transparent`
+- Queue: `Transparent`
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
@@ -89,15 +93,10 @@
 | IndirectLightToMatcap      | Float(0,1)    | 0             | Blends the indirect light to the matcap.                                                                                                        |
 | MatcapAddOrMultiply        | Integer(0,1)  | 0             | How the matcap will be blended, 0: add, 1: multiply.                                                                                            |
 
-### 🏷️Tessellation
-| Name                                                  | Type | Default value | Description |
-| ----------------------------------------------------- | ---- | ------------- | ----------- |
-| [Tessellation properties](tessellation_properties.md) |      |               |             |
-
-### 🏷️Displacement
-| Name                                                  | Type | Default value | Description |
-| ----------------------------------------------------- | ---- | ------------- | ----------- |
-| [Displacement properties](displacement_properties.md) |      |               |             |
+### 🏷️Mesh
+| Name                                  | Type | Default value | Description |
+| ------------------------------------- | ---- | ------------- | ----------- |
+| [Mesh properties](mesh_properties.md) |      |               |             |
 
 ## Additional property descriptions
 ### UseCustomMainLight 
@@ -113,10 +112,10 @@ Whether it's the main light in the scene or the custom main light, both are used
 
 ### CustomMainLightDirection
 The definition of the custom main light direction follows Unity’s convention, with the initial direction along the negative z-axis and a rotation defined by ZXY-ordered Euler angles in units of $\pi$.
-- `red`: x-axis rotation
-- `green`: y-axis rotation
-- `blue`: z-axis rotation
-- `alpha`: not used
+- `red`: X-axis rotation.
+- `green`: Y-axis rotation.
+- `blue`: Z-axis rotation.
+- `alpha`: Not used.
 
 ### RimLightPower, RimLightScale and RimLightBias
 The Fresnel effect of the rim light is given by the following well known formula:
@@ -132,10 +131,10 @@ Used to determine what the $base$ is in the above formula, mainly involving how 
 
 ### RimLightRotation
 Rim light static rotation. The rim light rotates in view space, following ZXY-ordered Euler angles in units of $\pi$.
-- `red`: x-axis rotation
-- `green`: y-axis rotation
-- `blue`: z-axis rotation
-- `alpha`: not used
+- `red`: X-axis rotation.
+- `green`: Y-axis rotation.
+- `blue`: Z-axis rotation.
+- `alpha`: Not used.
 
 ### MainLightToRimLight
 - `red`: Blends the main light to the rim light. Value range: $[0,1]$.
