@@ -1,5 +1,5 @@
 # Az Unlit shaders
-v1.2.0
+v1.3.0
 
 - [Az Unlit shaders](#az-unlit-shaders)
   - [Shader documents](#shader-documents)
