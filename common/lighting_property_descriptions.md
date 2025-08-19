@@ -6,6 +6,8 @@
     - [ShadowDarkControl](#shadowdarkcontrol)
     - [ShadowCookieControl](#shadowcookiecontrol)
     - [ShadowTransitionPower](#shadowtransitionpower)
+    - [DirectDiffuseIntensity](#directdiffuseintensity)
+    - [DirectSpecularIntensity](#directspecularintensity)
     - [IndirectDiffuseIntensity](#indirectdiffuseintensity)
     - [IndirectSpecularIntensity](#indirectspecularintensity)
     - [SpotDefaultCookie](#spotdefaultcookie)
@@ -35,11 +37,17 @@ Whether `ShadowIntensity` controls the intensity of light masks. Also see [Shado
 ### ShadowTransitionPower
 The power of the transition gradient at the light-dark boundaries. It fine-tunes the lighting by adjusting the falloff of the diffuse term of direct illumination, so it is not physically correct. However, for artistic style purposes, we could create a smoother transition at the light-dark boundaries with this property. This allows us to choose whether to make the light-dark boundaries appear as smooth as they would in gamma color space, even when rendering in linear color space ([Differences between linear and gamma color space](https://docs.unity3d.com/2019.4/Documentation/Manual/LinearRendering-LinearOrGammaWorkflow.html)). The default value 0 means no fine-tuning.
 
+### DirectDiffuseIntensity
+Direct diffuse reflection intensity. Set it to 0 to disable direct diffuse reflection.
+
+### DirectSpecularIntensity
+Direct specular reflection intensity. Set it to 0 to disable direct specular reflection.
+
 ### IndirectDiffuseIntensity
-Controls the diffuse term of the indirect lighting. You should setup your own indirect lights for it to work.     
+Controls the diffuse term of the indirect lighting. You should setup your own indirect lights for it to work.
 
 ### IndirectSpecularIntensity
-Controls the specular term of the indirect lighting. You should setup your own indirect lights for it to work.    
+Controls the specular term of the indirect lighting. You should setup your own indirect lights for it to work.
 
 ### SpotDefaultCookie
 Used to assist `ShadowCookieControl` and `ShadowIntensity` with spot light cookies. It's best not to touch it, as replacing the texture may cause artifacts due to the lack of support for certain features in Material Editor. It will be hidden in Material Editor v3.10.0 and later.
@@ -50,7 +58,7 @@ Used to assist `ShadowCookieControl` and `ShadowIntensity` with spot light cooki
 **Value true**: Enables the shadow optimization. Currently supports shadow optimization for spot lights and point lights. Shadow optimization for spot lights is done by just turning this on; and there is another property `ShadowPointPCFTexelSize` for shadow optimization for point lights.
 
 ### ShadowPointPCFTexelSize
-The sampling radius of point light shadow PCF filter. `ShadowOptimization` needs to be turned on to work. 
+The sampling radius of point light shadow PCF filter. `ShadowOptimization` needs to be turned on to work.
 
 ### SampleFullSHPerPixel
 **Value false**: Unity's default SH (Spherical Harmonics) sampling strategy is used: L2 per vertex, L0 and L1 per pixel.
