@@ -3,8 +3,10 @@ v1.1.0
 
 - [Az Planar Reflection shaders](#az-planar-reflection-shaders)
   - [Az/PlanarReflectionUnlit shader](#azplanarreflectionunlit-shader)
+    - [Tags](#tags)
     - [Properties](#properties)
   - [Az/PlanarReflectionLit shader](#azplanarreflectionlit-shader)
+    - [Tags](#tags-1)
     - [Properties](#properties-1)
   - [Changelog](#changelog)
   - [Notes](#notes)
@@ -14,31 +16,39 @@ v1.1.0
   - [Download](#download)
 
 ## Az/PlanarReflectionUnlit shader
+### Tags
+- RenderType: `Transparent`
+- Queue: `Transparent`+50
+
 ### Properties
-| Name                    | Type             | Default value               | Description                                                                                                   |
-| ----------------------- | ---------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Color                   | Color            | (1,1,1,1), explicit default | Color tint.                                                                                                   |
-| Albedo                  | Texture2D(G)     | white                       | Main albedo texture.                                                                                          |
-| AlbedoDetail            | Texture2D(G)     | gray                        | Detail albedo texture.                                                                                        |
-| AlbedoDetailScale       | Float(0,1)       | 0, explicit default         | The scale applied to `AlbedoDetail`.                                                                          |
-| Cutoff                  | Float(0,1)       | 0.01, explicit default      | Clip the mesh with this value according to the value computed by the alpha channels of `MainTex` and `Color`. |
-| NormalMap               | Texture2D(L)     | bump                        | Main normal map.                                                                                              |
-| NormalScale             | Float(0,1)       | 0.5, explicit default       | The scale applied to `NormalMap`.                                                                             |
-| NormalMapDetail         | Texture2D(L)     | bump                        | Detail normal map.                                                                                            |
-| NormalDetailScale       | Float(0,1)       | 0.5, explicit default       | The scale applied to `NormalMapDetail`.                                                                       |
-| ReflectionIntensity     | Float(0,1)       | 1, explicit default         | The intensity of the application of the reflection.                                                           |
-| ReflectionDistortion    | Float(0,1)       | 0.5, explicit default       | How much the reflection is distorted by surface normals `NormalMap` and `NormalMapDetail`.                    |
-| ReflectionBlurTexelSize | Float(1,2048)    | 1024, explicit default      | The texel size of Gaussian blur applied to the reflection.                                                    |
-| ReflectionBlurSigma     | Float(0.0001,20) | 1, explicit default         | The sigma controls the level of Gaussian blur applied to the reflection.                                      |
+| Name                    | Type             | Default value         | Description                                                                                                   |
+| ----------------------- | ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Color                   | Color            | (1,1,1,1), *explicit* | Color tint.                                                                                                   |
+| Albedo                  | Texture2D(G)     | white                 | Main albedo texture.                                                                                          |
+| AlbedoDetail            | Texture2D(G)     | gray                  | Detail albedo texture.                                                                                        |
+| AlbedoDetailScale       | Float(0,1)       | 0, *explicit*         | The scale applied to `AlbedoDetail`.                                                                          |
+| Cutoff                  | Float(0,1)       | 0.01, *explicit*      | Clip the mesh with this value according to the value computed by the alpha channels of `MainTex` and `Color`. |
+| NormalMap               | Texture2D(L)     | bump                  | Main normal map.                                                                                              |
+| NormalScale             | Float(0,1)       | 0.5, *explicit*       | The scale applied to `NormalMap`.                                                                             |
+| NormalMapDetail         | Texture2D(L)     | bump                  | Detail normal map.                                                                                            |
+| NormalDetailScale       | Float(0,1)       | 0.5, *explicit*       | The scale applied to `NormalMapDetail`.                                                                       |
+| ReflectionIntensity     | Float(0,1)       | 1, *explicit*         | The intensity of the application of the reflection.                                                           |
+| ReflectionDistortion    | Float(0,1)       | 0.5, *explicit*       | How much the reflection is distorted by surface normals `NormalMap` and `NormalMapDetail`.                    |
+| ReflectionBlurTexelSize | Float(1,2048)    | 1024, *explicit*      | The texel size of Gaussian blur applied to the reflection.                                                    |
+| ReflectionBlurSigma     | Float(0.0001,20) | 1, *explicit*         | The sigma controls the level of Gaussian blur applied to the reflection.                                      |
 
 ## Az/PlanarReflectionLit shader
+### Tags
+- RenderType: `Transparent`
+- Queue: `Transparent`+50
+
 ### Properties
 In addition to the above properties of `Az/PlanarReflectionUnlit` shader, it has two more properties:
 
-| Name       | Type       | Default value       | Description        |
-| ---------- | ---------- | ------------------- | ------------------ |
-| Metallic   | Float(0,1) | 1, explicit default | Metallic in PBR.   |
-| Smoothness | Float(0,1) | 1, explicit default | Smoothness in PBR. |
+| Name       | Type       | Default value | Description        |
+| ---------- | ---------- | ------------- | ------------------ |
+| Metallic   | Float(0,1) | 1, *explicit* | Metallic in PBR.   |
+| Smoothness | Float(0,1) | 1, *explicit* | Smoothness in PBR. |
 
 ## Changelog
 [Changelog](CHANGELOG.md)
