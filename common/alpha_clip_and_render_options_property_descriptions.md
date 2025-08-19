@@ -8,6 +8,7 @@
     - [BlendSrc](#blendsrc)
     - [BlendDst](#blenddst)
     - [ZWrite](#zwrite)
+    - [ZTest](#ztest)
     - [PREMULTIPLY\_ALPHA](#premultiply_alpha)
 
 ### AlphaMask
@@ -32,7 +33,14 @@ Alpha clip threshold value. Pixels with an alpha value below this will be clippe
 Whether to flip the normals of the back faces.
 
 ### Cull
-Face culling, 0: cull off, 1: cull front, 2: cull back.
+Face culling.
+| Value | Cull  |
+| ----- | ----- |
+| 0     | Off   |
+| 1     | Front |
+| 2     | Back  |
+
+https://docs.unity3d.com/Manual/SL-Cull.html
 
 ### BlendSrc
 Source (current color) blend mode/blend factor. Its value is defined by [Blend mode enum](blend_mode.md#blend-mode-enum). 
@@ -42,6 +50,28 @@ Destination (frame buffer) blend mode/blend factor. Its value is defined by [Ble
 
 ### ZWrite
 Whether to update the depth buffer when it passes the depth test.
+| Value | ZWrite |
+| ----- | ------ |
+| 0     | Off    |
+| 1     | On     |
+
+https://docs.unity3d.com/Manual/SL-ZWrite.html
+
+### ZTest
+The depth test method.
+| Value | ZTest    |
+| ----- | -------- |
+| 0     | Disabled |
+| 1     | Never    |
+| 2     | Less     |
+| 3     | Equal    |
+| 4     | LEqual   |
+| 5     | Greater  |
+| 6     | NotEqual |
+| 7     | GEqual   |
+| 8     | Always   |
+
+https://docs.unity3d.com/Manual/SL-ZTest.html
 
 ### PREMULTIPLY_ALPHA
 Whether to switch to premultiplied alpha mode. When enabled, it will turn on `ALPHAPREMULTIPLY_ON`; otherwise, it will turn on `ALPHABLEND_ON`.
