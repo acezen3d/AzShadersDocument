@@ -41,4 +41,3 @@ Controls the generation of the Matcap UVs, thus affecting the sampling of the ma
 **Value 3**: ***Cross Product***. Simple construction of the cross product of the normal and the view vectors.
 
 **Value 4**: ***RNM Blending***. Perturbation of the view space normal direction using the RNM normal blending. Unity Toon Shader's approach.
-
