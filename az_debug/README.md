@@ -1,5 +1,5 @@
 # Az Debug shader
-v1.0.0
+v1.1.0
 
 - [Az Debug shader](#az-debug-shader)
   - [Tags](#tags)
@@ -22,10 +22,12 @@ v1.0.0
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name        | Type         | Default value | Description                                                                              |
-| ----------- | ------------ | ------------- | ---------------------------------------------------------------------------------------- |
-| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).       |
-| AlphaToMask | Integer(0,1) | 1             | Whether to enable alpha to coverage. Should only be disabled when MSAA is not supported. |
+| Name        | Type         | Default value | Description                                                                                                           |
+| ----------- | ------------ | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Mask        | Texture2D(G) | white         | Clipping mask for the lines and fills, `red` channel is used. Can be assigned with `AlphaMask` from other Az shaders. |
+| Cutoff      | Float(0,1)   | 0.5           | Clipping threshold for `Mask`.                                                                                        |
+| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                                    |
+| AlphaToMask | Integer(0,1) | 1             | Whether to enable alpha to coverage. Should only be disabled when MSAA is not supported.                              |
 
 ### 🏷️Basic
 | Name           | Type        | Default value | Description            |
@@ -50,6 +52,8 @@ v1.0.0
 | Name            | Type          | Default value | Description                                                                                                  |
 | --------------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
 | DisplayVectors  | Boolean       | false         | Whether to display vector lines.                                                                             |
+| VectorsMask     | Texture2D(L)  | white         | Clipping mask for the vectors display, `rgb` channels represent TBN vectors respectively.                    |
+| VectorsCutoff   | Float(0,1)    | 0.5           | Clipping threshold for `VectorsMask`.                                                                        |
 | VectorsCull     | Integer(0,2)  | 0             | Cull for vectors. Also see [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).    |
 | VectorsZTest    | Integer(0,8)  | 4             | ZTest for vectors. Also see [ZTest](../common/alpha_clip_and_render_options_property_descriptions.md#ztest). |
 | TangentLength   | Float(0,0.01) | 0.005         | Tangent line length.                                                                                         |
