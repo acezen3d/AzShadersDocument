@@ -19,12 +19,12 @@
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name       | Type           | Default value | Description                                                                            |
-| ---------- | -------------- | ------------- | -------------------------------------------------------------------------------------- |
-| Cutoff     | Float(0,1)     | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff). |
-| Cull       | Integer(0,2)   | 2             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).     |
-| ZWrite     | Integer(0,1)   | 0, *explicit* | See [ZWrite](../common/alpha_clip_and_render_options_property_descriptions.md#zwrite). |
-| StencilRef | Integer(0,255) | 7             | The stencil reference value.                                                           |
+| Name        | Type           | Default value | Description                                                                            |
+| ----------- | -------------- | ------------- | -------------------------------------------------------------------------------------- |
+| Cutoff      | Float(0,1)     | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff). |
+| Cull        | Integer(0,2)   | 2             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).     |
+| StencilComp | Integer(0,8)   | 8             | The stencil compare operation.                                                         |
+| DepthOffset | Float(-10, 10) | 0             | The depth offset.                                                                      |
 
 ### 🏷️Main PBR
 | Name                                          | Type | Default value | Description |

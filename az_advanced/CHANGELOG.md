@@ -74,3 +74,11 @@
 - Change most normal map blending method from Whiteout to RNM; change tangent space map unpacking (to align with HDRP).
 - Make corresponding modifications to the third detail set and the vertex normal map on `Az/AdvancedExtraStyle`.
 - Remove `Az/AdvancedDebug`, since it has already been separated as `Az/Debug`.
+
+## v1.5.0
+- The custom mesh normals derived from `VertexNormalMap` are no longer applied directly to the tessellation and displacement, but instead masked by `green` channel of `TessSmoothMap` and `DisplaceMap` to control the influence on each of them.
+- Modify the default values of `TessSmoothMap`, `DisplaceMap` and `DisplaceMiddleLevel`.
+- Fix minor issues with the unpacking and blending of the tangent map.
+- Modify some properties to optimize the rendering of the eyes, making them render perfectly in any lighting situation:
+  - Add `StencilComp` and `DepthOffset` to `Az/AdvancedEye`, and remove `StencilRef` and `ZWrite` from `Az/AdvancedEye`.
+  - Remove `StencilRef` from `Az/AdvancedEyeW`.
