@@ -22,7 +22,11 @@
     - [DisplaceOffset](#displaceoffset)
 
 ### VertexNormalMap
-Normal map applied per vertex in the vertex function, defined in tangent space, use RGB color encoding, not DXT5nm encoding. Unlike normal maps applied in the fragment function, this truly modifies the mesh's normals, so the tessellation and displacement are also affected. `alpha` channel is its application strength mask.
+Normal map applied per vertex in the vertex function, defined in tangent space, use RGB color encoding, not DXT5nm encoding. Unlike normal maps applied in the fragment function, this truly modifies the mesh's normals, so it can also be called a custom mesh normal map.
+
+**Notes**
+- `alpha` channel of this texture, together with `VertexNormalStrength`, determines the strength of custom mesh normals applied in subsequent stages. However, they do not affect the tessellation and displacement.
+- The tessellation and displacement can be affected by custom mesh normals, with the strength masked by `green` channel of textures `TessSmoothMap` and `DisplaceMap`.
 
 ### VertexNormalStrength
 `VertexNormalMap` application strength, will be multiplied with `VertexNormalMap` `alpha` channel.
@@ -49,16 +53,20 @@ Maximum tessellation factor. The tessellation factor will eventually be clamped 
 Maximum distance of the triangle vertices outside the frustum (four planes). Any triangle with all three vertices exceeding this threshold will not be tessellated.
 
 ### TessSmoothMap
-Tessellation smooth map, grayscale texture, `red` channel is used. Works with `TessSmooth`.
+Tessellation smooth map.
+- `red` channel, together with `TessSmooth`, controls the smoothing of tessellation.
+- `green` channel determines the influence of custom mesh normals on tessellation smoothing (the smoothing of tessellation is performed along the normal direction). A value of 0 means custom mesh normals are not used, and a value of 1 means they are fully applied.
 
 ### TessSmooth
-Interpolation of the vertex position between its original position and the tessellation smoothing position. Used to control the smoothness of the tessellation. Works with `TessSmoothMap`. Note that the higher the smoothness, the greater the deviation from the original position.
+Interpolation of the vertex position between its original position and the tessellation smoothing position. Used to control the smoothing of tessellation. Works with `TessSmoothMap` `red` channel. Note that the higher the smoothing, the greater the deviation from the original position.
 
 ### Displacement
 Whether to enable the displacement.
 
 ### DisplaceMap
-Displacement map, grayscale texture, `red` channel is used.
+Displacement map.
+- `red` channel, which is the displacement map itself, determines how much the vertices are displaced.
+- `green` channel determines the influence of custom mesh normals on displacement (the displacement is performed along the normal direction). A value of 0 means custom mesh normals are not used, and a value of 1 means they are fully applied.
 
 ### DisplaceMiddleLevel
 Neutral displacement value that causes no displacement on `DisplaceMap`. Any lower values will push the surfaces inwards, and any higher values will push them outwards. Typically, this value is middle gray (0.5) or black (0).
