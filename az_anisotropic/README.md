@@ -1,5 +1,5 @@
 # Az Anisotropic shaders
-v1.0.0
+v1.1.0
 
 - [Az Anisotropic shaders](#az-anisotropic-shaders)
   - [Shader documents](#shader-documents)
