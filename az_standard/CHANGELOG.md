@@ -223,3 +223,8 @@
 - Add `VertexNormalMap` and `VertexNormalStrength` to Mesh category.
 - Fix incorrect UV for detail set 2 (was actually using detail set 1).
 - Remove `Az/StandardDebug`, since it has already been separated as `Az/Debug`.
+
+## v5.6.0
+- The custom mesh normals derived from `VertexNormalMap` are no longer applied directly to the tessellation and displacement, but instead masked by `green` channel of `TessSmoothMap` and `DisplaceMap` to control the influence on each of them.
+- Modify the default values of `TessSmoothMap`, `DisplaceMap` and `DisplaceMiddleLevel`.
+- Remove unnecessary properties: `ZWrite` and `StencilRef` from `Az/StandardEye`, and `StencilRef` from `Az/StandardEyeW`, and also drop the explicit default value of `ZWrite` in `Az/StandardEyeW`. This keeps the eye rendering simple.
