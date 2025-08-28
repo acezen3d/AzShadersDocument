@@ -1,5 +1,5 @@
 # Az Matcap shaders
-v2.2.0
+v2.3.0
 
 ## Shader documents
 - [Az/MatcapRawCutout shader](az_matcap_raw_cutout.md)
