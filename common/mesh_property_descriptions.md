@@ -50,7 +50,7 @@ Minimum tessellation factor. The tessellation factor will eventually be clamped 
 Maximum tessellation factor. The tessellation factor will eventually be clamped between `TessMin` and `TessMax`.
 
 ### TessThreshold
-Maximum distance of the triangle vertices outside the frustum (four planes). Any triangle with all three vertices exceeding this threshold will not be tessellated.
+Maximum allowed distance of a triangle's vertices outside the view frustum (four planes: left, right, top, bottom). Any triangle whose three vertices are farther than this threshold outside the view frustum will not be tessellated.
 
 ### TessSmoothMap
 Tessellation smooth map.
