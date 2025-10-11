@@ -3,6 +3,7 @@ v5.6.0
 
 - [Az Standard shaders](#az-standard-shaders)
   - [Shader documents](#shader-documents)
+  - [Editor stub shaders](#editor-stub-shaders)
   - [Changelog](#changelog)
   - [Notes](#notes)
   - [Download](#download)
@@ -20,6 +21,9 @@ v5.6.0
 - [Az/StandardLiteCutout shader](az_standard_lite_cutout_shader.md)
 - [Az/StandardLiteAlpha shader](az_standard_lite_alpha_shader.md)
 - [Az/StandardExtraStyle shader](az_standard_extra_style_shader.md)
+
+## Editor stub shaders
+[Editor stub shaders](editor_stub/README.md)
 
 ## Changelog
 [Changelog](CHANGELOG.md)
