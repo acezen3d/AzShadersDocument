@@ -6,7 +6,7 @@
   - [Live](#live)
   - [Draft](#draft)
   - [General information](#general-information)
-    - [Texture maps color space](#texture-maps-color-space)
+    - [Texture color space](#texture-color-space)
     - [Texture properties](#texture-properties)
     - [Explicit default](#explicit-default)
     - [Consistency with Unity Standard shader](#consistency-with-unity-standard-shader)
@@ -35,8 +35,8 @@ You can find the mods containing these shaders on my Patreon: https://www.patreo
 - [Az Advanced shaders](az_advanced/README.md)
 
 ## General information
-### Texture maps color space
-Since users can only import textures in gamma color space, limited by Material Editor, but many Az shaders can convert texture color space internally, that is, the textures are imported in gamma color space, but will be processed as in linear color space.
+### Texture color space
+Since Material Editor only allows textures to be imported in gamma color space, many Az shaders perform the color space conversion internally to support linear color space. In other words, the textures are imported in gamma color space, but will be processed as in linear color space (equivalent to unchecking the "sRGB (Color Texture)" in Unity Editor).
 
 To save space and maintain a neat layout, the color space is abbreviated and appended to the texture type instead of using a separate column.
 
@@ -47,7 +47,7 @@ To save space and maintain a neat layout, the color space is abbreviated and app
 The color space labeling of textures serves as a reference during texture creation, as the color space itself plays an important role in rendering. Because gamma and linear color spaces have different value gradients, using textures with a wrong color space may result in unintended visual outcomes.
 
 ### Texture properties
-In the newer Az shaders, certain textures now provide finer control over sampling-related properties, namely `AnisoLevel`, `FilterMode`, and `WrapMode`, making their sampling more appropriate. You need to upgrade Material Editor to v3.13.2 or higher.
+In the newer Az shaders, certain textures now provide finer control over sampling-related properties, namely `AnisoLevel`, `FilterMode`, and `WrapMode`, making their sampling more appropriate. You need to update Material Editor to v3.13.2 or higher.
 
 ### Explicit default
 Shader properties themselves have internal default values, which are not visible externally. When a property is not assigned, that value is used. This is called "implicit default".
@@ -95,7 +95,7 @@ Most Az shaders include specific Koikatsu game features, giving them types that 
 *: Some shaders support multiple renderers simultaneously to reduce the number of shaders.
 
 ### Shader keyword support
-To use certain Az shaders without issues, you need to update your Material Editor to v3.3.0 or later. This is because some Az shaders rely on shader keywords, which are only supported in newer versions of the Material Editor. If you use these shaders in an older version of Material Editor, you may get an error that Material Editor fails and other shader mods cannot be loaded.
+Some Az shaders rely on shader keywords, which are only supported in newer versions of Material Editor. To use these shaders correctly, make sure your Material Editor is updated to v3.3.0 or later. If you use these shaders in older versions, you may get an error that Material Editor fails and other shader mods cannot be loaded.
 
 ### Property category support
 It is recommended to use Material Editor v3.12.0 or later to display the property categories of certain Az shaders. Additionally, by disabling **Sort Properties by Type** and **Sort Properties by Name** configs, the properties will be sorted in their default order as shown in the document.
@@ -105,4 +105,4 @@ It is recommended to use Material Editor v3.12.0 or later to display the propert
 
 ## Notes
 - If you need to view previous versions of the documents, please check the commit history.
-- If you find any errors in the documents, or if you have any questions, feel free to contact me.
+- If you find any errors in the documents, or if you have any questions, feel free to contact me: [https://linktr.ee/acezen3d](https://linktr.ee/acezen3d).
