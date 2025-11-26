@@ -73,7 +73,7 @@ In Az shaders that use Standard (isotropic BRDF) model, if they have the followi
 - `Metallic`: $Metallic_{\text{Unity Standard}}={Metallic_{\text{Az}}}^\frac{1}{2.2}$ or $Metallic_{\text{Az}}={Metallic_{\text{Unity Standard}}}^{2.2}$.
 
 ### Shader type
-Most Az shaders include specific Koikatsu game features, giving them types that suggest their intended use. These types appear as suffixes in the shader names. Most of the shader types listed below are derived from the game’s original shaders.
+Most Az shaders include specific Koikatsu game features, giving them types that suggest their intended use. These types appear as suffixes in the shader names. Most of the shader types listed below are derived from the game's original shaders.
 
 | Shader type      | Potential renderers                              | Typical game shader                   |
 | ---------------- | ------------------------------------------------ | ------------------------------------- |

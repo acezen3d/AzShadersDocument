@@ -88,7 +88,7 @@ The effect of `DisplaceAdjustment` is calculated using the following formula:
 $$DisplaceFactor=10^{DisplaceAdjustment-2}$$
 
 - When `DisplaceAdjustment` is 0, `DisplaceFactor` is 0.01, consistent with previous versions' built-in factor.
-- When `DisplaceAdjustment` is 2, `DisplaceFactor` is 1, corresponding to Unity’s unit of 1 meter.
+- When `DisplaceAdjustment` is 2, `DisplaceFactor` is 1, corresponding to Unity's unit of 1 meter.
 
 **Notes**
 - The transformation of objects in world space does not affect the description above.

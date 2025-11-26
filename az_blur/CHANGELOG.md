@@ -9,7 +9,7 @@ v2.0.0
   - Change the default value of `BlurCorrection` to 1.
   - Add `Adjustments` to control how the offset from the normal map and the blur texel size vary with depth.
 - For `Az/BlurLinearMotion`, `Az/BlurZoomMotion` and `Az/BlurCircularMotion`:
-  - The blur range is now always based on the screen’s vertical texel size.
+  - The blur range is now always based on the screen's vertical texel size.
   - Change the lower bound of `BlurRange` to 0 (for `Az/BlurZoomMotion`, it's -10). 
 - Remove the use of the alpha channel (fourth component) of `BlurCenter` to control the blur direction in `Az/BlurZoomMotion`; the sign of `BlurRange` is now used instead.
 - Fix the issue in `Az/BlurZoomMotion` where the blur direction could be incorrect and exceed the center.
