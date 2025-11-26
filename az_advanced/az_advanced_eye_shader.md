@@ -63,7 +63,7 @@
 ### HighlightLevel
 The albedo boost level of highlight areas (`overtex1` and `overtex2`). The default value is 1, which means no boosting. A value greater than 1 makes the highlight areas to be brighter than the rest of the eye.
 
-> This is a major compromise I made for cartoon eyes. The flat eye mesh can't produce specular highlights (even with a normal map, it doesn’t match the painted cartoon highlights) similar to the spherical eyeballs of a real human. So we can only choose to fake it and fake it better.
+> This is a major compromise I made for cartoon eyes. The flat eye mesh can't produce specular highlights (even with a normal map, it doesn't match the painted cartoon highlights) similar to the spherical eyeballs of a real human. So we can only choose to fake it and fake it better.
 
 ### UseOverColor
 Whether to use `overcolor1` and `overcolor2` to control the highlight colors.
