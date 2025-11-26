@@ -19,4 +19,4 @@
 | BlurMaskLevel | Float(-1,1)  | 0             | Blur mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                          |
 | BlurCenter    | Vector       | (0.5,0.5,0,0) | The `rg` channels represent The center of the blur in screen space.                                               |
 | BlurIteration | Float(1,100) | 20            | Number of iterations for blur computation; higher values produce stronger blur but also consume more performance. |
-| BlurRange     | Float(1,10)  | 1             | The texel sampling range for blur computation.                                                                    |
+| BlurRange     | Float(0,10)  | 1             | The texel sampling range for blur computation.                                                                    |
