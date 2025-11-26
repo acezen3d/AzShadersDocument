@@ -111,7 +111,7 @@ The custom main light settings (`CustomMainLightDirection` and `CustomMainLightC
 Whether it's the main light in the scene or the custom main light, both are used for light blending and masking in features.
 
 ### CustomMainLightDirection
-The definition of the custom main light direction follows Unity’s convention, with the initial direction along the negative z-axis and a rotation defined by ZXY-ordered Euler angles in units of $\pi$.
+The definition of the custom main light direction follows Unity's convention, with the initial direction along the negative z-axis and a rotation defined by ZXY-ordered Euler angles in units of $\pi$.
 - `red`: X-axis rotation.
 - `green`: Y-axis rotation.
 - `blue`: Z-axis rotation.

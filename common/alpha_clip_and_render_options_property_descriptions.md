@@ -23,7 +23,7 @@ However, in cases like hair shaders, `alpha_a` and `alpha_b` have no effect, the
 | Off          | 0       | 0       | Keep                 | Keep                 | Keep                 |
 
 **Notes**
-- Although it’s called `AlphaMask`, it does not control the transparency; it only participates in alpha clipping.
+- Although it's called `AlphaMask`, it does not control the transparency; it only participates in alpha clipping.
 - It's hidden on the body renderer by Material Editor.
 
 ### Cutoff
