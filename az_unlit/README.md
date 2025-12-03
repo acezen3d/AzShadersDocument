@@ -1,5 +1,5 @@
 # Az Unlit shaders
-v1.3.0
+v2.0.0
 
 - [Az Unlit shaders](#az-unlit-shaders)
   - [Shader documents](#shader-documents)
@@ -12,6 +12,8 @@ v1.3.0
  - [Az/ShadowCaster shader](az_shadow_caster_shader.md)
  - [Az/UnlitTriplanarCutout shader](az_unlit_triplanar_cutout_alpha_shader.md#azunlittriplanarcutout-shader)
  - [Az/UnlitTriplanarAlpha shader](az_unlit_triplanar_cutout_alpha_shader.md#azunlittriplanaralpha-shader)
+ - [Az/EmissionAnimationCutout shader](az_emission_animation_cutout_alpha_shader.md#azemissionanimationcutout-shader)
+ - [Az/EmissionAnimationAlpha shader](az_emission_animation_cutout_alpha_shader.md#azemissionanimationalpha-shader)
 
 ## Changelog
 [Changelog](CHANGELOG.md)
