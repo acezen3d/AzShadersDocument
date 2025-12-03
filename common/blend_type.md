@@ -20,7 +20,7 @@
   - [Notes](#notes)
 
 ## What's blend type
-Blend type here refers to the blend mode commonly found in graphics editing programs such as Adobe Photoshop and GIMP. To avoid confusion with the GPU's [blend mode](blend_mode.md), it has been renamed to blende type.
+Blend type here refers to the blend mode commonly found in graphics editing programs such as Adobe Photoshop and GIMP. To avoid confusion with the GPU's [Blend mode](blend_mode.md), it has been renamed to blende type.
 
 **References**
 - https://en.wikipedia.org/wiki/Blend_modes
