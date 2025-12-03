@@ -27,7 +27,6 @@
 | ScreenTex          | Texture2D(G)  | white         | An extra color texture in screen space, will be blended with `MainTex` by `alpha` channel and `ScreenTexBlendType`.                    |
 | ScreenColor        | Color         | (1,1,1,1)     | Color tint of `ScreenTex`. `alpha` channel is also used.                                                                               |
 | ScreenTexBlendType | Integer(0,11) | 1             | The blend type of `ScreenTex`. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color). |
-| ScreenUVStretch    | Integer(-1,1) | 0             | See [Additional property descriptions/ScreenUVStretch](#screenuvstretch).                                                              |
 | ScreenUVScroll     | Float(0,1)    | 0             | Whether to animate the UV of `ScreenTex`, with the speed determined by its UV offsets.                                                 |
 
 ## Az/UnlitAlpha shader
