@@ -9,3 +9,7 @@
 
 ## v1.3.0
 - Add `UVScroll` and `ScreenUVScroll` to `Az/UnlitCutout` and `Az/UnlitAlpha`.
+
+## v2.0.0
+- Remove `ScreenUVStretch` from `Az/UnlitCutout` and `Az/UnlitAlpha`. The user can adjust the texture tiling to match the screen's aspect ratio.
+- Add `Az/EmissionAnimationCutout` and `Az/EmissionAnimationAlpha`. They are super complex and powerful emission animation shaders, and also the best emission animation shaders in Koikatsu.

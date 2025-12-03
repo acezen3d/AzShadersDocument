@@ -7,8 +7,6 @@
   - [Az/UnlitAlpha shader](#azunlitalpha-shader)
     - [Tags](#tags-1)
     - [Properties](#properties-1)
-  - [Additional property descriptions](#additional-property-descriptions)
-    - [ScreenUVStretch](#screenuvstretch)
 
 ## Az/UnlitCutout shader
 ### Tags
@@ -27,7 +25,6 @@
 | ScreenTex          | Texture2D(G)  | white         | An extra color texture in screen space, will be blended with `MainTex` by `alpha` channel and `ScreenTexBlendType`.                    |
 | ScreenColor        | Color         | (1,1,1,1)     | Color tint of `ScreenTex`. `alpha` channel is also used.                                                                               |
 | ScreenTexBlendType | Integer(0,11) | 1             | The blend type of `ScreenTex`. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color). |
-| ScreenUVStretch    | Integer(-1,1) | 0             | See [Additional property descriptions/ScreenUVStretch](#screenuvstretch).                                                              |
 | ScreenUVScroll     | Float(0,1)    | 0             | Whether to animate the UV of `ScreenTex`, with the speed determined by its UV offsets.                                                 |
 
 ## Az/UnlitAlpha shader
@@ -37,13 +34,3 @@
 
 ### Properties
 (Same as `Az/UnlitCutout`)
-
-## Additional property descriptions
-### ScreenUVStretch
-Determines whether to stretch the screen space UVs to match the aspect ratio of `ScreenTex`.
-
-**Value -1**: The U (x-axis) is aligned, and the V (y-axis) is stretched.
-
-**Value 0**: No stretching; the original UVs are preserved.
-
-**Value 1**: The V (y-axis) is aligned, and the U (x-axis) is stretched.
