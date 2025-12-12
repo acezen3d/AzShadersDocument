@@ -38,20 +38,20 @@
 | Cull      | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).           |
 
 #### 🏷️Main
-| Name                | Type          | Default value | Description                                                                                                                                                                     |
-| ------------------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MainTex             | Texture2D(G)  | white         | Base color texture. Only `alpha` channel is used.                                                                                                                               |
-| Color               | Color         | (1,1,1,1)     | Color tint of `MainTex`. Only `alpha` channel is used.                                                                                                                          |
-| ScreenTex           | Texture2D(G)  | white         | An extra color texture in screen space, will be blended with `MainTex` by `alpha` channel and `ScreenTexBlendType`.                                                             |
-| ScreenColor         | Color         | (1,1,1,1)     | Color tint of `ScreenTex`. `alpha` channel is also used.                                                                                                                        |
-| ScreenTexBlendType  | Integer(0,11) | 1             | The blend type of `ScreenTex`. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color).                                          |
-| EmissionMap         | Texture2D(G)  | white         | Emission map, no need to be a grayscale but a color texture. `rgb`: emission, `alpha` channel not used and will be handled automatically. Note black (0,0,0) means no emission. |
-| EmissionColor       | Color         | (0,0,0,0)     | Emission color, will be multiplied with `EmissionMap`.                                                                                                                          |
-| EmissionIntensity   | Float(0,2)    | 0             | Emission intensity control, will be multiplied with `EmissionMap` and `EmissionColor`.                                                                                          |
-| AnimationUVType     | Integer(0,1)  | 0             | See [Additional property descriptions/AnimationUVType](#animationuvtype).                                                                                                       |
-| AnimationUVOverride | Boolean       | false         | See [Additional property descriptions/AnimationUVOverride](#animationuvoverride).                                                                                               |
-| AnimationUVWrapMode | Integer(0,2)  | 0             | See [Additional property descriptions/AnimationUVWrapMode](#animationuvwrapmode).                                                                                               |
-| AnimationDuration   | Float(0.1,10) | 1             | Controls the overall speed of all animations by defining the duration of each cycle, in seconds. The larger it is, the slower the animation, and vice versa.                    |
+| Name                | Type          | Default value | Description                                                                                                                                                                             |
+| ------------------- | ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MainTex             | Texture2D(G)  | white         | Base color texture.                                                                                                                                                                     |
+| Color               | Color         | (1,1,1,1)     | Color tint of `MainTex`.                                                                                                                                                                |
+| ScreenTex           | Texture2D(G)  | white         | An extra color texture in screen space, will be blended with `MainTex` by `alpha` channel and `ScreenTexBlendType`.                                                                     |
+| ScreenColor         | Color         | (1,1,1,1)     | Color tint of `ScreenTex`. `alpha` channel is also used.                                                                                                                                |
+| ScreenTexBlendType  | Integer(0,11) | 1             | The blend type of `ScreenTex`. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color).                                                  |
+| EmissionMap         | Texture2D(G)  | white         | Emission map, no need to be a grayscale but a color texture. `rgb`: emission, `alpha` channel is not used and will be handled automatically. Note that black (0,0,0) means no emission. |
+| EmissionColor       | Color         | (0,0,0,0)     | Emission color, will be multiplied with `EmissionMap`.                                                                                                                                  |
+| EmissionIntensity   | Float(0,2)    | 0             | Emission intensity control, will be multiplied with `EmissionMap` and `EmissionColor`.                                                                                                  |
+| AnimationUVType     | Integer(0,1)  | 0             | See [Additional property descriptions/AnimationUVType](#animationuvtype).                                                                                                               |
+| AnimationUVOverride | Boolean       | false         | See [Additional property descriptions/AnimationUVOverride](#animationuvoverride).                                                                                                       |
+| AnimationUVWrapMode | Integer(0,2)  | 0             | See [Additional property descriptions/AnimationUVWrapMode](#animationuvwrapmode).                                                                                                       |
+| AnimationDuration   | Float(0.1,10) | 1             | Controls the overall speed of all animations by defining the duration of each cycle, in seconds. The larger it is, the slower the animation, and vice versa.                            |
 
 #### 🏷️UV Scroll
 | Name                     | Type         | Default value | Description                                                                                                                                                       |
@@ -184,59 +184,59 @@ Determines the basic timing method for each cycle.
 
 **Value 0**: ***Forward***.
 ```
-1.0 │  /¦  /¦  /¦
-    │ / ¦ / ¦ / ¦
-    │/  ¦/  ¦/  ¦
-0.0 ├───┼───┼───┼─── t
-    0   1   2   3
+1 │  /¦  /¦  /¦
+  │ / ¦ / ¦ / ¦
+  │/  ¦/  ¦/  ¦
+0 ├───┼───┼───┼─── t
+  0   1   2   3
 ```
 
 **Value 1**: ***Backward***.
 ```
-1.0 │\  ¦\  ¦\  ¦        or       0   1   2   3 
-    │ \ ¦ \ ¦ \ ¦             0.0 ├───┼───┼───┼─── t
-    │  \¦  \¦  \¦                 │\  ¦\  ¦\  ¦   
-0.0 ├───┼───┼───┼─── t            │ \ ¦ \ ¦ \ ¦
-    0   1   2   3            -1.0 │  \¦  \¦  \¦
+1 │\  ¦\  ¦\  ¦        or     0   1   2   3 
+  │ \ ¦ \ ¦ \ ¦             0 ├───┼───┼───┼─── t
+  │  \¦  \¦  \¦               │\  ¦\  ¦\  ¦   
+0 ├───┼───┼───┼─── t          │ \ ¦ \ ¦ \ ¦
+  0   1   2   3            -1 │  \¦  \¦  \¦
 ```
 
 **Value 2**: ***PingPong***.
 ```
-1.0 │  /¦\  ¦  /¦
-    │ / ¦ \ ¦ / ¦
-    │/  ¦  \¦/  ¦
-0.0 ├───┼───┼───┼─── t
-    0   1   2   3
+1 │  /¦\  ¦  /¦
+  │ / ¦ \ ¦ / ¦
+  │/  ¦  \¦/  ¦
+0 ├───┼───┼───┼─── t
+  0   1   2   3
 ```
 
 **Value 3**: ***ForwardContinuous***.
 ```
-3.0 │   ¦   ¦  /¦
-    │   ¦   ¦ / ¦
-    │   ¦   ¦/  ¦
-2.0 │   ¦  /¦   ¦
-    │   ¦ / ¦   ¦
-    │   ¦/  ¦   ¦ 
-1.0 │  /¦   ¦   ¦
-    │ / ¦   ¦   ¦
-    │/  ¦   ¦   ¦
-0.0 ├───┼───┼───┼─── t
-    0   1   2   3
+3 │   ¦   ¦  /¦
+  │   ¦   ¦ / ¦
+  │   ¦   ¦/  ¦
+2 │   ¦  /¦   ¦
+  │   ¦ / ¦   ¦
+  │   ¦/  ¦   ¦ 
+1 │  /¦   ¦   ¦
+  │ / ¦   ¦   ¦
+  │/  ¦   ¦   ¦
+0 ├───┼───┼───┼─── t
+  0   1   2   3
 ```
 
 **Value 4**: ***BackwardContinuous***.
 ```
-3.0 │\  ¦   ¦   ¦        or       0   1   2   3
-    │ \ ¦   ¦   ¦             0.0 ├───┼───┼───┼─── t
-    │  \¦   ¦   ¦                 │\  ¦   ¦   ¦   
-2.0 │   ¦\  ¦   ¦                 │ \ ¦   ¦   ¦  
-    │   ¦ \ ¦   ¦            -1.0 │  \¦   ¦   ¦   
-    │   ¦  \¦   ¦                 │   ¦\  ¦   ¦ 
-1.0 │   ¦   ¦\  ¦                 │   ¦ \ ¦   ¦ 
-    │   ¦   ¦ \ ¦            -2.0 │   ¦  \¦   ¦  
-    │   ¦   ¦  \¦                 │   ¦   ¦\  ¦   
-0.0 ├───┼───┼───┼─── t            │   ¦   ¦ \ ¦ 
-    0   1   2   3            -3.0 │   ¦   ¦  \¦    
+3 │\  ¦   ¦   ¦        or     0   1   2   3
+  │ \ ¦   ¦   ¦             0 ├───┼───┼───┼─── t
+  │  \¦   ¦   ¦               │\  ¦   ¦   ¦   
+2 │   ¦\  ¦   ¦               │ \ ¦   ¦   ¦  
+  │   ¦ \ ¦   ¦            -1 │  \¦   ¦   ¦   
+  │   ¦  \¦   ¦               │   ¦\  ¦   ¦ 
+1 │   ¦   ¦\  ¦               │   ¦ \ ¦   ¦ 
+  │   ¦   ¦ \ ¦            -2 │   ¦  \¦   ¦  
+  │   ¦   ¦  \¦               │   ¦   ¦\  ¦   
+0 ├───┼───┼───┼─── t          │   ¦   ¦ \ ¦ 
+  0   1   2   3            -3 │   ¦   ¦  \¦    
 ```
 
 **Notes**
