@@ -60,9 +60,9 @@ In addition to the above properties of `Az/PlanarReflectionUnlit` shader, it has
 
 ## Tips
 ### How to solve the problem of blurring, oversharpening or moiré appearance of texture details?
-See  [[Adv. tip] Solve the problem of blurring, oversharpening or moiré appearance of texture details](https://discord.com/channels/1122523329430048911/1212062837997051944)
+See [[Adv. tip] Solve the problem of blurring, oversharpening or moiré appearance of texture details](https://discord.com/channels/1122523329430048911/1212062837997051944)
 ### How to make glowing objects still glow in the reflection?
-See  [[Adv. tip] Add Bloom to arbitrary camera in Koikatsu Studio](https://discord.com/channels/1122523329430048911/1197373266571034655)
+See [[Adv. tip] Add Bloom to arbitrary camera in Koikatsu Studio](https://discord.com/channels/1122523329430048911/1197373266571034655)
 
 ## Download
 https://www.patreon.com/posts/99193796
