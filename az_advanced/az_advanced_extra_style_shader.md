@@ -71,7 +71,7 @@
 | RimLightMap             | Texture2D(G)  | white         | Rim light texture, its `rgb` channels are for the color, and `alpha` channel is for the mask.                                                          |
 | RimLightColor           | Color         | (1,1,1,1)     | Rim light color, its `rgb` channels will be multiplied with `rgb` channels of `RimLightMap`, `alpha` channel is not used.                              |
 | RimLightIntensity       | Float(0,2)    | 1             | Rim light intensity, will be multiplied with `rgb` values of the rim light.                                                                            |
-| RimLightMaskLevel       | Float(-1,1)   | 0             | Rim light mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                          |
+| RimLightMaskLevel       | Float(-1,1)   | 0             | Rim light mask level. -1: fully suppressed; 0: mask-defined; 1: fully applied.                                                                         |
 | RimLightPower           | Float(0,10)   | 1             | See [Additional property descriptions/RimLightPower, RimLightScale and RimLightBias](#rimlightpower-rimlightscale-and-rimlightbias).                   |
 | RimLightScale           | Float(0,2)    | 1             | See [Additional property descriptions/RimLightPower, RimLightScale and RimLightBias](#rimlightpower-rimlightscale-and-rimlightbias).                   |
 | RimLightBias            | Float(-1,1)   | 0             | See [Additional property descriptions/RimLightPower, RimLightScale and RimLightBias](#rimlightpower-rimlightscale-and-rimlightbias).                   |
@@ -94,9 +94,9 @@
 | MatcapColor2               | Color         | (1,1,1,1)     | Matcap color of detail set 2.                                                                                                                   |
 | MatcapColor3               | Color         | (1,1,1,1)     | Matcap color of detail set 3.                                                                                                                   |
 | MatcapMask                 | Texture2D(L)  | white         | Matcap mask, `red` channel for detail set 1, `green` channel for detail set 2, `blue` channel for detail set 3.                                 |
-| MatcapMaskLevel            | Float(-1,1)   | 0             | Matcap 1 mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                    |
-| MatcapMaskLevel2           | Float(-1,1)   | 0             | Matcap 2 mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                    |
-| MatcapMaskLevel3           | Float(-1,1)   | 0             | Matcap 3 mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                    |
+| MatcapMaskLevel            | Float(-1,1)   | 0             | Matcap 1 mask level. -1: fully suppressed; 0: mask-defined; 1: fully applied.                                                                   |
+| MatcapMaskLevel2           | Float(-1,1)   | 0             | Matcap 2 mask level. -1: fully suppressed; 0: mask-defined; 1: fully applied.                                                                   |
+| MatcapMaskLevel3           | Float(-1,1)   | 0             | Matcap 3 mask level. -1: fully suppressed; 0: mask-defined; 1: fully applied.                                                                   |
 | MatcapUVRotation           | Float(-1,1)   | 0             | Matcap 1 UV rotation in units of $\pi$.                                                                                                         |
 | MatcapUVRotation2          | Float(-1,1)   | 0             | Matcap 2 UV rotation in units of $\pi$.                                                                                                         |
 | MatcapUVRotation3          | Float(-1,1)   | 0             | Matcap 3 UV rotation in units of $\pi$.                                                                                                         |
@@ -119,7 +119,7 @@
 | RingMap             | Texture2D(G)  | white         | Ring texture, its `rgb` channels are for the color, and `alpha` channel is for the mask.                                                  |
 | RingColor           | Color         | (1,1,1,1)     | Ring color, its `rgb` channels will be multiplied with `rgb` channels of `RingMap`, `alpha` channel is not used.                          |
 | RingIntensity       | Float(0,2)    | 1             | Ring intensity, will be multiplied with `rgb` values of the ring.                                                                         |
-| RingMaskLevel       | Float(-1,1)   | 0             | Ring mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                  |
+| RingMaskLevel       | Float(-1,1)   | 0             | Ring mask level. -1: fully suppressed; 0: mask-defined; 1: fully applied.                                                                 |
 | RingStyle           | Integer(0,4)  | 4             | Ring styles. See [Additional property descriptions/RingStyle](#ringstyle).                                                                |
 | RingSharpness       | Float(-2,2)   | 1             | Ring sharpness.                                                                                                                           |
 | RingWidth           | Float(0,1)    | 0.2           | Ring width.                                                                                                                               |
