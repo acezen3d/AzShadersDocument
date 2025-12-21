@@ -27,7 +27,7 @@
 | Adjustments          | Vector             | (0,0,0,0)     | See [Additional property descriptions/Adjustments](#adjustments).                                                                            |
 | Magnification        | Float(0.1,10)      | 1             | The scale used to magnify the screen capture.                                                                                                |
 | BlurMask             | Texture2D(L)       | white         | Used to mask which areas will be blurred and which will not, `red` channel is used.                                                          |
-| BlurMaskLevel        | Float(-1,1)        | 0             | Blur mask level. -1: fully masked; 0: as defined by the mask texture; 1: fully unmasked.                                                     |
+| BlurMaskLevel        | Float(-1,1)        | 0             | Blur mask level. -1: fully suppressed; 0: mask-defined; 1: fully applied.                                                                    |
 | BlurKernelSize       | Integer(1,127)     | 35            | Kernel size of the image convolution. Keep it as low as possible for better performance.                                                     |
 | BlurSigma            | Float(0.00001, 20) | 1             | The sigma parameter of the Gaussian function, i.e., the standard deviation. Effective only when `GAUSSIAN_BLUR` is enabled.                  |
 | BlurTexelSize        | Float(1,4)         | 1             | The texel size multiplier, controlling the sampling radius of the image convolution.                                                         |
