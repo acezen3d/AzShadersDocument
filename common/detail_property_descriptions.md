@@ -36,7 +36,7 @@ Whether to enable the detail set n.
 
 ### DetailMask
 **This is not Koikatsu's original `DetailMask`!**\
-Koikatsu uses this map to control ramp based specular highlights, shadows and rim lights. But in Az shaders, it serves as a mask for detail sets - `red`  for detail set 1, `green` for detail set 2, `blue` for detail set 3. If you want to use something like `DetailMask` of Koikatsu, please refer to `DrawnMap`, if available in the shader.
+Koikatsu uses this map to control ramp based specular highlights, shadows and rim lights. But in Az shaders, it serves as a mask for detail sets - `red` for detail set 1, `green` for detail set 2, `blue` for detail set 3. If you want to use something like `DetailMask` of Koikatsu, please refer to `DrawnMap`, if available in the shader.
 
 ### DetailUVRotation(n)
 Detail UV rotation angle for detail set n in units of $\pi$.
