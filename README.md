@@ -92,7 +92,7 @@ Most Az shaders include specific Koikatsu game features, giving them types that 
 | LiteCutout       | Item, studio item, clothing                      | -                                     |
 | LiteAlpha        | Item, studio item, clothing                      | -                                     |
 
-*: Some shaders support multiple renderers simultaneously to reduce the number of shaders.
+*: Some shaders also support other renderers to reduce the number of separate shaders needed.
 
 ### Shader keyword support
 Some Az shaders rely on shader keywords, which are only supported in newer versions of Material Editor. To use these shaders correctly, make sure your Material Editor is updated to v3.3.0 or later. If you use these shaders in older versions, you may get an error that Material Editor fails and other shader mods cannot be loaded.
