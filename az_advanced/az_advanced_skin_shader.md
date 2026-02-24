@@ -103,7 +103,7 @@ You need to make a special normal map with `blue` channel serving as a mask. Thi
 - `MainTex` game render
   - Built-in body/face color mask and Body/General/Skin Color, Skin Color (Redder Areas) (***Multiply***)   
   - Body/Nails/Nail Color (***Multiply***)
-  - Body/Suntan/Suntan Type, Suntan Color (***Multiply***)
+  - Body/Suntan/Suntan Type, Suntan Color (***Normal***)
   - Body/Body Paint/Paint 01 Type, Paint 01 Color (***Normal***)
   - Body/Body Paint/Paint 02 Type, Paint 02 Color (***Normal***)
   - Face/Nose/Nose Type (***Normal***)
