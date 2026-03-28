@@ -101,6 +101,7 @@ It is recommended to use Material Editor v3.12.0 or later to display the propert
 
 ## Tutorials
 - [How to setup ambient lighting](tutorials/how_to_setup_ambient_lighting.md)
+- [Auto replace shaders from asset bundles in Unity Editor (Play mode)](tutorials/auto_replace_shaders_from_asset_bundles_in_unity_editor_play_mode.md)
 
 ## Notes
 - If you need to view previous versions of the documents, please check the commit history.
