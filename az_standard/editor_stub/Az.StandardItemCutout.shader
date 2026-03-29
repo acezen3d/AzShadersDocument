@@ -1,3 +1,4 @@
+// v5.6.0
 Shader "Az/StandardItemCutout"
 {
     Properties
