@@ -1,3 +1,5 @@
 *.nocommit.*
 *.meta
 .vscode/**
+.opencode/**
+AGENTS.md
