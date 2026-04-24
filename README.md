@@ -9,7 +9,7 @@
     - [Texture color space](#texture-color-space)
     - [Texture properties](#texture-properties)
     - [Explicit default](#explicit-default)
-    - [Consistency with Unity Standard shader](#consistency-with-unity-standard-shader)
+    - [Consistency with Unity Standard Shader](#consistency-with-unity-standard-shader)
     - [Shader type](#shader-type)
     - [Shader keyword support](#shader-keyword-support)
     - [Property category support](#property-category-support)
@@ -36,7 +36,7 @@ You can find the mods containing these shaders on my Patreon: https://www.patreo
 
 ## General information
 ### Texture color space
-Since Material Editor only allows textures to be imported in gamma color space, many Az shaders perform the color space conversion internally to support linear color space. In other words, the textures are imported in gamma color space, but will be processed as in linear color space (equivalent to unchecking the "sRGB (Color Texture)" in Unity Editor).
+Since Material Editor only allows textures to be imported in gamma color space, many Az shaders perform the color space conversion internally to support linear color space. In other words, the textures are imported in gamma color space, but will be processed as if in linear color space (equivalent to unchecking the "sRGB (Color Texture)" in Unity Editor).
 
 To save space and maintain a neat layout, the color space is abbreviated and appended to the texture type instead of using a separate column.
 
@@ -47,16 +47,15 @@ To save space and maintain a neat layout, the color space is abbreviated and app
 The color space labeling of textures serves as a reference during texture creation, as the color space itself plays an important role in rendering. Because gamma and linear color spaces have different value gradients, using textures with a wrong color space may result in unintended visual outcomes.
 
 ### Texture properties
-In the newer Az shaders, certain textures now provide finer control over sampling-related properties, namely `AnisoLevel`, `FilterMode`, and `WrapMode`, making their sampling more appropriate. You need to update Material Editor to v3.13.2 or higher.
+In newer Az shaders, certain textures now provide finer control over sampling-related properties, namely `AnisoLevel`, `FilterMode`, and `WrapMode`, making their sampling more appropriate. You need to update Material Editor to v3.13.2 or higher.
 
 ### Explicit default
 Shader properties themselves have internal default values, which are not visible externally. When a property is not assigned, that value is used. This is called "implicit default".
 
-While the shader manifest of Material Editor also allows shader authors to define default values for specific shader properties externally. When switching to that shader, those properties will be assigned the corresponding values. This is called "explicit default". Since this assignment is enforced by Material Editor when switching shaders, such default values are clearly marked as *explicit* as a reminder.
+The shader manifest of Material Editor also allows shader authors to define default values for specific shader properties externally. When switching to that shader, those properties will be assigned the corresponding values. This is called "explicit default". Since this assignment is enforced by Material Editor when switching shaders, such default values are clearly marked as *explicit* as a reminder.
 
-### Consistency with Unity Standard shader
-When Az shaders have exactly the same lighting result as Unity Standard shader?
-In Az shaders that use Standard (isotropic BRDF) model, if they have the following properties, their values should be:
+### Consistency with Unity Standard Shader
+Az shaders have exactly the same lighting result as Unity Standard Shader under the condition that they use the Standard (isotropic BRDF) model, and the following properties, if present, must have the following values:
 
 *Lighting properties*
 - `ShadowIntensity`: 1
@@ -100,7 +99,7 @@ Some Az shaders rely on shader keywords, which are only supported in newer versi
 It is recommended to use Material Editor v3.12.0 or later to display the property categories of certain Az shaders. Additionally, by disabling **Sort Properties by Type** and **Sort Properties by Name** configs, the properties will be sorted in their default order as shown in the documents.
 
 ## Tutorials
-- [How to setup ambient lighting](tutorials/how_to_setup_ambient_lighting.md)
+- [How to set up ambient lighting](tutorials/how_to_set_up_ambient_lighting.md)
 - [Auto replace shaders from asset bundles in Unity Editor (Play mode)](tutorials/auto_replace_shaders_from_asset_bundles_in_unity_editor_play_mode.md)
 
 ## Notes

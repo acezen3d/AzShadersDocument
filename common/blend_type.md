@@ -20,14 +20,14 @@
   - [Notes](#notes)
 
 ## What's blend type
-Blend type here refers to the blend mode commonly found in graphics editing programs such as Adobe Photoshop and GIMP. To avoid confusion with the GPU's [Blend mode](blend_mode.md), it has been renamed to blende type.
+The blend type here refers to the blend mode commonly found in image editors such as Adobe Photoshop and GIMP. To avoid confusion with the GPU's [Blend mode](blend_mode.md), it has been renamed to blend type.
 
 **References**
 - https://en.wikipedia.org/wiki/Blend_modes
 - https://helpx.adobe.com/photoshop/using/blending-modes.html
 
 ## Supported blend types
-Suppose $a$ is the destination, $b$ is the source, $t$ is the blending ratio and $o$ is the blending output by following methods, then after blending, $a$ becomes:  
+Suppose $a$ is the destination, $b$ is the source, $t$ is the blending ratio, and $o$ is the blending output by the following methods. Then, after blending, $a$ becomes:  
 
 $$a=(1-t)a+to$$
 
@@ -119,4 +119,4 @@ $$
  | 9     | Min               |
  
 ## Notes
-- `MultiplyAndDouble` behaves differently under different enums. In **Blend type enum for color**, it means multiplying by $2 ^ {2.2}$ (if we're working in linear color space , which we are), but in **Blend type enum for non-color**, it means multiplying by 2.
+- `MultiplyAndDouble` behaves differently under different enums. In **Blend type enum for color**, it means multiplying by $2 ^ {2.2}$ (if we're working in linear color space, which we are), but in **Blend type enum for non-color**, it means multiplying by 2.

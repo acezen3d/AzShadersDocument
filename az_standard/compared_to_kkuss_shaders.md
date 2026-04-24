@@ -6,14 +6,14 @@
   - [Notes](#notes)
 
 ## Properties changed
-- AddColor -> BaseColor
-- SpecularPower -> Glossiness (some KKUSS shaders use `Glossiness`, some others use `SpecularPower`)
-- ShadowPower -> ShadowIntensity
-- Emission -> EmissionMap, EmissionColor, EmissionIntensity
-- Occlusion -> IndirectDiffuseIntensity, IndirectSpecularIntensity
+- `AddColor` -> `BaseColor`
+- `SpecularPower` -> `Glossiness` (some KKUSS shaders use `Glossiness`, some others use `SpecularPower`)
+- `ShadowPower` -> `ShadowIntensity`
+- `Emission` -> `EmissionMap`, `EmissionColor`, `EmissionIntensity`
+- `Occlusion` -> `IndirectDiffuseIntensity`, `IndirectSpecularIntensity`
 
 ## Properties added
 (Omitted)
 
 ## Notes
-- What are compared here is only shader properties introduced by KKUSS, and all Koikatsu built-in shader properties are ignored here.
+- Only shader properties introduced by KKUSS are compared here; all Koikatsu built-in shader properties are ignored.

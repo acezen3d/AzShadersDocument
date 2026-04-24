@@ -5,14 +5,14 @@
   - [Notes](#notes)
 
 ## Properties
-| Name                | Type        | Default value | Description                                 |
-| ------------------- | ----------- | ------------- | ------------------------------------------- |
-| MatcapTexInvert     | Boolean     | false         | Matcap texture color invert adjustment.     |
-| MatcapTexHue        | Float(-1,1) | 0             | Matcap texture color hue adjustment.        |
-| MatcapTexSaturation | Float(-1,1) | 0             | Matcap texture color saturation adjustment. |
-| MatcapTexLightness  | Float(-1,1) | 0             | Matcap texture color lightness adjustment.  |
-| MatcapTexBrightness | Float(-1,1) | 0             | Matcap texture color brightness adjustment. |
-| MatcapTexContrast   | Float(-1,1) | 0             | Matcap texture color contrast adjustment.   |
+| Name                | Type        | Default value | Description                                          |
+| ------------------- | ----------- | ------------- | ---------------------------------------------------- |
+| MatcapTexInvert     | Boolean     | false         | Inverts the matcap texture colors.                   |
+| MatcapTexHue        | Float(-1,1) | 0             | Adjusts the hue of the matcap texture colors.        |
+| MatcapTexSaturation | Float(-1,1) | 0             | Adjusts the saturation of the matcap texture colors. |
+| MatcapTexLightness  | Float(-1,1) | 0             | Adjusts the lightness of the matcap texture colors.  |
+| MatcapTexBrightness | Float(-1,1) | 0             | Adjusts the brightness of the matcap texture colors. |
+| MatcapTexContrast   | Float(-1,1) | 0             | Adjusts the contrast of the matcap texture colors.   |
 
 ## Notes
 - The matcap texture editing feature consists of three adjustment functions, executed in the following order:

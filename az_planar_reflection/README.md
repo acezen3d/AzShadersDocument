@@ -21,21 +21,21 @@ v1.1.0
 - Queue: `Transparent`+50
 
 ### Properties
-| Name                    | Type             | Default value         | Description                                                                                                   |
-| ----------------------- | ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Color                   | Color            | (1,1,1,1), *explicit* | Color tint.                                                                                                   |
-| Albedo                  | Texture2D(G)     | white                 | Main albedo texture.                                                                                          |
-| AlbedoDetail            | Texture2D(G)     | gray                  | Detail albedo texture.                                                                                        |
-| AlbedoDetailScale       | Float(0,1)       | 0, *explicit*         | The scale applied to `AlbedoDetail`.                                                                          |
-| Cutoff                  | Float(0,1)       | 0.01, *explicit*      | Clip the mesh with this value according to the value computed by the alpha channels of `MainTex` and `Color`. |
-| NormalMap               | Texture2D(L)     | bump                  | Main normal map.                                                                                              |
-| NormalScale             | Float(0,1)       | 0.5, *explicit*       | The scale applied to `NormalMap`.                                                                             |
-| NormalMapDetail         | Texture2D(L)     | bump                  | Detail normal map.                                                                                            |
-| NormalDetailScale       | Float(0,1)       | 0.5, *explicit*       | The scale applied to `NormalMapDetail`.                                                                       |
-| ReflectionIntensity     | Float(0,1)       | 1, *explicit*         | The intensity of the application of the reflection.                                                           |
-| ReflectionDistortion    | Float(0,1)       | 0.5, *explicit*       | How much the reflection is distorted by surface normals `NormalMap` and `NormalMapDetail`.                    |
-| ReflectionBlurTexelSize | Float(1,2048)    | 1024, *explicit*      | The texel size of Gaussian blur applied to the reflection.                                                    |
-| ReflectionBlurSigma     | Float(0.0001,20) | 1, *explicit*         | The sigma controls the level of Gaussian blur applied to the reflection.                                      |
+| Name                    | Type             | Default value         | Description                                                                                                        |
+| ----------------------- | ---------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Color                   | Color            | (1,1,1,1), *explicit* | The tint color.                                                                                                    |
+| Albedo                  | Texture2D(G)     | white                 | The main albedo texture.                                                                                           |
+| AlbedoDetail            | Texture2D(G)     | gray                  | The detail albedo texture.                                                                                         |
+| AlbedoDetailScale       | Float(0,1)       | 0, *explicit*         | The scale applied to `AlbedoDetail`.                                                                               |
+| Cutoff                  | Float(0,1)       | 0.01, *explicit*      | Clips the mesh using this value, based on the alpha value computed by the alpha channels of `MainTex` and `Color`. |
+| NormalMap               | Texture2D(L)     | bump                  | The main normal map.                                                                                               |
+| NormalScale             | Float(0,1)       | 0.5, *explicit*       | The scale applied to `NormalMap`.                                                                                  |
+| NormalMapDetail         | Texture2D(L)     | bump                  | The detail normal map.                                                                                             |
+| NormalDetailScale       | Float(0,1)       | 0.5, *explicit*       | The scale applied to `NormalMapDetail`.                                                                            |
+| ReflectionIntensity     | Float(0,1)       | 1, *explicit*         | The intensity of the application of the reflection.                                                                |
+| ReflectionDistortion    | Float(0,1)       | 0.5, *explicit*       | Controls how much the reflection is distorted by the surface normals from `NormalMap` and `NormalMapDetail`.       |
+| ReflectionBlurTexelSize | Float(1,2048)    | 1024, *explicit*      | The texel size of the Gaussian blur effect applied to the reflection.                                              |
+| ReflectionBlurSigma     | Float(0.0001,20) | 1, *explicit*         | The sigma of the Gaussian blur effect applied to the reflection.                                                   |
 
 ## Az/PlanarReflectionLit shader
 ### Tags
@@ -43,19 +43,19 @@ v1.1.0
 - Queue: `Transparent`+50
 
 ### Properties
-In addition to the above properties of `Az/PlanarReflectionUnlit` shader, it has two more properties:
+In addition to the above properties of the `Az/PlanarReflectionUnlit` shader, it has two more properties:
 
-| Name       | Type       | Default value | Description        |
-| ---------- | ---------- | ------------- | ------------------ |
-| Metallic   | Float(0,1) | 1, *explicit* | Metallic in PBR.   |
-| Smoothness | Float(0,1) | 1, *explicit* | Smoothness in PBR. |
+| Name       | Type       | Default value | Description                  |
+| ---------- | ---------- | ------------- | ---------------------------- |
+| Metallic   | Float(0,1) | 1, *explicit* | The metallic value in PBR.   |
+| Smoothness | Float(0,1) | 1, *explicit* | The smoothness value in PBR. |
 
 ## Changelog
 [Changelog](CHANGELOG.md)
 
 ## Notes
 - When you use **Planar Reflection Lit**, if you want it to be able to receive shadows, you need to lower its render queue below 2500.
-- If you want reflections with soft blurred edges, in addition to using a proper `Albedo`, you need to lower `Cutoff` to near or equal to 0.
+- For reflections with soft blurred edges, use a proper `Albedo` and lower `Cutoff` to near or equal to 0.
 - Make your work easier and more enjoyable with the FREE [Normal Map Tool](https://www.patreon.com/posts/99107961).
 
 ## Tips
