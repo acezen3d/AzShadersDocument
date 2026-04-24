@@ -15,21 +15,21 @@
 Whether to enable the stocking.
 
 ### DensityMap
-Density map, reflecting the tightness(or thickness) of the stocking fabric when stretched.
+The density map, reflecting the tightness (or thickness) of the stocking fabric when stretched.
 
 ### DensityStrength
-Application strength of density map.
+The application strength of the density map.
 
 ### StockingFresnelRange
-Stocking fresnel range.
+The stocking fresnel range.
 
 ### StockingFresnelScale
-Stocking fresnel scale.
+The stocking fresnel scale.
 
 ### StockingFresnelBias
-Stocking fresnel bias.
+The stocking fresnel bias.
 
-### StockingAlphaLift 
+### StockingAlphaLift
 The effect of density on alpha.
 
 ### StockingAlbedoDrop

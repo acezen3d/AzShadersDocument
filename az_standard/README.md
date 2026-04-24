@@ -29,7 +29,7 @@ v5.6.0
 [Changelog](CHANGELOG.md)
 
 ## Notes
-- Az Standard shaders support most Unity Standard shader properties, see [Compared to Unity Standard shader](compared_to_unity_standard_shader.md).
+- Az Standard shaders support most Unity Standard Shader properties, see [Compared to Unity Standard Shader](compared_to_unity_standard_shader.md).
 - Az Standard shaders support and improve properties of KKUSS shaders, see [Compared to KKUSS shaders](compared_to_kkuss_shaders.md).
 - General albedo stack order:\
   (Underlay and Overlay)ed `MainTex` -> `ColorMask` (if it exists) -> `BaseColor`-> `DrawnMap` -> `DetailAlbedo(2)`. 

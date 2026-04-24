@@ -30,82 +30,82 @@
     - [LiquidBlendMultiplier](#liquidblendmultiplier)
 
 ### liquidmask
-*Koikatsu property*. Liquid distribution mask.
+*Koikatsu property*. The liquid distribution mask.
 
 ### Texture2
-*Koikatsu property*. Liquid shape and level mask. `red`: level 1, `green`: level 2.
+*Koikatsu property*. The liquid shape and level mask. `red`: level 1; `green`: level 2.
 
 ### Texture3
-*Koikatsu property*. Liquid normal map.
+*Koikatsu property*. The liquid normal map.
 
 ### LiquidTiling
-*Koikatsu property*. Liquid tiling and offset, `rg`: offset, `ba`: tiling.
+*Koikatsu property*. The liquid tiling and offset. `rg`: offset; `ba`: tiling.
 
 ### liquidftop
-*Koikatsu property*. Liquid level for the front top area, corresponding to `red` channel of `liquimask`.
+*Koikatsu property*. The liquid level for the front top area, corresponding to the `red` channel of `liquidmask`.
 
 ### liquidfbot
-*Koikatsu property*. Liquid level for the front bottom area, corresponding to `green` channel of `liquimask`.
+*Koikatsu property*. The liquid level for the front bottom area, corresponding to the `green` channel of `liquidmask`.
 
 ### liquidbtop
-*Koikatsu property*. Liquid level for the back top area, corresponding to `blue` channel of `liquimask`.
+*Koikatsu property*. The liquid level for the back top area, corresponding to the `blue` channel of `liquidmask`.
 
 ### liquidbbot
-*Koikatsu property*. Liquid level for the back bottom area, corresponding to `rg` channels of `liquimask`.
+*Koikatsu property*. The liquid level for the back bottom area, corresponding to the `rg` channels of `liquidmask`.
 
 ### liquidface
-*Koikatsu property*. Liquid level for the face area, corresponding to `gb` channels of `liquidmask`.
+*Koikatsu property*. The liquid level for the face area, corresponding to the `gb` channels of `liquidmask`.
 
 ### LiquidFoot
-*Extension property*. Liquid level for the foot area, corresponding to `rb` channels of `liquidmask`.
+*Extension property*. The liquid level for the foot area, corresponding to the `rb` channels of `liquidmask`.
 
 ### LiquidAll
-*Extension property*. Liquid level for the all areas.
+*Extension property*. The liquid level for all areas.
 
 ### LiquidFTopUV
-*Extension property*. UV manipulation for the front top area only.
+*Extension property*. The UV manipulation for the front top area only.
  
 ### LiquidFBotUV
-*Extension property*. UV manipulation for the front bottom area only.
+*Extension property*. The UV manipulation for the front bottom area only.
 
 ### LiquidBTopUV
-*Extension property*. UV manipulation for the back top area only.
+*Extension property*. The UV manipulation for the back top area only.
 
 ### LiquidBBotUV
-*Extension property*. UV manipulation for the back bottom area only.
+*Extension property*. The UV manipulation for the back bottom area only.
 
 ### LiquidFaceUV
-*Extension property*. UV manipulation for the face area only.
+*Extension property*. The UV manipulation for the face area only.
 
 ### LiquidFootUV
-*Extension property*. UV manipulation for the foot area only.
+*Extension property*. The UV manipulation for the foot area only.
 
 ### LiquidColor
-*Extension property*. Liquid color tint.
+*Extension property*. The liquid tint color.
 
 ### LiquidAlpha
-*Extension property*. Liquid alpha factors.
+*Extension property*. The liquid alpha factors.
 
 ### LiquidAlbedo
-*Extension property*. Liquid albedo factors.
+*Extension property*. The liquid albedo factors.
 
 ### LiquidNormal
-*Extension property*. Liquid normal factors.
+*Extension property*. The liquid normal factors.
 
 ### LiquidNormalScale
-*Extension property*. Liquid normal map scale.
+*Extension property*. The liquid normal map scale.
 
 ### LiquidMetallic
-*Extension property*. Liquid metallic.
+*Extension property*. The liquid metallic.
 
 ### LiquidGlossiness
-*Extension property*. Liquid glossiness.
+*Extension property*. The liquid glossiness.
 
 ### LiquidTranslucency
-*Extension property*. Liquid translucency factors.
+*Extension property*. The liquid translucency factors.
 
 ### LiquidLighting
-*Extension property*. Liquid lighting factors.
+*Extension property*. The liquid lighting factors.
 
 ### LiquidBlendMultiplier
-*Extension property*. Multiplier for blending liquid and the surface lighting result.
+*Extension property*. The multiplier for blending the liquid and the surface lighting result.

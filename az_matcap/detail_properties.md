@@ -8,7 +8,7 @@
 | ------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------------------------------- |
 | DetailMask                | Texture2D(L)  | red           | See [DetailMask](../common/detail_property_descriptions.md#detailmask).                               |
 | DetailUVRotation          | Float(-1,1)   | 0             | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).               |
-| NormalMapDetail           | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                |
+| NormalMapDetail           | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common/detail_property_descriptions.md#normalmapdetailn).                 |
 | DetailNormalMapScale      | Float(0,1)    | 0             | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).       |
 | AlbedoMapDetail           | Texture2D(G)  | white         | See [AlbedoMapDetail(n)](../common/detail_property_descriptions.md#albedomapdetailn).                 |
 | DetailAlbedoBlend         | Float(0,1)    | 0             | See [DetailAlbedoBlend(n)](../common/detail_property_descriptions.md#detailalbedoblendn).             |

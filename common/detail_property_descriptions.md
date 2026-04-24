@@ -36,85 +36,85 @@ Whether to enable the detail set n.
 
 ### DetailMask
 **This is not Koikatsu's original `DetailMask`!**\
-Koikatsu uses this map to control ramp based specular highlights, shadows and rim lights. But in Az shaders, it serves as a mask for detail sets - `red` for detail set 1, `green` for detail set 2, `blue` for detail set 3. If you want to use something like `DetailMask` of Koikatsu, please refer to `DrawnMap`, if available in the shader.
+Koikatsu uses this map to control ramp-based specular highlights, shadows, and rim lights. But in Az shaders, it serves as a mask for detail sets: `red` for the detail set 1, `green` for the detail set 2, `blue` for the detail set 3. If you want to use something like `DetailMask` of Koikatsu, please refer to `DrawnMap`, if available in the shader.
 
 ### DetailUVRotation(n)
-Detail UV rotation angle for detail set n in units of $\pi$.
+The detail UV rotation angle for the detail set n in units of $\pi$.
 
 ### NormalMapDetail(n)
-Detail normal map for detail set n.
+The detail normal map for the detail set n.
 
 ### NormalMapDetailBiases
-Mipmap bias when sampling detail normal maps.
+The mipmap bias when sampling detail normal maps.
 
 ### DetailNormalMapScale(n)
-Detail normal map scale for detail set n.
+The detail normal map scale for the detail set n.
 
 ### TangentMapDetail(n)
-Detail tangent map for detail set n.
+The detail tangent map for the detail set n.
 
 ### TangentMapDetailBiases
-Mipmap bias when sampling detail tangent maps.
+The mipmap bias when sampling detail tangent maps.
 
 ### DetailTangentMapScale(n)
-Detail tangent map scale for detail set n.
+The detail tangent map scale for the detail set n.
 
 ### AlbedoMapDetail(n)
-Detail albedo map for detail set n. No need to be a grayscale but a color texture.
+The detail albedo map for the detail set n. It can be a color texture, not just a grayscale texture.
 
 ### AlbedoMapDetailBiases
-Mipmap bias when sampling detail albedo maps.
+The mipmap bias when sampling detail albedo maps.
 
 ### DetailAlbedoBlend(n)
-Detail albedo blend amount for detail set n.
+The detail albedo blend amount for the detail set n.
 
 ### DetailAlbedoBlendType
-Detail albedo blend type, which determines how the detail albedo blends into the main albedo. Its value is defined by [Blend type enum for color](blend_type.md#blend-type-enum-for-color).
+The detail albedo blend type, which determines how the detail albedo blends into the main albedo. Its value is defined by [Blend type enum for color](blend_type.md#blend-type-enum-for-color).
 
 ### DetailAlphaBlend(n)
-Detail alpha blend amount for detail set n.
+The detail alpha blend amount for the detail set n.
 
 ### DetailAlphaBlendType
-Detail alpha blend type, which determines how the detail alpha blends into the main alpha. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
+The detail alpha blend type, which determines how the detail alpha blends into the main alpha. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
 
 ### MetallicGlossMapDetail(n)
-Detail metallic and glossiness map for detail set n, metallic - `red`, glossiness - `alpha`.
+The detail metallic and glossiness map for the detail set n. `red`: metallic; `alpha`: glossiness.
 
 ### MetallicGlossMapDetailBiases
-Mipmap bias when sampling detail metallic and glossiness maps.
+The mipmap bias when sampling detail metallic and glossiness maps.
 
 ### DetailMetallicBlend(n)
-Detail metallic blend amount for detail set n.    
+The detail metallic blend amount for the detail set n.    
 
 ### DetailMetallicBlendType
-Detail metallic blend type, which determines how the detail metallic blends into the main metallic. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
+The detail metallic blend type, which determines how the detail metallic blends into the main metallic. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
 
 ### SpecGlossMapDetail(n)
-Detail specular and glossiness map for detail set n, specular - `rgb`, glossiness - `alpha`.
+The detail specular and glossiness map for the detail set n. `rgb`: specular; `alpha`: glossiness.
 
 ### DetailSpecularBlend(n)
-Detail specular blend amount for detail set n.
+The detail specular blend amount for the detail set n.
 
 ### DetailSpecularBlendType
-Detail specular blend type, which determines how the detail specular blends into the main specular. Its value is defined by [Blend type enum for color](blend_type.md#blend-type-enum-for-color).
+The detail specular blend type, which determines how the detail specular blends into the main specular. Its value is defined by [Blend type enum for color](blend_type.md#blend-type-enum-for-color).
 
 ### DetailGlossinessBlend(n)
-Detail glossiness blend amount for detail set n.
+The detail glossiness blend amount for the detail set n.
 
 ### DetailGlossinessBlendType
-Detail glossiness blend type, which determines how the detail glossiness blends into the main glossiness. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
+The detail glossiness blend type, which determines how the detail glossiness blends into the main glossiness. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
 
 ### OcclusionMapDetail(n)
-Detail ambient occlusion map, using `green` channel. In some shaders, it can also include detail anisotropy (`red`) data.
+The detail ambient occlusion map. The `green` channel is used. In some shaders, it can also include detail anisotropy (`red`) data.
 
 ### OcclusionMapDetailBiases
-Mipmap bias when sampling detail ambient occlusion maps.
+The mipmap bias when sampling detail ambient occlusion maps.
 
 ### DetailOcclusionStrength(n)
-Detail ambient occlusion strength for detail set n.
+The detail ambient occlusion strength for the detail set n.
 
 ### DetailAnisotropyBlend(n)
-Detail anisotropy blend amount for detail set n.
+The detail anisotropy blend amount for the detail set n.
 
 ### DetailAnisotropyBlendType
-Detail anisotropy blend type, which determines how the detail anisotropy blends into the main anisotropy. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
+The detail anisotropy blend type, which determines how the detail anisotropy blends into the main anisotropy. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).

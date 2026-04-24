@@ -18,17 +18,17 @@
 | DetailUVRotation2                             | Float(-1,1)     | 0                               | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).                     |
 | DetailUVRotation3                             | Float(-1,1)     | 0                               | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).                     |
 | *Normal*                                      |                 |                                 |                                                                                                             |
-| NormalMapDetail                               | Texture2D(L)    | bump                            | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                      |
-| NormalMapDetail2                              | Texture2D(L)    | bump                            | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                      |
-| NormalMapDetail3                              | Texture2D(L)    | bump                            | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                      |
+| NormalMapDetail                               | Texture2D(L)    | bump                            | See [NormalMapDetail(n)](../common/detail_property_descriptions.md#normalmapdetailn).                       |
+| NormalMapDetail2                              | Texture2D(L)    | bump                            | See [NormalMapDetail(n)](../common/detail_property_descriptions.md#normalmapdetailn).                       |
+| NormalMapDetail3                              | Texture2D(L)    | bump                            | See [NormalMapDetail(n)](../common/detail_property_descriptions.md#normalmapdetailn).                       |
 | NormalMapDetailBiases                         | Vector          | (0,0,0,0)                       | See [NormalMapDetailBiases](../common/detail_property_descriptions.md#normalmapdetailbiases).               |
 | DetailNormalMapScale                          | Float(0,1)      | 0                               | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).             |
 | DetailNormalMapScale2                         | Float(0,1)      | 0                               | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).             |
 | DetailNormalMapScale3                         | Float(0,1)      | 0                               | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).             |
 | *Tangent*                                     |                 |                                 |                                                                                                             |
-| TangentMapDetail                              | Texture2D(L)    | default_tangent_map, *explicit* | See [TangentMapDetail(n)](../common//detail_property_descriptions.md#tangentmapdetailn).                    |
-| TangentMapDetail2                             | Texture2D(L)    | default_tangent_map, *explicit* | See [TangentMapDetail(n)](../common//detail_property_descriptions.md#tangentmapdetailn).                    |
-| TangentMapDetail3                             | Texture2D(L)    | default_tangent_map, *explicit* | See [TangentMapDetail(n)](../common//detail_property_descriptions.md#tangentmapdetailn).                    |
+| TangentMapDetail                              | Texture2D(L)    | default_tangent_map, *explicit* | See [TangentMapDetail(n)](../common/detail_property_descriptions.md#tangentmapdetailn).                     |
+| TangentMapDetail2                             | Texture2D(L)    | default_tangent_map, *explicit* | See [TangentMapDetail(n)](../common/detail_property_descriptions.md#tangentmapdetailn).                     |
+| TangentMapDetail3                             | Texture2D(L)    | default_tangent_map, *explicit* | See [TangentMapDetail(n)](../common/detail_property_descriptions.md#tangentmapdetailn).                     |
 | TangentMapDetailBiases                        | Vector          | (0,0,0,0)                       | See [TangentMapDetailBiases](../common/detail_property_descriptions.md#tangentmapdetailbiases).             |
 | DetailTangentMapScale                         | Float(0,1)      | 0                               | See [DetailTangentMapScale(n)](../common/detail_property_descriptions.md#detailtangentmapscalen).           |
 | DetailTangentMapScale2                        | Float(0,1)      | 0                               | See [DetailTangentMapScale(n)](../common/detail_property_descriptions.md#detailtangentmapscalen).           |
@@ -90,7 +90,7 @@
 | DetailSpecularBlendType   | `Az/SubsurfaceSkin`, `Az/SubsurfaceSubpart` |
 
 ## Additional property descriptions
-### MetallicGlossMapDetail(n) 
+### MetallicGlossMapDetail(n)
 - When `SPECULAR_SETUP` is turned off, they're `MetallicGlossMapDetail(n)`. Also see [MetallicGlossMapDetail(n)](../common/detail_property_descriptions.md#metallicglossmapdetailn).
 - When `SPECULAR_SETUP` is turned on, they're `SpecGlossMapDetail(n)`. Also see [SpecGlossMapDetail(n)](../common/detail_property_descriptions.md#specglossmapdetailn).
 
