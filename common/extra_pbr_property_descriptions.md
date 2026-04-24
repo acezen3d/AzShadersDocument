@@ -10,26 +10,26 @@
     - [TearFadeSoftness](#tearfadesoftness)
 
 ### WearMap
-Wear map. `red` channel is used.
+The wear map. The `red` channel is used.
 
 ### WearAdjustment
-Wear map value adjustment.
+The wear map value adjustment.
 
 ### WearStrengths
-Wear effect applied to the albedo and glossiness of the concave and convex areas.
+The wear effect applied to the albedo and glossiness of the concave and convex areas.
 
 ### TearMap
-Tear map. `red` channel is used.
+The tear map. The `red` channel is used.
 
 ### AlphaEx
-Tear alpha threshold.
+The tear alpha threshold.
 
 ### TearMode
-Tear mode.
+The tear mode.
 
 **Value 0**: ***Clip***.
 
 **Value 1**: ***Fade***.
 
 ### TearFadeSoftness
-Smooth interval when `TearMode` is set to 1.
+The smooth interval when `TearMode` is set to 1.

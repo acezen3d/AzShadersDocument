@@ -22,46 +22,46 @@ v1.2.0
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name        | Type         | Default value | Description                                                                                                           |
-| ----------- | ------------ | ------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Mask        | Texture2D(G) | white         | Clipping mask for the lines and fills, `red` channel is used. Can be assigned with `AlphaMask` from other Az shaders. |
-| Cutoff      | Float(0,1)   | 0.5           | Clipping threshold for `Mask`.                                                                                        |
-| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                                    |
-| AlphaToMask | Integer(0,1) | 1             | Whether to enable alpha to coverage. Should only be disabled when MSAA is not supported.                              |
+| Name        | Type         | Default value | Description                                                                                                                |
+| ----------- | ------------ | ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Mask        | Texture2D(G) | white         | The clipping mask for the lines and fills. Uses the `red` channel. Can be assigned with `AlphaMask` from other Az shaders. |
+| Cutoff      | Float(0,1)   | 0.5           | The clipping threshold for `Mask`.                                                                                         |
+| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                                         |
+| AlphaToMask | Integer(0,1) | 1             | Whether to enable Alpha to Coverage. Should only be disabled when MSAA is not supported.                                   |
 
 ### 🏷️Basic
 | Name           | Type        | Default value | Description            |
 | -------------- | ----------- | ------------- | ---------------------- |
-| LineColor      | Color       | (0,0,0,1)     | Line color.            |
-| FillColor      | Color       | (1,1,1,1)     | Fill color.            |
-| LineThickness  | Float(0,1)  | 0.5           | Line thickness.        |
-| LineSmoothness | Float(0,20) | 3             | Line smoothness.       |
+| LineColor      | Color       | (0,0,0,1)     | The line color.        |
+| FillColor      | Color       | (1,1,1,1)     | The fill color.        |
+| LineThickness  | Float(0,1)  | 0.5           | The line thickness.    |
+| LineSmoothness | Float(0,20) | 3             | The line smoothness.   |
 | NoLine         | Boolean     | false         | Do not draw the lines. |
 | NoFill         | Boolean     | false         | Do not draw the fills. |
 
 ### 🏷️Visualization
 | Name            | Type          | Default value | Description                                                           |
 | --------------- | ------------- | ------------- | --------------------------------------------------------------------- |
-| VisualizeOnLine | Float(0,1)    | 1             | The weight of the visualization color blend into the lines.           |
-| VisualizeOnFill | Float(0,1)    | 1             | The weight of the visualization color blend into the fills.           |
+| VisualizeOnLine | Float(0,1)    | 1             | The weight of the visualization color blended into the lines.         |
+| VisualizeOnFill | Float(0,1)    | 1             | The weight of the visualization color blended into the fills.         |
 | Visualization   | Integer(0,4)  | 0             | See [Additional property descriptions/Visualization](#visualization). |
-| BoneA           | Integer(0,99) | 0             | Bone index A.                                                         |
-| BoneB           | Integer(0,99) | 0             | Bone index B.                                                         |
+| BoneA           | Integer(0,99) | 0             | The bone index A.                                                     |
+| BoneB           | Integer(0,99) | 0             | The bone index B.                                                     |
 
 ### 🏷️Vectors
-| Name            | Type          | Default value | Description                                                                                                  |
-| --------------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
-| DisplayVectors  | Boolean       | false         | Whether to display vector lines.                                                                             |
-| VectorsMask     | Texture2D(L)  | white         | Clipping mask for the vectors display, `rgb` channels represent TBN vectors respectively.                    |
-| VectorsCutoff   | Float(0,1)    | 0.5           | Clipping threshold for `VectorsMask`.                                                                        |
-| VectorsCull     | Integer(0,2)  | 0             | Cull for vectors. Also see [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).    |
-| VectorsZTest    | Integer(0,8)  | 4             | ZTest for vectors. Also see [ZTest](../common/alpha_clip_and_render_options_property_descriptions.md#ztest). |
-| TangentLength   | Float(0,0.01) | 0.005         | Tangent line length.                                                                                         |
-| TangentColor    | Color         | (1,0,0,1)     | Tangent line color.                                                                                          |
-| BitangentLength | Float(0,0.01) | 0.005         | Bitangent/binormal line length.                                                                              |
-| BitangentColor  | Color         | (0,1,0,1)     | Bitangent/binormal line color.                                                                               |
-| NormalLength    | Float(0,0.01) | 0.005         | Normal line length.                                                                                          |
-| NormalColor     | Color         | (0,0,1,1)     | Normal line color.                                                                                           |
+| Name            | Type          | Default value | Description                                                                                                                  |
+| --------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| DisplayVectors  | Boolean       | false         | Whether to display vector lines.                                                                                             |
+| VectorsMask     | Texture2D(L)  | white         | The clipping mask for the vectors display. The `rgb` channels represent the TBN vectors respectively.                        |
+| VectorsCutoff   | Float(0,1)    | 0.5           | The clipping threshold for `VectorsMask`.                                                                                    |
+| VectorsCull     | Integer(0,2)  | 0             | The cull for the vectors display. Also see [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).    |
+| VectorsZTest    | Integer(0,8)  | 4             | The ZTest for the vectors display. Also see [ZTest](../common/alpha_clip_and_render_options_property_descriptions.md#ztest). |
+| TangentLength   | Float(0,0.01) | 0.005         | The tangent line length.                                                                                                     |
+| TangentColor    | Color         | (1,0,0,1)     | The tangent line color.                                                                                                      |
+| BitangentLength | Float(0,0.01) | 0.005         | The bitangent/binormal line length.                                                                                          |
+| BitangentColor  | Color         | (0,1,0,1)     | The bitangent/binormal line color.                                                                                           |
+| NormalLength    | Float(0,0.01) | 0.005         | The normal line length.                                                                                                      |
+| NormalColor     | Color         | (0,0,1,1)     | The normal line color.                                                                                                       |
 
 ### 🏷️Mesh
 | Name                     | Type         | Default value | Description                                                                                       |
@@ -90,35 +90,22 @@ v1.2.0
 
 ## Additional property descriptions
 ### Visualization
-**Value 0**
-- Visualizes ***World Normal***.
-- If `VertexNormalMap` texture is applied, the displayed normals are after application.
-- If the displacement is turned on, the displayed normals are after the displacement.
+**Value 0**: Visualizes ***World Normal***. If `VertexNormalMap` texture is applied, the displayed normals are after applying the map. Also note that if the displacement is enabled, the displayed normals are after the displacement.
 
-**Value 1**
-- Visualizes ***World Tangent***.
-- If `VertexTangentMap` texture is applied, the displayed tangents are after application.
+**Value 1**: Visualizes ***World Tangent***. If `VertexTangentMap` texture is applied, the displayed tangents are after applying the map.
 
-**Value 2**
-- Visualizes ***Face Orientation***.
-- Like Blender, blue means front faces, and red means back faces.
+**Value 2**: Visualizes ***Face Orientation***. Like Blender, blue indicates front faces and red indicates back faces.
 
-**Value 3**
-- Visualizes ***Vertex Color***.
-- Display the first vertex color data.
+**Value 3**: Visualizes ***Vertex Color***. Displays the first vertex color data.
 
-**Value 4**
-- Visualizes ***Blend Weight***.
-- Can display the weights of two bones (`BoneA` and `BoneB`) at the same time.
-- Change the values ​​of `BoneA` and `BoneB` to see the weights of the corresponding bones.
-- Like Blender, black means no weight, and from blue to red, the weight gradually increases.
+**Value 4**: Visualizes ***Blend Weight***. Supports displaying the weights for two bones (`BoneA` and `BoneB`) at the same time. Change their values to inspect the corresponding bone weights. Like Blender, black indicates no weight, and the weight increases progressively from blue to red.
 
 ## Known issues
-- Due to the limitations of KK's lower version of Unity, Blend Weight visualization, `BoneA` and `BoneB` works only in KKS version.
+- Due to the limitations of KK's lower version of Unity, the Blend Weight visualization, `BoneA` and `BoneB` work only in the KKS version.
 
 ## Notes
-- Using the most complex body mesh in the game as a reference, it has 100 weighted bones, so the index range of `BoneA` and `BoneB` is 0-99. You can also manually modify it to other values if needed.
-- Assign -1 or other out of bounds index to `BoneA` or `BoneB` to suppress its display.
+- The most complex body mesh in the game has 100 weighted bones, so the index range of `BoneA` and `BoneB` is 0-99. You can also manually modify it to other values if needed.
+- Assign -1 or other out-of-bounds index to `BoneA` or `BoneB` to suppress their display.
 - The purpose of presenting two weights at the same time is to make it easier to check, such as the symmetry of the weights.
 
 ## Changelog

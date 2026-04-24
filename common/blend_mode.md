@@ -18,11 +18,11 @@
     - [Maximum](#maximum)
 
 ## What's blend mode
-In Unity, `Blend` and `BlendOp` are commands used in shaders to control how colors are combined in GPU during rendering.
+In Unity, `Blend` and `BlendOp` are commands used in shaders to control how colors are combined during GPU rendering.
 
-`Blend`: This defines how the source (new pixel data) and destination (existing pixel data in the frame buffer) colors are blended together. It is controlled by a set of source and destination factors i.e. blend modes, which determine the contribution of each color to the final blended result.
+`Blend`: This defines how the source (new pixel data) and destination (existing pixel data in the frame buffer) colors are blended together. It is controlled by a set of source and destination factors, i.e., blend modes, which determine the contribution of each color to the final blended result.
 
-`BlendOp`: This defines the operation applied to the source and destination values during the blending process. The operation determines how the two colors interact with each other. The default value for `BlendOp` is `Add`, and common operations include `Add`, `Sub`, `RevSub`, `Min` and `Max`, each performing different mathematical combinations of the source and destination values.
+`BlendOp`: This defines the operation applied to the source and destination values during the blending process. The operation determines how the two colors interact with each other. The default value for `BlendOp` is `Add`, and common operations include `Add`, `Sub`, `RevSub`, `Min`, and `Max`, each performing different mathematical combinations of the source and destination values.
 
 Together, `Blend` and `BlendOp` provide flexible control over how rendered objects interact with the existing image, enabling effects like transparency and other complex visual effects.
 

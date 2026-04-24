@@ -6,10 +6,10 @@
     - [DrawnShadowStrength](#drawnshadowstrength)
 
 ### DrawnMap
-*Koikatsu property*. Koikatsu's original `DetailMask` can be assigned to this. `red`: drawn specular highlights, `green`: drawn shadows.
+*Koikatsu property*. Koikatsu's original `DetailMask` can be assigned to this. `red`: drawn specular highlights; `green`: drawn shadows.
 
 ### DrawnSpecularStrength
-*Koikatsu property*. The strength of the drawn specular highlights, the larger the brighter. Very limitedly similar to `SpecularPower` in Koikatsu built-in shaders.
+*Koikatsu property*. The strength of the drawn specular highlights, the larger the brighter. Somewhat similar to `SpecularPower` in Koikatsu built-in shaders.
 
 ### DrawnShadowStrength
-*Koikatsu property*. The strength of the drawn shadows, the larger the darker. Very limitedly similar to `ShadowExtend` in Koikatsu built-in shaders.
+*Koikatsu property*. The strength of the drawn shadows, the larger the darker. Somewhat similar to `ShadowExtend` in Koikatsu built-in shaders.

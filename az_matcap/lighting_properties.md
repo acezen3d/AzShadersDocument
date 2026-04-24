@@ -11,8 +11,8 @@
 | ShadowDarkControl         | Float(0,1)   | 1                                     | See [ShadowDarkControl](../common/lighting_property_descriptions.md#shadowdarkcontrol).                 |
 | ShadowCookieControl       | Float(0,1)   | 0                                     | See [ShadowCookieControl](../common/lighting_property_descriptions.md#shadowcookiecontrol).             |
 | ShadowTransitionPower     | Float(0,1)   | 0                                     | See [ShadowTransitionPower](../common/lighting_property_descriptions.md#shadowtransitionpower).         |
-| DirectDiffuseIntensity    | Float(0,1)   | 1                                     | See [ShadowTransitionPower](../common/lighting_property_descriptions.md#directdiffuseintensity).        |
-| DirectSpecularIntensity   | Float(0,1)   | 1                                     | See [ShadowTransitionPower](../common/lighting_property_descriptions.md#directspecularintensity).       |
+| DirectDiffuseIntensity    | Float(0,1)   | 1                                     | See [DirectDiffuseIntensity](../common/lighting_property_descriptions.md#directdiffuseintensity).       |
+| DirectSpecularIntensity   | Float(0,1)   | 1                                     | See [DirectSpecularIntensity](../common/lighting_property_descriptions.md#directspecularintensity).     |
 | IndirectDiffuseIntensity  | Float(0,1)   | 1                                     | See [IndirectDiffuseIntensity](../common/lighting_property_descriptions.md#indirectdiffuseintensity).   |
 | IndirectSpecularIntensity | Float(0,1)   | 1                                     | See [IndirectSpecularIntensity](../common/lighting_property_descriptions.md#indirectspecularintensity). |
 | SpotDefaultCookie         | Texture2D(L) | unity_spot_default_cookie, *explicit* | See [SpotDefaultCookie](../common/lighting_property_descriptions.md#spotdefaultcookie).                 |

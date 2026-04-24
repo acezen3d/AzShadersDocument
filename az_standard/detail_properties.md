@@ -13,8 +13,8 @@
 | DetailUVRotation          | Float(-1,1)   | 0             | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).               |
 | DetailUVRotation2         | Float(-1,1)   | 0             | See [DetailUVRotation(n)](../common/detail_property_descriptions.md#detailuvrotationn).               |
 | *Normal*                  |               |               |                                                                                                       |
-| NormalMapDetail           | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                |
-| NormalMapDetail2          | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common//detail_property_descriptions.md#normalmapdetailn).                |
+| NormalMapDetail           | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common/detail_property_descriptions.md#normalmapdetailn).                 |
+| NormalMapDetail2          | Texture2D(L)  | bump          | See [NormalMapDetail(n)](../common/detail_property_descriptions.md#normalmapdetailn).                 |
 | DetailNormalMapScale      | Float(0,1)    | 0             | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).       |
 | DetailNormalMapScale2     | Float(0,1)    | 0             | See [DetailNormalMapScale(n)](../common/detail_property_descriptions.md#detailnormalmapscalen).       |
 | *Albedo*                  |               |               |                                                                                                       |

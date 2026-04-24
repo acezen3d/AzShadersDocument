@@ -1,84 +1,85 @@
 # Changelog
 
-## v1.0.0
-- `Az/AdvancedExtraStyle` enhancement:
-  - Remove `MatcapAddOrMultiply`.
-  - Add `MatcapBlendSrc`, `MatcapBlendDst` and `MatcapBlendBase`.
-  - Add `RimLightBlendSrc`, `RimLightBlendDst` and `RimLightBlendBase`.
-  - Add `CustomMainLightSpace`.
-  - Add the ring feature.
-- Optimize `Az/AdvancedItemAlpha` and `Az/AdvancedClothAlpha` shaders to include a depth prepass for depth pre-writing when `ZWrite` is `On`.
-- Add `Az/AdvancedItemAlphaAlt` and `Az/AdvancedClothAlphaAlt` to support correctly ordered two-sided transparent rendering.
-- Enable the specular setup support on the cloth and item shaders.
-  - Add `SPECULAR_SETUP` keyword and `SpecColor`, `DetailSpecularBlendType` properties.
-  - When switching to the specular setup, the original metallic-related properties are interpreted as their specular counterparts:
-    - `MetallicGlossMap` to `SpecGlossMap`
-    - `MetallicGlossMapDetail(2)` to `SpecGlossMapDetail(2)`
-    - `DetailMetallic` to `DetailSpecular`
-- Major optimization of the liquid feature:
-  - Layered rendering of the liquid to make it more realistic.
-  - Add `LiquidFTopUV`, `LiquidFBotUV`, `LiquidBTopUV`, `LiquidBBotUV`, `LiquidFaceUV`, `LiquidFootUV` to support individual UV offsets, uniform scaling, and rotation for each area.
-  - Add `LiquidAlphaFactors`, `LiquidAlbedoFactors`, `LiquidNormalFactors`, `LiquidShadowFactors` and `LiquidLightingFactors` to provide fine control for the corresponding terms.
-  - Add `LiquidBlendMultiplier` to control the blending strength between the liquid and the surface.
-- Add `Color4` to the color mask properties.
-
-## v1.1.0
-- Rename `LiquidBaseColor` to `LiquidColor`.
-
-## v1.2.0
-- Add `Az/AdvancedLiteCutout`, `Az/AdvancedLiteAlpha` and `Az/AdvancedLiteAlphaAlt`shaders.
-- Fix the issue that the eyes lost the highlight areas (`overtex1` and `overtex2`) when `IgnoreOverTexUV` is 0.
-- Fix `MatcapCancelCameraRolling` not working properly in `Az/AdvancedExtraStyle`.
-- Change the render type and default render queue of `Az/AdvancedExtraStyle`.
-
-## v1.2.1
-- Fix the two matcaps not blending correctly in `Az/AdvancedExtraStyle`.
-
-## v1.3.0
-- Remove the intentional ignoring of the offset and tiling for `Texture2` and `Texture3` to fix the issue where certain plugins in Koikatsu attempt to manipulate them but have no effect.
-- Fix the uv is not passed in the depth prepass in `Az/AdvancedClothAlpha`, `Az/AdvancedItemAlpha` and `Az/AdvancedLiteAlpha`.
-- Add alpha dithering transparency feature to `Az/AdvancedClothCutout`, `Az/AdvancedItemCutout` and `Az/AdvancedLiteCutout`.
+## v1.5.0
+- The custom mesh normals derived from `VertexNormalMap` are no longer applied directly to the tessellation and displacement, but instead masked by the `green` channel of `TessSmoothMap` and `DisplaceMap` to control the influence on each of them.
+- Modify the default values of `TessSmoothMap`, `DisplaceMap` and `DisplaceMiddleLevel`.
+- Fix minor issues with the unpacking and blending of tangent space maps.
+- Modify some properties to optimize the rendering of the eyes, making them render perfectly in any lighting situation:
+  - Add `StencilComp` and `DepthOffset` to `Az/AdvancedEye`, and remove `StencilRef` and `ZWrite` from `Az/AdvancedEye`.
+  - Remove `StencilRef` from `Az/AdvancedEyeW`.
 
 ## v1.4.0
 - Redesign the alpha dithering:
   - Remove `DitherPattern1`, `DitherPattern2`, `DitherPatternBlend`, `DitherNoiseTex1`, `DitherNoiseTex2`.
   - Add `DitherPattern`, `DitherPatternLevel`, `DitherAnimationType`, `DitherAnimationFPS`, `DitherAnimationParams`, `UseNativeShadowDither`.
   - Add `Alpha` and the alpha dithering to `Az/AdvancedHair` and `Az/Advanced*Cutout` shaders.
-- Fix missing gamma tag for blend base (color) properties in `Az/AdvancedExtraStyle`.
-- Optimize the rendering of `Az/Advanced*AlphaAlt` shaders so that ForwardAdd pass no longer needs to be rendered twice.
-- Move `Alpha` to Main PBR category.
-- Add the liquid feature to `Az/AdvancedSubpart` shader.
+- Fix the missing gamma tag for blend base (color) properties in `Az/AdvancedExtraStyle`.
+- Optimize the rendering of the `Az/Advanced*AlphaAlt` shaders so that ForwardAdd passes no longer needs to be rendered twice.
+- Move `Alpha` to the Main PBR category.
+- Add the liquid feature to the `Az/AdvancedSubpart` shader.
 - Optimize the detail properties:
   - Rename some detail properties to avoid misleading meanings:
     - `DetailAlbedoMapScale` to `DetailAlbedoBlend`
     - `DetailMetallic` to `DetailMetallicBlend`
     - `DetailGlossiness` to `DetailGlossinessBlend`
-  - Fix incorrect UV for detail set 2 (was actually using detail set 1).
+  - Fix the incorrect UV usage for the detail set 2 (was actually using the detail set 1 UV settings).
   - Add `DetailAlphaBlend(2)` and `DetailAlphaBlendType`.
   - Add the third detail set.
-  - Add sampling bias properties for detail set maps: `NormalMapDetailBiases`, `AlbedoMapDetailBiases`, `MetallicGlossMapDetailBiases`, `OcclusionMapDetailBiases`.
-- Add the tear and wear features (in Extra PBR category) to cloth and item shaders.
+  - Add the sampling bias properties for detail set maps: `NormalMapDetailBiases`, `AlbedoMapDetailBiases`, `MetallicGlossMapDetailBiases`, `OcclusionMapDetailBiases`.
+- Add the tear and wear features (in the Extra PBR category) to cloth and item shaders.
 - Optimize the liquid feature:
   - Rename `LiquidAlphaFactors` to `LiquidAlpha`, `LiquidAlbedoFactors` to `LiquidAlbedo`, `LiquidNormalFactors` to `LiquidNormal`.
-  - Remove `LiquidShadowFactors`, add `LiquidTranslucency`.
+  - Remove `LiquidShadowFactors`, and add `LiquidTranslucency`.
   - Rename `LiquidLightingFactors` to `LiquidLighting`.
 - Remove the drawn map feature.
 - Refactor the core lighting code.
-- Add two properties `DirectDiffuseIntensity` and `DirectSpecularIntensity` to Lighting category.
-- Remove `ShadowIntensity`, `ShadowReceiveControl`, `ShadowDarkControl`, `ShadowCookieControl`, `ShadowCookieControl` and `SpotDefaultCookie` from Lighting category.
+- Add two properties `DirectDiffuseIntensity` and `DirectSpecularIntensity` to the Lighting category.
+- Remove `ShadowIntensity`, `ShadowReceiveControl`, `ShadowDarkControl`, `ShadowCookieControl`, and `SpotDefaultCookie` from the Lighting category.
 - Add the secondary specular lobe: `GlossinessSec`, `LobeMix`, `DUAL_SPECULAR_LOBE`.
 - Add the stocking feature to cloth shaders.
-- Merge Tessellation and Displacement categories into Mesh category.
-- Change the behavior of `TessSmoothMap` so that vertices generated by tessellation no longer rely on interpolation of the original vertex values, but are applied directly.
-- Add `VertexNormalMap` and `VertexNormalStrength` to Mesh category.
-- Change most normal map blending method from Whiteout to RNM; change tangent space map unpacking (to align with HDRP).
+- Merge the Tessellation and Displacement categories into the Mesh category.
+- Change the behavior of `TessSmoothMap` so that vertices generated by the tessellation no longer rely on the interpolation of the original vertex values, but are applied directly.
+- Add `VertexNormalMap` and `VertexNormalStrength` to the Mesh category.
+- Change most normal map blending methods from Whiteout to RNM.
+- Change the tangent space map unpacking method to be consistent with HDRP.
 - Make corresponding modifications to the third detail set and the vertex normal map on `Az/AdvancedExtraStyle`.
 - Remove `Az/AdvancedDebug`, since it has already been separated as `Az/Debug`.
 
-## v1.5.0
-- The custom mesh normals derived from `VertexNormalMap` are no longer applied directly to the tessellation and displacement, but instead masked by `green` channel of `TessSmoothMap` and `DisplaceMap` to control the influence on each of them.
-- Modify the default values of `TessSmoothMap`, `DisplaceMap` and `DisplaceMiddleLevel`.
-- Fix minor issues with the unpacking and blending of the tangent map.
-- Modify some properties to optimize the rendering of the eyes, making them render perfectly in any lighting situation:
-  - Add `StencilComp` and `DepthOffset` to `Az/AdvancedEye`, and remove `StencilRef` and `ZWrite` from `Az/AdvancedEye`.
-  - Remove `StencilRef` from `Az/AdvancedEyeW`.
+## v1.3.0
+- Remove the intentional ignoring of the offset and tiling for `Texture2` and `Texture3` to fix the issue where certain plugins in Koikatsu attempt to manipulate them but have no effect.
+- Fix an issue where UVs were not passed to the depth prepass in `Az/AdvancedClothAlpha`, `Az/AdvancedItemAlpha`, and `Az/AdvancedLiteAlpha`.
+- Add the alpha dithering transparency feature to `Az/AdvancedClothCutout`, `Az/AdvancedItemCutout` and `Az/AdvancedLiteCutout`.
+
+## v1.2.1
+- Fix the two matcaps not blending correctly in `Az/AdvancedExtraStyle`.
+
+## v1.2.0
+- Add the `Az/AdvancedLiteCutout`, `Az/AdvancedLiteAlpha`, and `Az/AdvancedLiteAlphaAlt` shaders.
+- Fix an issue where the eyes lost the highlight areas (`overtex1` and `overtex2`) when `IgnoreOverTexUV` is 0.
+- Fix `MatcapCancelCameraRolling` not working properly in `Az/AdvancedExtraStyle`.
+- Change the render type and default render queue of `Az/AdvancedExtraStyle`.
+
+## v1.1.0
+- Rename `LiquidBaseColor` to `LiquidColor`.
+
+## v1.0.0
+- `Az/AdvancedExtraStyle` enhancement:
+  - Remove `MatcapAddOrMultiply`.
+  - Add `MatcapBlendSrc`, `MatcapBlendDst`, and `MatcapBlendBase`.
+  - Add `RimLightBlendSrc`, `RimLightBlendDst`, and `RimLightBlendBase`.
+  - Add `CustomMainLightSpace`.
+  - Add the ring feature.
+- Optimize the `Az/AdvancedItemAlpha` and `Az/AdvancedClothAlpha` shaders to include a depth prepass for depth pre-writing when `ZWrite` is on.
+- Add `Az/AdvancedItemAlphaAlt` and `Az/AdvancedClothAlphaAlt` to support correctly ordered two-sided transparent rendering.
+- Enable the specular setup support on cloth and item shaders.
+  - Add the `SPECULAR_SETUP` keyword and `SpecColor`, `DetailSpecularBlendType` properties.
+  - When switching to the specular setup, the original metallic-related properties are interpreted as their specular counterparts:
+    - `MetallicGlossMap` to `SpecGlossMap`
+    - `MetallicGlossMapDetail(2)` to `SpecGlossMapDetail(2)`
+    - `DetailMetallic` to `DetailSpecular`
+- Major optimization of the liquid feature:
+  - Layered rendering of the liquid to make it more realistic.
+  - Add `LiquidFTopUV`, `LiquidFBotUV`, `LiquidBTopUV`, `LiquidBBotUV`, `LiquidFaceUV`, `LiquidFootUV` to support individual UV offsets, uniform tiling, and rotation for each area.
+  - Add `LiquidAlphaFactors`, `LiquidAlbedoFactors`, `LiquidNormalFactors`, `LiquidShadowFactors` and `LiquidLightingFactors` to provide fine control for the corresponding terms.
+  - Add `LiquidBlendMultiplier` to control how much the liquid blends into the surface.
+- Add `Color4` to the color mask properties.

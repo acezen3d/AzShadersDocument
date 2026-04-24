@@ -29,80 +29,80 @@
     - [DUAL\_SPECULAR\_LOBE](#dual_specular_lobe)
 
 ### MainTex
-Albedo map.
+The albedo map.
 
 ### Color
-Albedo color, will be multiplied with `MainTex` to determine the albedo in `rgb` channels and alpha in `alpha` channel.
+The albedo color. It will be multiplied with `MainTex` to determine the albedo in the `rgb` channels and the alpha in the `alpha` channel.
 
 ### BaseColor
-Albedo color, will be multiplied with `MainTex` `rgb` channels to determine the albedo. `alpha` channel: not used. 
+The albedo color. It will be multiplied with the `MainTex` `rgb` channels to determine the albedo. The `alpha` channel is not used.
 
 ### Alpha
-Alpha value, will be multiplied with `MainTex` `alpha` channel to determine the alpha.
+The alpha value. It will be multiplied with the `MainTex` `alpha` channel to determine the alpha.
 
 ### NormalMap
-Normal map.
+The normal map.
 
 ### NormalMapScale
-Normal map scale.
+The normal map scale.
 
 ### TangentMap
-Tangent map.
+The tangent map.
 
 ### TangentMapScale
-Tangent map scale.
+The tangent map scale.
 
 ### MetallicGlossMap
-Metallic and glossiness map, metallic - `red`, glossiness - `alpha`.
+The metallic and glossiness map. `red`: metallic; `alpha`: glossiness.
 
-### Metallic 
-Metallic value. If `MetallicGlossMap` exists, it will be multiplied with `MetallicGlossMap` `red` channel.
+### Metallic
+The metallic value. If `MetallicGlossMap` exists, it will be multiplied with the `MetallicGlossMap` `red` channel.
 
 ### SpecGlossMap
-Specular and glossiness map, specular - `rgb`, glossiness - `alpha`. 
+The specular and glossiness map. `rgb`: specular; `alpha`: glossiness.
 
 ### SpecColor
-Specular color. If `SpecGlossMap` exists, it will be multiplied with `SpecGlossMap` `rgb` channels.
+The specular color. If `SpecGlossMap` exists, it will be multiplied with the `SpecGlossMap` `rgb` channels.
 
 ### Glossiness
-Glossiness value. If `MetallicGlossMap` or `SpecGlossMap` exists, it will be multiplied with their `alpha` channel.
+The glossiness value. If `MetallicGlossMap` or `SpecGlossMap` exists, it will be multiplied with their `alpha` channels.
 
 ### GlossinessSec
-Secondary glossiness value. If `MetallicGlossMap` or `SpecGlossMap` exists, it will be multiplied with their `alpha` channel.
+The secondary glossiness value. If `MetallicGlossMap` or `SpecGlossMap` exists, it will be multiplied with their `alpha` channels.
 
 ### LobeMix
 The amount of mixing between the primary and secondary specular lobes.
 
 ### OcclusionMap
-Ambient occlusion map. Uses the `green` channel to reduce ambient/indirect lighting in occluded areas. In some shaders, it can also include anisotropy (`red`) data.
+The ambient occlusion map. The `green` channel is used. It reduces ambient/indirect lighting in occluded areas. In some shaders, it can also include anisotropy (`red`) data.
 
 ### OcclusionStrength
-Ambient occlusion strength.
+The ambient occlusion strength.
 
 ### Anisotropy
-Anisotropy value. If `OcclusionMap` exists, it will be multiplied with its `red` channel.
+The anisotropy value. If `OcclusionMap` exists, it will be multiplied with its `red` channel.
 
 ### AnisotropySec
-Secondary anisotropy value. If `OcclusionMap` exists, it will be multiplied with its `red` channel.
+The secondary anisotropy value. If `OcclusionMap` exists, it will be multiplied with its `red` channel.
 
 ### AnisotropyRotation
-Anisotropy rotation in units of $\pi$.
+The anisotropy rotation in units of $\pi$.
 
 ### AnisotropyRotationSec
-Secondary anisotropy rotation in units of $\pi$.
+The secondary anisotropy rotation in units of $\pi$.
 
 ### EmissionMap
-Emission map, no need to be a grayscale but a color texture. `rgb`: emission, `alpha` channel is not used and will be handled automatically. Note that black (0,0,0) means no emission.
+The emission map. It can be a color texture, not just a grayscale texture. `rgb`: emission; `alpha`: not used and will be handled automatically. Note that black (0,0,0) means no emission.
 
 ### EmissionColor
-Emission color, will be multiplied with `EmissionMap`.
+The emission color. It will be multiplied with `EmissionMap`.
 
 ### EmissionIntensity
-Emission intensity control, will be multiplied with `EmissionMap` and `EmissionColor`.
+The emission intensity control. It will be multiplied with `EmissionMap` and `EmissionColor`.
 
 ### SPECULAR_SETUP
-Some of Az shaders support both the metallic setup and specular setup, switchable via `SPECULAR_SETUP`. This corresponds to Unity's Standard shader and StandardSpecular shader, as described in: [Metallic vs. specular workflow](https://docs.unity3d.com/Manual/StandardShaderMetallicVsSpecular.html), also [Material charts](https://docs.unity3d.com/Manual/StandardShaderMaterialCharts.html).
+Some Az shaders support both the metallic setup and specular setup, switchable via `SPECULAR_SETUP`. This corresponds to Unity's Standard shader and StandardSpecular shader, as described in [Metallic vs. specular workflow](https://docs.unity3d.com/Manual/StandardShaderMetallicVsSpecular.html), also [Material charts](https://docs.unity3d.com/Manual/StandardShaderMaterialCharts.html).
 When switching to the specular setup, the original metallic-related properties are interpreted as their specular counterparts.
 
 ### DUAL_SPECULAR_LOBE
-Whether to enable the duel specular lobe.
+Whether to enable the dual specular lobe.

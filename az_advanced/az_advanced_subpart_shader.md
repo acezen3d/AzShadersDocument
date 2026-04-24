@@ -29,19 +29,19 @@
 | --------------------------------------------- | ---- | ------------- | ----------- |
 | [Main PBR properties](main_pbr_properties.md) |      |               |             |
 
-### 🏷️Detail            
+### 🏷️Detail
 | Name                                      | Type | Default value | Description |
 | ----------------------------------------- | ---- | ------------- | ----------- |
 | [Detail properties](detail_properties.md) |      |               |             |
 
 ### 🏷️Koikatsu and Extension
-| Name                                      | Type          | Default value | Description                                                                                                                                         |
-| ----------------------------------------- | ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Color                                     | Color         | (1,1,1,1)     | *Extension property*. The color adjustment, will be multiplied with the main albedo.                                                                |
-| OverTex                                   | Texture2D(G)  | white         | *Extension property*. A custom over texture, using UV0.                                                                                             |
-| OverColor                                 | Color         | (1,1,1,1)     | *Extension property*. `OverTex` color tint.                                                                                                         |
-| OverTexBlendType                          | Integer(0,11) | 1             | *Extension property*. `OverTex` blend type. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color). |
-| [Liquid properties](liquid_properties.md) |               |               |                                                                                                                                                     |
+| Name                                      | Type          | Default value | Description                                                                                                                                             |
+| ----------------------------------------- | ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Color                                     | Color         | (1,1,1,1)     | *Extension property*. The color adjustment, will be multiplied with the main albedo.                                                                    |
+| OverTex                                   | Texture2D(G)  | white         | *Extension property*. A custom over texture, using UV0.                                                                                                 |
+| OverColor                                 | Color         | (1,1,1,1)     | *Extension property*. The `OverTex` tint color.                                                                                                         |
+| OverTexBlendType                          | Integer(0,11) | 1             | *Extension property*. The `OverTex` blend type. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color). |
+| [Liquid properties](liquid_properties.md) |               |               |                                                                                                                                                         |
 
 ### 🏷️Lighting
 | Name                                          | Type | Default value | Description |
@@ -53,7 +53,7 @@
 | ------------------------------------- | ---- | ------------- | ----------- |
 | [Mesh properties](mesh_properties.md) |      |               |             |
 
-## Albedo stack 
+## Albedo stack
 ### Order
 `MainTex`  
 -> `OverTex`, `OverColor`, `OverTexBlendType`   

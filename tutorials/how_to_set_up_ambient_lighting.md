@@ -1,6 +1,6 @@
-# How to setup ambient lighting
+# How to set up ambient lighting
 
-- [How to setup ambient lighting](#how-to-setup-ambient-lighting)
+- [How to set up ambient lighting](#how-to-set-up-ambient-lighting)
   - [Ambient lighting diffuse term](#ambient-lighting-diffuse-term)
     - [Flat](#flat)
     - [Trilight](#trilight)
@@ -15,7 +15,7 @@
     - [Reflection Probe (specular term)](#reflection-probe-specular-term)
   - [Notes](#notes)
 
-This article mainly demonstrates how to use most of parameters related to ambient lighting (https://docs.unity3d.com/ScriptReference/RenderSettings.html) of Unity in Runtime Unity Editor REPL (https://github.com/ManlyMarco/RuntimeUnityEditor).
+This article mainly demonstrates how to use most of the parameters related to ambient lighting in Unity (https://docs.unity3d.com/ScriptReference/RenderSettings.html) in the Runtime Unity Editor REPL (https://github.com/ManlyMarco/RuntimeUnityEditor).
 
 ## Ambient lighting diffuse term
 ### Flat
@@ -70,7 +70,7 @@ UnityEngine.RenderSettings.reflectionIntensity = 1.0f;
 - https://forum.unity.com/threads/solved-scenemanager-loadscene-make-the-scene-darker-a-bug.542440/#post-7752681
 - https://issuetracker.unity3d.com/issues/dynamicgi-dot-updateenvironment-fails-to-update-gameobject-when-more-than-one-material-is-assigned
 
-But this already involves the use of the next option, so it is not classified as this.
+But this already involves the use of the next option, so it is not covered here.
 
 ### Custom
 ```cs
@@ -82,20 +82,20 @@ UnityEngine.RenderSettings.customReflection = (UnityEngine.Cubemap)UnityEngine.R
 // Intensity control
 UnityEngine.RenderSettings.reflectionIntensity = 1.0f;
 ```
-[n4]: If we have already setup `UnityEngine.RenderSettings.skybox`, then this is a easy and quick way.
+[n4]: If we have already set up `UnityEngine.RenderSettings.skybox`, then this is an easy and quick way.
 
 [n5]: At runtime, we need to do a lot of things in order to load the image as a `Cubemap`. Some examples:
 - https://forum.unity.com/threads/loading-skybox-texture-from-disk-at-runtime.667402/#post-4494838
 - https://assetstore.unity.com/packages/tools/utilities/panorama-to-cubemap-13616
 
 ## How to get a skybox material in Runtime Unity Editor
-1. Find a mod item that use `Skybox/Cubemap` shader, like **Az/Skybox/\***, **[Cz]/SkyBox/\***, **nashi/Skybox/\***, etc., place it.
+1. Find a mod item that uses `Skybox/Cubemap` shader, like **Az/Skybox/\***, **[Cz]/SkyBox/\***, **nashi/Skybox/\***, etc., place it.
 2. Choose it in the workspace and open Material Editor to check the renderer name, like **dome_sphere**.
-3. Search the renderer name in Runtime Unity Editor Object Browser to find the `GameObject`.
+3. Search the renderer name in the Runtime Unity Editor Object Browser to find the `GameObject`.
 4. Click **Inspect** to inspect the found `GameObject`, check its **Components**, find the component `UnityEngine.MeshRenderer`, like **dome_sphere (UnityEngine.MeshRenderer)**.
 5. Enter the component `UnityEngine.MeshRenderer`, find the property `sharedMaterial`.
-6. Right click `sharedMaterial` and choose **Send to REPL**, a line of code will appear in Runtime Unity Editor REPL, such as `var q = (UnityEngine.Material)InteropTempVar;`; Or enter the property `sharedMaterial`, then go to Runtime Unity Editor REPL and type the code `var q = geti();`.
-7. Click **Run** to run the code in Runtime Unity Editor REPL.
+6. Right click `sharedMaterial` and choose **Send to REPL**, a line of code will appear in the Runtime Unity Editor REPL, such as `var q = (UnityEngine.Material)InteropTempVar;`; Or enter the property `sharedMaterial`, then go to the Runtime Unity Editor REPL and type the code `var q = geti();`.
+7. Click **Run** to run the code in the Runtime Unity Editor REPL.
 8. Now the variable `q` carries our skybox material.
 
 ## Related: Local indirect lighting
@@ -110,4 +110,4 @@ https://docs.unity3d.com/ScriptReference/ReflectionProbe.html
 ## Notes
 - Ambient lighting requires shader support to work.
 - The greater the `Glossiness` and `Metallic` of the material, the more pronounced the ambient specular reflections will be. If `Glossiness` and `Metallic` are too small, ambient specular reflections may become invisible.
-- All changes in Runtime Unity Editor will not be saved to the scene file, you need to record them yourself.
+- All changes in Runtime Unity Editor will not be saved to the scene file; you need to record them yourself.

@@ -12,11 +12,10 @@
     - [PREMULTIPLY\_ALPHA](#premultiply_alpha)
 
 ### AlphaMask
-Alpha mask of Koikatsu, works together with the hidden properties `alpha_a` and `alpha_b`, which are controlled by game logic.\
-Under normal circumstances, you don't need to touch it. It's mainly used in skin and cloth shaders, with the following logic. 
-However, in cases like hair shaders, `alpha_a` and `alpha_b` have no effect, the `red` channel of this texture always takes effect.
+The alpha mask of Koikatsu. It works together with the hidden properties `alpha_a` and `alpha_b`, which are controlled by the game logic.\
+Under normal circumstances, you don't need to touch it. It's mainly used in skin and cloth shaders, with the following logic. However, in cases like hair shaders, `alpha_a` and `alpha_b` have no effect, and the `red` channel of this texture always takes effect.
 
-| Cloth status | alpha_a | alpha_b | AlphaMask-rgb(1,1,0) | AlphaMask-rgb(0,1,0) | AlphaMask-rgb(0,0,0) |
+| Cloth status | alpha_a | alpha_b | AlphaMask rgb(1,1,0) | AlphaMask rgb(0,1,0) | AlphaMask rgb(0,0,0) |
 | ------------ | ------- | ------- | -------------------- | -------------------- | -------------------- |
 | On           | 1       | 1       | Keep                 | Clip                 | Clip                 |
 | Half         | 0       | 1       | Keep                 | Keep                 | Clip                 |
@@ -27,13 +26,13 @@ However, in cases like hair shaders, `alpha_a` and `alpha_b` have no effect, the
 - It's hidden on the body renderer by Material Editor.
 
 ### Cutoff
-Alpha clip threshold value. Pixels with an alpha value below this will be clipped.
+The alpha clip threshold value. Pixels with an alpha value below this will be clipped.
 
 ### NormalBackFaceFlip
 Whether to flip the normals of the back faces.
 
 ### Cull
-Face culling.
+The face culling.
 | Value | Cull  |
 | ----- | ----- |
 | 0     | Off   |
@@ -43,10 +42,10 @@ Face culling.
 https://docs.unity3d.com/Manual/SL-Cull.html
 
 ### BlendSrc
-Source (current color) blend mode/blend factor. Its value is defined by [Blend mode enum](blend_mode.md#blend-mode-enum). 
+The source (current color) blend mode/blend factor. Its value is defined by [Blend mode enum](blend_mode.md#blend-mode-enum). 
 
 ### BlendDst
-Destination (frame buffer) blend mode/blend factor. Its value is defined by [Blend mode enum](blend_mode.md#blend-mode-enum). 
+The destination (frame buffer) blend mode/blend factor. Its value is defined by [Blend mode enum](blend_mode.md#blend-mode-enum). 
 
 ### ZWrite
 Whether to update the depth buffer when it passes the depth test.
@@ -74,7 +73,7 @@ The depth test method.
 https://docs.unity3d.com/Manual/SL-ZTest.html
 
 ### PREMULTIPLY_ALPHA
-Whether to switch to premultiplied alpha mode. When enabled, it will turn on `ALPHAPREMULTIPLY_ON`; otherwise, it will turn on `ALPHABLEND_ON`.
+Whether to use premultiplied alpha mode. When enabled, it will turn on `ALPHAPREMULTIPLY_ON`; otherwise, it will turn on `ALPHABLEND_ON`.
 
 **Notes**
 - When `PREMULTIPLY_ALPHA` is off, the blend modes are commonly set to:
