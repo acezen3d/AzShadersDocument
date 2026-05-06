@@ -11,10 +11,14 @@
     - [TessMax](#tessmax)
     - [TessThreshold](#tessthreshold)
     - [TessSmoothMap](#tesssmoothmap)
+    - [TessVertexNormalStrength](#tessvertexnormalstrength)
     - [TessSmooth](#tesssmooth)
     - [Displacement](#displacement)
     - [DisplaceMap](#displacemap)
-    - [DisplaceMiddleLevel](#displacemiddlelevel)
+    - [DisplaceVertexNormalStrength](#displacevertexnormalstrength)
+    - [DisplaceUV(n)](#displaceuvn)
+    - [DisplaceMiddleLevel(n)](#displacemiddleleveln)
+    - [DisplaceBlendParams](#displaceblendparams)
     - [DisplaceStrength](#displacestrength)
     - [DisplaceNormalTexelSize](#displacenormaltexelsize)
     - [DisplaceNormalMultiplier](#displacenormalmultiplier)
@@ -58,6 +62,9 @@ The tessellation smoothing map.
 - The `red` channel, together with `TessSmooth`, controls the tessellation smoothing.
 - The `green` channel determines the influence of the custom mesh normals on the tessellation smoothing (which is performed along the normal direction). A value of 0 means the custom mesh normals are not used, and a value of 1 means they are fully applied.
 
+### TessVertexNormalStrength
+The custom mesh normals application strength for the tessellation. It will be multiplied with the `TessSmoothMap` `green` channel.
+
 ### TessSmooth
 The interpolation of the vertex position between its original position and the tessellation smoothing position. Works with the `TessSmoothMap` `red` channel. Note that the higher the smoothing, the greater the deviation from the original position.
 
@@ -65,12 +72,29 @@ The interpolation of the vertex position between its original position and the t
 Whether to enable the displacement.
 
 ### DisplaceMap
-The displacement map.
-- The `red` channel, which is the displacement map itself, determines how much the vertices are displaced.
-- The `green` channel determines the influence of the custom mesh normals on the displacement (which is performed along the normal direction). A value of 0 means the custom mesh normals are not used, and a value of 1 means they are fully applied.
+The displacement maps or maps. 
+Some Az shaders support up to three displacement maps through multi-channel displacement blending, with the `rgb` channels corresponding to the three displacement maps.
+- The `rgb` channels represent the first, second and third displacement maps respectively.
+- The `alpha` channel determines the influence of the custom mesh normals on the displacement (which is performed along the normal direction). A value of 0 means the custom mesh normals are not used, and a value of 1 means they are fully applied.
 
-### DisplaceMiddleLevel
-The neutral value that causes no displacement on `DisplaceMap`. Any lower values will push the surfaces inwards, and any higher values will push them outwards. Typically, this value is middle gray (0.5) or black (0).
+**Notes**
+- The offset and tiling of `DisplaceMap` (`DisplaceMap_ST`) only affect the `alpha` channel.
+
+### DisplaceVertexNormalStrength
+The custom mesh normals application strength for the displacement. It will be multiplied with the `DisplaceMap` `alpha` channel.
+
+### DisplaceUV(n)
+The UV offset and tiling for the displacement map n. `rg`: offset, `ba`: tiling.
+
+### DisplaceMiddleLevel(n)
+The neutral value that causes no displacement on the displacement map n. Any lower values will push the surfaces inwards, and any higher values will push them outwards. Typically, this value is middle gray (0.5) or black (0).
+
+### DisplaceBlendParams
+The blending parameters for the displacement maps. Controls how the first, second, and third displacement maps are blended together.
+- `red`: The blend amount for the second displacement map. 
+- `green`: The blend type for the second displacement map. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
+- `blue`: The blend amount for the third displacement map. 
+- `alpha`: The blend type for the third displacement map. Its value is defined by [Blend type enum for non-color](blend_type.md#blend-type-enum-for-non-color).
 
 ### DisplaceStrength
 The strength of the displacement.
@@ -86,10 +110,10 @@ Since the displacement is performed in object space, the displacement distance/a
 
 The effect of `DisplaceAdjustment` is calculated using the following formula:
 
-$$DisplaceFactor=10^{DisplaceAdjustment-2}$$
+$$DisplaceFactor=10^{DisplaceAdjustment}$$
 
-- When `DisplaceAdjustment` is 0, `DisplaceFactor` is 0.01, consistent with previous versions' built-in factor.
-- When `DisplaceAdjustment` is 2, `DisplaceFactor` is 1, corresponding to Unity's unit of 1 meter.
+- When `DisplaceAdjustment` is -2, `DisplaceFactor` is 0.01, consistent with previous versions' built-in factor.
+- When `DisplaceAdjustment` is 0, `DisplaceFactor` is 1, corresponding to Unity's unit of 1 meter.
 
 **Notes**
 - The transformation of objects in world space does not affect the description above.
