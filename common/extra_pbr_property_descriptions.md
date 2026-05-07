@@ -27,9 +27,10 @@ The tear alpha threshold.
 ### TearMode
 The tear mode.
 
-**Value 0**: ***Clip***.
-
-**Value 1**: ***Fade***.
+| Value | Tear mode  |
+| ----- | ---------- |
+| 0     | ***Clip*** |
+| 1     | ***Fade*** |
 
 ### TearFadeSoftness
 The smooth interval when `TearMode` is set to 1.

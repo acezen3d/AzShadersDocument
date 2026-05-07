@@ -10,12 +10,12 @@ Given a normalized time $t$ (ranging from 0 to 1), an easing function outputs a 
 
 | Value | Easing function | Control points       |
 | ----- | --------------- | -------------------- |
-| 0     | Linear          | (0, 0, 1, 1)         |
-| 1     | Ease            | (0.25, 0.1, 0.25, 1) |
-| 2     | EaseIn          | (0.42, 0, 1, 1)      |
-| 3     | EaseOut         | (0, 0, 0.58, 1)      |
-| 4     | EaseInOut       | (0.42, 0, 0.58, 1)   |
-| 5     | Custom          | -                    |
+| 0     | ***Linear***    | (0, 0, 1, 1)         |
+| 1     | ***Ease***      | (0.25, 0.1, 0.25, 1) |
+| 2     | ***EaseIn***    | (0.42, 0, 1, 1)      |
+| 3     | ***EaseOut***   | (0, 0, 0.58, 1)      |
+| 4     | ***EaseInOut*** | (0.42, 0, 0.58, 1)   |
+| 5     | ***Custom***    | -                    |
 
 ## Online editor
 - https://easingwizard.com/

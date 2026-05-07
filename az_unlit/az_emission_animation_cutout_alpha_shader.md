@@ -174,11 +174,11 @@
 ### ScreenUVAspectMode
 This property controls whether the screen space UVs take the screen's aspect ratio into account. Since screens are generally not square, sampling textures directly using screen space UVs can result in stretching. This property determines whether and along which axis the screen space UVs are fitted according to the screen's aspect ratio, ensuring that texture sampling remains its original proportions.
 
-**Value 0**: ***Preserve***. The original screen space UVs remain unchanged.
-
-**Value 1**: ***FitU***. The U (X-axis) is aligned and the V (Y-axis) is scaled accordingly.
-
-**Value 2**: ***FitV***. The V (Y-axis) is aligned and the U (X-axis) is scaled accordingly.
+| Value | Screen UV aspect mode | Description                                                         |
+| ----- | --------------------- | ------------------------------------------------------------------- |
+| 0     | ***Preserve***        | The original screen space UVs remain unchanged.                     |
+| 1     | ***FitU***            | The U (X-axis) is aligned and the V (Y-axis) is scaled accordingly. |
+| 2     | ***FitV***            | The V (Y-axis) is aligned and the U (X-axis) is scaled accordingly. |
 
 ### AlphaFromEmission
 Whether to use the alpha value from the emission as the main alpha.
@@ -188,14 +188,14 @@ Whether to use the alpha value from the emission as the main alpha.
 **Value true**: The main alpha is determined by emission maps (`EmissionMap.a`, `ColorBlendMap.a`) and colors (`EmissionColor.a`, `ColorBlendColor.a`).
 
 **Notes**
-- When `AnimationUVType` is 1 (***Screen Space UV***), there is an exception: the shadow caster will always use `MainTex.a` and `Color.a`.
+- When `AnimationUVType` is 1 (***ScreenSpaceUV***), there is an exception: the shadow caster will always use `MainTex.a` and `Color.a`.
 
 ### AnimationUVType
 The UV type used for the emission UV animation:
-
-**Value 0**: ***Mesh UV***.
-
-**Value 1**: ***Screen Space UV***.
+| Value | Animation UV type   |
+| ----- | ------------------- |
+| 0     | ***MeshUV***        |
+| 1     | ***ScreenSpaceUV*** |
 
 ### AnimationUVOverride
 Whether the animated UVs are allowed to simultaneously override the sampling UVs of related textures:
@@ -213,33 +213,31 @@ Whether the animated UVs are allowed to simultaneously override the sampling UVs
 ### AnimationUVWrapMode
 Specifies the wrap mode for the animated UVs. This property is particularly useful for UV animations that require custom texture wrapping.
 
-**Value 0**: ***Inherit***. The animated UVs are not processed; the texture's own wrap mode is used.
-
-**Value 1**: ***Repeat***. The animated UVs are processed as if having the repeat wrap mode.
-
-**Value 2**: ***Clamp***. The animated UVs are processed as if having the clamp wrap mode.
+| Value | Animation UV wrap mode | Description                                                              |
+| ----- | ---------------------- | ------------------------------------------------------------------------ |
+| 0     | ***Inherit***          | The animated UVs are not processed; the texture's own wrap mode is used. |
+| 1     | ***Repeat***           | The animated UVs are processed as if having the repeat wrap mode.        |
+| 2     | ***Clamp***            | The animated UVs are processed as if having the clamp wrap mode.         |
 
 ### AnimationUVOrder
 The execution order of UV animations:
 
-**Value 0**: UV pulse, UV spin, UV scroll.
-
-**Value 1**: UV pulse, UV scroll, UV spin.
-
-**Value 2**: UV spin, UV pulse, UV scroll.
-
-**Value 3**: UV spin, UV scroll, UV pulse.
-
-**Value 4**: UV scroll, UV pulse, UV spin.
-
-**Value 5**: UV scroll, UV spin, UV pulse.
+| Value | Description                   |
+| ----- | ----------------------------- |
+| 0     | UV pulse, UV spin, UV scroll. |
+| 1     | UV pulse, UV scroll, UV spin. |
+| 2     | UV spin, UV pulse, UV scroll. |
+| 3     | UV spin, UV scroll, UV pulse. |
+| 4     | UV scroll, UV pulse, UV spin. |
+| 5     | UV scroll, UV spin, UV pulse. |
 
 ### AnimationColorOrder
 The execution order of color animations:
 
-**Value 0**: Hue shift, color blend.
-
-**Value 1**: Color blend, hue shift.
+| Value | Description             |
+| ----- | ----------------------- |
+| 0     | Hue shift, color blend. |
+| 1     | Color blend, hue shift. |
 
 ### Mask
 A comprehensive mask texture:
@@ -267,7 +265,15 @@ An animation can have different animation properties on its various components; 
 ### \*CycleMode\*
 Determines the basic timing method for each cycle.
 
-**Value 0**: ***Forward***.
+| Value | Cycle mode               |
+| ----- | ------------------------ |
+| 0     | ***Forward***            |
+| 1     | ***Backward***           |
+| 2     | ***PingPong***           |
+| 3     | ***ForwardContinuous***  |
+| 4     | ***BackwardContinuous*** |
+
+***Forward***:
 ```
 1 │  /¦  /¦  /¦
   │ / ¦ / ¦ / ¦
@@ -276,7 +282,7 @@ Determines the basic timing method for each cycle.
   0   1   2   3
 ```
 
-**Value 1**: ***Backward***.
+***Backward***:
 ```
 1 │\  ¦\  ¦\  ¦        or     0   1   2   3 
   │ \ ¦ \ ¦ \ ¦             0 ├───┼───┼───┼─── t
@@ -285,7 +291,7 @@ Determines the basic timing method for each cycle.
   0   1   2   3            -1 │  \¦  \¦  \¦
 ```
 
-**Value 2**: ***PingPong***.
+***PingPong***:
 ```
 1 │  /¦\  ¦  /¦
   │ / ¦ \ ¦ / ¦
@@ -294,7 +300,7 @@ Determines the basic timing method for each cycle.
   0   1   2   3
 ```
 
-**Value 3**: ***ForwardContinuous***.
+***ForwardContinuous***:
 ```
 3 │   ¦   ¦  /¦
   │   ¦   ¦ / ¦
@@ -309,7 +315,7 @@ Determines the basic timing method for each cycle.
   0   1   2   3
 ```
 
-**Value 4**: ***BackwardContinuous***.
+***BackwardContinuous***:
 ```
 3 │\  ¦   ¦   ¦        or     0   1   2   3
   │ \ ¦   ¦   ¦             0 ├───┼───┼───┼─── t
@@ -330,19 +336,8 @@ Determines the basic timing method for each cycle.
   - Non-continuable animations: UV pulse, color blend.
 
 ### \*Easing\*
-See [Easing function](../common/easing_function.md).
-
-**Value 0**: ***Linear***.
-
-**Value 1**: ***Ease***.
-
-**Value 2**: ***EaseIn***.
-
-**Value 3**: ***EaseOut***.
-
-**Value 4**: ***EaseInOut***.
-
-**Value 5**: ***Custom***. A custom easing function is used, the corresponding `*EasingParams*` property takes effect.
+See [Easing function](../common/easing_function.md).\
+When the `*Easing*` property is 5 (***Custom***), the corresponding `*EasingParams*` property defines the custom easing function and takes effect.
 
 ### \*EasingParams\*
 Defines the control points of the custom cubic Bezier curve for easing customization, namely $(x_1, y_1, x_2, y_2)$ in its `rgba` channels. It's effective only when the corresponding `*Easing*` property is set to 5 (***Custom***).

@@ -89,34 +89,34 @@ o=
 $$
 
 ## Blend type enum for color
-| Value | Blend type        |
-| ----- | ----------------- |
-| 0     | Normal            |
-| 1     | Multiply          |
-| 2     | MultiplyAndDouble |
-| 3     | Add               |
-| 4     | AddMultiply       |
-| 5     | Subtract          |
-| 6     | ReverseSubtract   |
-| 7     | Screen            |
-| 8     | Max               |
-| 9     | Min               |
-| 10    | Overlay           |
-| 11    | HardLight         |
+| Value | Blend type              |
+| ----- | ----------------------- |
+| 0     | ***Normal***            |
+| 1     | ***Multiply***          |
+| 2     | ***MultiplyAndDouble*** |
+| 3     | ***Add***               |
+| 4     | ***AddMultiply***       |
+| 5     | ***Subtract***          |
+| 6     | ***ReverseSubtract***   |
+| 7     | ***Screen***            |
+| 8     | ***Max***               |
+| 9     | ***Min***               |
+| 10    | ***Overlay***           |
+| 11    | ***HardLight***         |
 
 ## Blend type enum for non-color
- | Value | Blend type        |
- | ----- | ----------------- |
- | 0     | Normal            |
- | 1     | Multiply          |
- | 2     | MultiplyAndDouble |
- | 3     | Add               |
- | 4     | AddMultiply       |
- | 5     | Subtract          |
- | 6     | ReverseSubtract   |
- | 7     | Screen            |
- | 8     | Max               |
- | 9     | Min               |
+ | Value | Blend type              |
+ | ----- | ----------------------- |
+ | 0     | ***Normal***            |
+ | 1     | ***Multiply***          |
+ | 2     | ***MultiplyAndDouble*** |
+ | 3     | ***Add***               |
+ | 4     | ***AddMultiply***       |
+ | 5     | ***Subtract***          |
+ | 6     | ***ReverseSubtract***   |
+ | 7     | ***Screen***            |
+ | 8     | ***Max***               |
+ | 9     | ***Min***               |
  
 ## Notes
 - `MultiplyAndDouble` behaves differently under different enums. In **Blend type enum for color**, it means multiplying by $2 ^ {2.2}$ (if we're working in linear color space, which we are), but in **Blend type enum for non-color**, it means multiplying by 2.

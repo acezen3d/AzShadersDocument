@@ -54,37 +54,34 @@
 ### BlendOrder
 Takes effect when `UseMainColor` is `true`. Controls the blending order of the triplanar textures with the main color.
 
-**Value 0**: ***XYZ***.
-
-**Value 1**: ***XZY***.
-
-**Value 2**: ***YXZ***.
-
-**Value 3**: ***YZX***.
-
-**Value 4**: ***ZXY***.
-
-**Value 5**: ***ZYX***.
+| Value | Blend order |
+| ----- | ----------- |
+| 0     | ***XYZ***   |
+| 1     | ***XZY***   |
+| 2     | ***YXZ***   |
+| 3     | ***YZX***   |
+| 4     | ***ZXY***   |
+| 5     | ***ZYX***   |
 
 ### UVMode
-**Value 0**: ***World Position***. The vertices' world space positions are used as the sampling UVs.
-
-**Value 1**: ***Mesh UV***. The vertices' UV coordinates are used directly as the sampling UVs.
+| Value | UV mode             | Description                                                         |
+| ----- | ------------------- | ------------------------------------------------------------------- |
+| 0     | ***WorldPosition*** | The vertices' world space positions are used as the sampling UVs.   |
+| 1     | ***MeshUV***        | The vertices' UV coordinates are used directly as the sampling UVs. |
 
 ### UFlipModes and VFlipModes
-**Value 0**: The UVs are not flipped in the U(V) direction.
-
-**Value 1**: The UVs are flipped in the U(V) direction where normals are positive.
-
-**Value 2**: The UVs are flipped in the U(V) direction where normals are negative.
-
-**Value 3**: The UVs are flipped in the U(V) direction everywhere.
-
-The two properties share a similar structure:
+The two properties have similar functionality and also share a similar structure. They control the behavior of their corresponding directions.
 - `red`: Value for `TextureX`.
 - `green`: Value for `TextureY`.
 - `blue`: Value for `TextureZ`.
 - `alpha`: Not used.
+
+| Value | Description                                                                                       |
+| ----- | ------------------------------------------------------------------------------------------------- |
+| 0     | The UVs are not flipped.                                                                          |
+| 1     | The UVs are flipped where normals are positive (pointing in the positive direction of the plane). |
+| 2     | The UVs are flipped where normals are negative (pointing in the positive negative of the plane).  |
+| 3     | The UVs are flipped everywhere.                                                                   |
 
 ### BlendOffsets, BlendPowers and BlendScales
 These properties are used to calculate the blend factor, which determines how the triplanar textures are blended together when `UseMainColor` is `false`, or how they blend with the main color when `UseMainColor` is `true`.

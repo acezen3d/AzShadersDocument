@@ -33,11 +33,11 @@ Whether to flip the normals of the back faces.
 
 ### Cull
 The face culling.
-| Value | Cull  |
-| ----- | ----- |
-| 0     | Off   |
-| 1     | Front |
-| 2     | Back  |
+| Value | Cull        |
+| ----- | ----------- |
+| 0     | ***Off***   |
+| 1     | ***Front*** |
+| 2     | ***Back***  |
 
 https://docs.unity3d.com/Manual/SL-Cull.html
 
@@ -49,26 +49,26 @@ The destination (frame buffer) blend mode/blend factor. Its value is defined by 
 
 ### ZWrite
 Whether to update the depth buffer when it passes the depth test.
-| Value | ZWrite |
-| ----- | ------ |
-| 0     | Off    |
-| 1     | On     |
+| Value | ZWrite    |
+| ----- | --------- |
+| 0     | ***Off*** |
+| 1     | ***On***  |
 
 https://docs.unity3d.com/Manual/SL-ZWrite.html
 
 ### ZTest
 The depth test method.
-| Value | ZTest    |
-| ----- | -------- |
-| 0     | Disabled |
-| 1     | Never    |
-| 2     | Less     |
-| 3     | Equal    |
-| 4     | LEqual   |
-| 5     | Greater  |
-| 6     | NotEqual |
-| 7     | GEqual   |
-| 8     | Always   |
+| Value | ZTest          |
+| ----- | -------------- |
+| 0     | ***Disabled*** |
+| 1     | ***Never***    |
+| 2     | ***Less***     |
+| 3     | ***Equal***    |
+| 4     | ***LEqual***   |
+| 5     | ***Greater***  |
+| 6     | ***NotEqual*** |
+| 7     | ***GEqual***   |
+| 8     | ***Always***   |
 
 https://docs.unity3d.com/Manual/SL-ZTest.html
 
