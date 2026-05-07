@@ -20,7 +20,7 @@ This is the complete documentation for Az shaders: the shaders created by Acezen
 
 ## Live
 - [Az Blur shaders](az_blur/README.md)
-- [Az Debug shader](az_debug/README.md)
+- [Az Debug shaders](az_debug/README.md)
 - [Az Matcap shaders](az_matcap/README.md)
 - [Az Unlit shaders](az_unlit/README.md)
 - [Az Standard shaders](az_standard/README.md)
