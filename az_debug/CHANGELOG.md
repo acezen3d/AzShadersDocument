@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.0.0
+- Correct the `VertexNormalMap` and `VertexTangentMap` application for odd negative scales on both mesh renderers and skinned mesh renderers.
+- Update `Az/Debug` property categories:
+  - Merge the Basic and Visualization categories into the Main and Visualization category.
+  - Rename the Vectors category to the Vertex Data category.
+- Add the vertex point display feature to the Vertex Data category.
+- Rename `VectorsMask`, `VectorsCutoff`, `VectorsCull` to `VertexDataMask`, `CutoffVertexData`, `CullVertexData`.
+- Remove `VectorsZTest`.
+- Rename `DisplayVectors` to `DisplayBasisVectors`.
+- Extend `TangentLength`, `BitangentLength`, and `NormalLength` ranges from $[0,0.01]$ to $[0,0.1]$ for finer control, and change their default values to 0.01.
+- Add depth offset controls for the vertex points (`PointDepthOffset`) and the basis vectors (`VectorsDepthOffset`).
+- Replace `Mask` with `MainTex` for alpha clipping via its `alpha` channel.
+- Replace `NoFill` and `NoLine` with `DisplayFill` and `DisplayLine` for clearer control.
+- Rename `LineThickness` to `LineWidth` and `LineSmoothness` to `LineSoftness`.
+- Improve line rendering with screen space edge pixel distance calculation for more consistent and accurate line widths.
+- Add `TessVertexNormalStrength` and `DisplaceVertexNormalStrength` to control the vertex normal application strength during the tessellation and displacement.
+- Add multi-channel displacement blending support with `DisplaceUV`, `DisplaceUV2`, `DisplaceUV3`, `DisplaceMiddleLevel2`, `DisplaceMiddleLevel3`, and `DisplaceBlendParams`. Check the documents for more details.
+- Change the default value of `DisplaceMap` from `red` to `gray` and the default value of `DisplaceMiddleLevel` from 0 to 0.5.
+- Extend `DisplaceAdjustment` range from $[0,2]$ to $[-2,2]$.
+- Add the `Az/DebugCamera` shader for debugging the camera textures: Depth, Depth Normals, and Motion Vectors.
+
 ## v1.2.0
 - The custom mesh normals derived from `VertexNormalMap` are no longer applied directly to the tessellation and displacement, but instead masked by the `green` channel of `TessSmoothMap` and `DisplaceMap` to control the influence on each of them.
 - Modify the default values of `TessSmoothMap`, `DisplaceMap` and `DisplaceMiddleLevel`.
