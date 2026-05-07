@@ -21,11 +21,11 @@ The dither pattern sampling mipmap level.
 ### DitherAnimationType
 The dither animation type.
 
-**Value 0**: ***No Animation***.
-
-**Value 1**: ***UV Scrolling***.
-
-**Value 2**: ***Sprite Cycling***.
+| Value | Dither animation type |
+| ----- | --------------------- |
+| 0     | ***NoAnimation***     |
+| 1     | ***UVScrolling***     |
+| 2     | ***SpriteCycling***   |
 
 ### DitherAnimationFPS
 The FPS of the dither animation. -2: `1/smoothDt`; -1: `1/dt`; 0~120: value itself.
