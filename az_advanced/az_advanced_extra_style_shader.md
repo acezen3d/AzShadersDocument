@@ -200,15 +200,13 @@ Controls the generation of the Matcap UVs, thus affecting the sampling of the ma
 - `alpha`: Controls the power of Half Lambert to determine the range for masking the matcap. Value range: $[0,\infty)$, typically $[0,10]$.
 
 ### RingStyle
-**Value 0**: ***Tangent***. One ring appears along the tangent direction (camera's X-axis).
-
-**Value 1**: ***Tangent2***. Two rings appear along the tangent direction (camera's X-axis).
-
-**Value 2**: ***Binormal***. One ring appears along the binormal direction (camera's Y-axis).
-
-**Value 3**: ***Binormal2***. Two rings appear along the binormal direction (camera's Y-axis).
-
-**Value 4**: ***Radius***. On ring appears directly facing the camera, along the normal direction (camera's Z-axis).
+| Value | Ring style       | Description                                                                               |
+| ----- | ---------------- | ----------------------------------------------------------------------------------------- |
+| 0     | ***Tangent***    | One ring appears along the tangent direction (camera's X-axis).                           |
+| 1     | ***Tangent2***   | Two rings appear along the tangent direction (camera's X-axis).                           |
+| 2     | ***Bitangent***  | One ring appears along the bitangent direction (camera's Y-axis).                         |
+| 3     | ***Bitangent2*** | Two rings appear along the bitangent direction (camera's Y-axis).                         |
+| 4     | ***Radius***     | On ring appears directly facing the camera, along the normal direction (camera's Z-axis). |
 
 ### MainLightToRing
 - `red`: Blends the main light to the ring. Value range: $[0,1]$.  
