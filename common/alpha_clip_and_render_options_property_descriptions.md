@@ -3,6 +3,8 @@
 - [Alpha clip and render options property descriptions](#alpha-clip-and-render-options-property-descriptions)
     - [AlphaMask](#alphamask)
     - [Cutoff](#cutoff)
+    - [CutoffShadow](#cutoffshadow)
+    - [AlphaToMask](#alphatomask)
     - [NormalBackFaceFlip](#normalbackfaceflip)
     - [Cull](#cull)
     - [BlendSrc](#blendsrc)
@@ -27,6 +29,14 @@ Under normal circumstances, you don't need to touch it. It's mainly used in skin
 
 ### Cutoff
 The alpha clip threshold value. Pixels with an alpha value below this will be clipped.
+
+### CutoffShadow
+The alpha clip threshold value for the shadow caster pass. When this property is present, it overrides `Cutoff` for alpha clipping in the shadow caster pass.
+
+### AlphaToMask
+Whether to enable Alpha to Coverage. Alpha to Coverage is an MSAA-based technique that uses the fragment's alpha output as a coverage mask, allowing the GPU to generate semi-transparent edges with multiple coverage levels (depending on the MSAA sample count). This produces smooth, anti-aliased cutout edges without the sorting overhead of alpha blending.
+
+When enabled, Alpha to Coverage takes effect. When disabled, the shader falls back to standard alpha clipping. Note that Alpha to Coverage requires MSAA to be enabled; otherwise it falls back automatically. Should only be disabled when MSAA is not supported or when standard alpha clipping is preferred.
 
 ### NormalBackFaceFlip
 Whether to flip the normals of the back faces.
