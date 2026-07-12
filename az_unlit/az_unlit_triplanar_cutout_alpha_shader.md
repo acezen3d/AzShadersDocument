@@ -23,7 +23,9 @@
 | ------------ | ------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | AlphaMask    | Texture2D(G) | white         | See [AlphaMask](../common/alpha_clip_and_render_options_property_descriptions.md#alphamask).                                 |
 | Cutoff       | Float(0,1)   | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff).                                       |
+| CutoffShadow | Float(0,1)   | 0.5           | See [CutoffShadow](../common/alpha_clip_and_render_options_property_descriptions.md#cutoffshadow).                           |
 | Cull         | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                                           |
+| AlphaToMask  | Integer(0,1) | 1             | See [AlphaToMask](../common/alpha_clip_and_render_options_property_descriptions.md#alphatomask).                             |
 | MainTex      | Texture2D(G) | white         | The base color texture.                                                                                                      |
 | Color        | Color        | (1,1,1,1)     | The tint color of `MainTex`. The `alpha` channel is also used.                                                               |
 | UseMainColor | Boolean      | false         | Whether to blend the main color (i.e., the product of `MainTex.rgb` and `Color.rgb`) with the triplanar textures.            |
@@ -48,7 +50,7 @@
 - Queue: `Transparent`
 
 ### Properties
-(Same as `Az/UnlitTriplanarCutout`)
+(Same as `Az/UnlitTriplanarCutout`, except `AlphaToMask`)
 
 ## Additional property descriptions
 ### BlendOrder
