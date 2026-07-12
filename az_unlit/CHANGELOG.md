@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.0
+- Remove the `Az/ShadowCaster` shader. It has now been moved into Az Shadow shaders.
+- Add `CutoffShadow` to all shaders, allowing a separate alpha clip threshold for the shadow caster pass.
+- Add `AlphaToMask` to `Az/UnlitCutout`, `Az/UnlitTriplanarCutout`, and `Az/EmissionAnimationCutout` for Alpha to Coverage support.
+
 ## v2.1.0
 - For `Az/UnlitCutout` and `Az/UnlitAlpha`, add back `ScreenUVStretch` and change it to `ScreenUVAspectMode`.
 - For `Az/EmissionAnimationCutout` and `Az/EmissionAnimationAlpha`:

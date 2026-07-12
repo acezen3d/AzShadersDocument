@@ -35,11 +35,13 @@
 
 ### Properties
 #### 🏷️Alpha Clip and Render Options
-| Name      | Type         | Default value | Description                                                                                  |
-| --------- | ------------ | ------------- | -------------------------------------------------------------------------------------------- |
-| AlphaMask | Texture2D(G) | white         | See [AlphaMask](../common/alpha_clip_and_render_options_property_descriptions.md#alphamask). |
-| Cutoff    | Float(0,1)   | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff).       |
-| Cull      | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).           |
+| Name         | Type         | Default value | Description                                                                                        |
+| ------------ | ------------ | ------------- | -------------------------------------------------------------------------------------------------- |
+| AlphaMask    | Texture2D(G) | white         | See [AlphaMask](../common/alpha_clip_and_render_options_property_descriptions.md#alphamask).       |
+| Cutoff       | Float(0,1)   | 0.5           | See [Cutoff](../common/alpha_clip_and_render_options_property_descriptions.md#cutoff).             |
+| CutoffShadow | Float(0,1)   | 0.5           | See [CutoffShadow](../common/alpha_clip_and_render_options_property_descriptions.md#cutoffshadow). |
+| Cull         | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).                 |
+| AlphaToMask  | Integer(0,1) | 1             | See [AlphaToMask](../common/alpha_clip_and_render_options_property_descriptions.md#alphatomask).   |
 
 #### 🏷️Main
 | Name                        | Type          | Default value | Description                                                                                                                                                                                                     |
@@ -167,7 +169,7 @@
 - Queue: `Transparent`
 
 ### Properties
-(Same as `Az/EmissionAnimationCutout`)
+(Same as `Az/EmissionAnimationCutout`, except `AlphaToMask`)
 
 ## Additional property descriptions
 ### AlphaFromEmission
