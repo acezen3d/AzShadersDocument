@@ -19,11 +19,11 @@
 
 ## Properties
 ### 🏷️Alpha Clip and Render Options
-| Name        | Type         | Default value | Description                                                                              |
-| ----------- | ------------ | ------------- | ---------------------------------------------------------------------------------------- |
-| Cutoff      | Float(0,1)   | 0.5           | The clipping threshold for the main texture.                                             |
-| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).       |
-| AlphaToMask | Integer(0,1) | 1             | Whether to enable Alpha to Coverage. Should only be disabled when MSAA is not supported. |
+| Name        | Type         | Default value | Description                                                                                      |
+| ----------- | ------------ | ------------- | ------------------------------------------------------------------------------------------------ |
+| Cutoff      | Float(0,1)   | 0.5           | The clipping threshold for the main texture.                                                     |
+| Cull        | Integer(0,2) | 0             | See [Cull](../common/alpha_clip_and_render_options_property_descriptions.md#cull).               |
+| AlphaToMask | Integer(0,1) | 1             | See [AlphaToMask](../common/alpha_clip_and_render_options_property_descriptions.md#alphatomask). |
 
 ### 🏷️Main and Visualization
 | Name            | Type          | Default value | Description                                                                 |
