@@ -15,7 +15,6 @@
     - [Tags](#tags-1)
     - [Properties](#properties-1)
   - [Additional property descriptions](#additional-property-descriptions)
-    - [ScreenUVAspectMode](#screenuvaspectmode)
     - [AlphaFromEmission](#alphafromemission)
     - [AnimationUVType](#animationuvtype)
     - [AnimationUVOverride](#animationuvoverride)
@@ -50,7 +49,7 @@
 | ScreenTex                   | Texture2D(G)  | white         | An extra color texture in screen space, will be blended with `MainTex` by the `alpha` channel and `ScreenTexBlendType`.                                                                                         |
 | ScreenColor                 | Color         | (1,1,1,1)     | The tint color of `ScreenTex`. The `alpha` channel is also used.                                                                                                                                                |
 | ScreenTexBlendType          | Integer(0,11) | 1             | The blend type of `ScreenTex`. Its value is defined by [Blend type enum for color](../common/blend_type.md#blend-type-enum-for-color).                                                                          |
-| ScreenUVAspectMode          | Integer(0,2)  | 0             | See [Additional property descriptions/ScreenUVAspectMode](#screenuvaspectmode).                                                                                                                                 |
+| ScreenUVAspectMode          | Integer(0,2)  | 0             | See [ScreenUVAspectMode](../common/misc_property_descriptions.md#screenuvaspectmode).                                                                                                                           |
 | EmissionMap                 | Texture2D(G)  | white         | The emission map. The `rgb` channels define the emission color. The `alpha` channel is also used if `AlphaFromEmission` is `true`.                                                                              |
 | EmissionColor               | Color         | (0,0,0,1)     | The emission color. It will be multiplied with `EmissionMap`. The `alpha` channel is also used if `AlphaFromEmission` is `true`.                                                                                |
 | EmissionIntensity           | Float(0,2)    | 0             | The emission intensity control. It will be multiplied with `EmissionMap` and `EmissionColor`.                                                                                                                   |
@@ -171,15 +170,6 @@
 (Same as `Az/EmissionAnimationCutout`)
 
 ## Additional property descriptions
-### ScreenUVAspectMode
-This property controls whether the screen space UVs take the screen's aspect ratio into account. Since screens are generally not square, sampling textures directly using screen space UVs can result in stretching. This property determines whether and along which axis the screen space UVs are fitted according to the screen's aspect ratio, ensuring that texture sampling remains its original proportions.
-
-| Value | Screen UV aspect mode | Description                                                         |
-| ----- | --------------------- | ------------------------------------------------------------------- |
-| 0     | ***Preserve***        | The original screen space UVs remain unchanged.                     |
-| 1     | ***FitU***            | The U (X-axis) is aligned and the V (Y-axis) is scaled accordingly. |
-| 2     | ***FitV***            | The V (Y-axis) is aligned and the U (X-axis) is scaled accordingly. |
-
 ### AlphaFromEmission
 Whether to use the alpha value from the emission as the main alpha.
 
