@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.1
+- Rename `PointDepthOffset` to `DepthOffsetPoint` and `VectorsDepthOffset` to `DepthOffsetVectors`.
+- Fix NaN propagation during tangent space generation caused by degenerate UVs, which could result in rendering artifacts.
+
 ## v2.0.0
 - Correct the `VertexNormalMap` and `VertexTangentMap` application for odd negative scales on both mesh renderers and skinned mesh renderers.
 - Update `Az/Debug` property categories:
